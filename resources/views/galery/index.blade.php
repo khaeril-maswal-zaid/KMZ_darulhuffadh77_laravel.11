@@ -1,0 +1,232 @@
+@extends('layout.template')
+
+@section('content')
+    <section>
+        <!-- Crausel mini Start -->
+        <div class="container-fluid bg-primary py-5 mb-4 mb-md-5 bg-header">
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-4 text-white animated zoomIn">Tentang</h1>
+                    <a href="/" class="h5 text-white">Home</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="/" class="h5 text-white">About</a>
+                </div>
+            </div>
+        </div>
+        <!-- Crausel mini End -->
+
+        <!-- Petunjuk URL Start -->
+        <div class="container-xxl">
+            <div class="container">
+                <div class="alert alert-success py-2 label-url" role="alert">
+                    <a href="/"><i class="bi bi-house-door-fill"></i></a>
+                    <span class="px-1">/</span>
+
+                    <span class="px-1">Lembaga</span>
+                    <span class="px-1">/</span>
+
+                    <a href="/">Lorem ipsum dolor</a>
+                </div>
+            </div>
+        </div>
+        <!-- Petunjuk URL Enad -->
+    </section>
+
+
+    <!-- Projects Start -->
+    <section class="container-fluid py-3 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-3">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px">
+                <h5 class="fw-bold text-primary text-uppercase">Galeri Pondok</h5>
+                <h1 class="mb-0">{{ config('app.name') }}</h1>
+            </div>
+
+            <div class="row wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-12 text-center">
+                    <ul class="list-inline rounded mb-5" id="portfolio-flters">
+                        <li class="mx-2 active" data-filter="*">Semua</li>
+                        <li class="mx-2" data-filter=".putra">Galery Putra</li>
+                        <li class="mx-2" data-filter=".putri">Galery Putri</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row portfolio-container mb-3 ">
+
+                <div class="col-lg-4 col-md-6 portfolio-item putra mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="portfolio-inner rounded" style="height: 15em;">
+                        <img class="img-fluid h-100 w-100" src="{{ asset('assets/img/blog-1.jpg') }}" alt=""
+                            style="object-fit: cover;">
+
+                        <div class="portfolio-text px-3">
+                            <h5 class="text-white text-center mb-4">Sejarah {{ config('app.name') }}</h5>
+                            <div class="d-flex">
+                                <a class="btn btn-lg-square rounded-circle mx-2" href="{{ asset('assets/img/blog-1.jpg') }}"
+                                    data-lightbox="portfolio">
+                                    <i class="fa fa-eye mt-2"></i>
+                                </a>
+                                <a class="btn btn-lg-square rounded-circle mx-2" href="/">
+                                    <i class="fa fa-link mt-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item putri mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="portfolio-inner rounded" style="height: 15em;">
+                        <img class="img-fluid h-100 w-100" src="{{ asset('assets/img/blog-2.jpg') }}" alt=""
+                            style="object-fit: cover;">
+
+                        <div class="portfolio-text px-3">
+                            <h5 class="text-white text-center mb-4">Sejarah {{ config('app.name') }}</h5>
+                            <div class="d-flex">
+                                <a class="btn btn-lg-square rounded-circle mx-2" href="{{ asset('assets/img/blog-2.jpg') }}"
+                                    data-lightbox="portfolio">
+                                    <i class="fa fa-eye mt-2"></i>
+                                </a>
+                                <a class="btn btn-lg-square rounded-circle mx-2" href="/">
+                                    <i class="fa fa-link mt-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item putra mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="portfolio-inner rounded" style="height: 15em;">
+                        <img class="img-fluid h-100 w-100" src="{{ asset('assets/img/blog-3.jpg') }}" alt=""
+                            style="object-fit: cover;">
+
+                        <div class="portfolio-text px-3">
+                            <h5 class="text-white text-center mb-4">Sejarah {{ config('app.name') }}</h5>
+                            <div class="d-flex">
+                                <a class="btn btn-lg-square rounded-circle mx-2" href="{{ asset('assets/img/blog-3.jpg') }}"
+                                    data-lightbox="portfolio">
+                                    <i class="fa fa-eye mt-2"></i>
+                                </a>
+                                <a class="btn btn-lg-square rounded-circle mx-2" href="/">
+                                    <i class="fa fa-link mt-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item putri mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="portfolio-inner rounded" style="height: 15em;">
+                        <img class="img-fluid h-100 w-100" src="{{ asset('assets/img/blog-1.jpg') }}" alt=""
+                            style="object-fit: cover;">
+
+                        <div class="portfolio-text px-3">
+                            <h5 class="text-white text-center mb-4">Sejarah {{ config('app.name') }}</h5>
+                            <div class="d-flex">
+                                <a class="btn btn-lg-square rounded-circle mx-2"
+                                    href="{{ asset('assets/img/blog-1.jpg') }}" data-lightbox="portfolio">
+                                    <i class="fa fa-eye mt-2"></i>
+                                </a>
+                                <a class="btn btn-lg-square rounded-circle mx-2" href="/">
+                                    <i class="fa fa-link mt-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item putri mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="portfolio-inner rounded" style="height: 15em;">
+                        <img class="img-fluid h-100 w-100" src="{{ asset('assets/img/blog-1.jpg') }}" alt=""
+                            style="object-fit: cover;">
+
+                        <div class="portfolio-text px-3">
+                            <h5 class="text-white text-center mb-4">Sejarah {{ config('app.name') }}</h5>
+                            <div class="d-flex">
+                                <a class="btn btn-lg-square rounded-circle mx-2"
+                                    href="{{ asset('assets/img/blog-1.jpg') }}" data-lightbox="portfolio">
+                                    <i class="fa fa-eye mt-2"></i>
+                                </a>
+                                <a class="btn btn-lg-square rounded-circle mx-2" href="/">
+                                    <i class="fa fa-link mt-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item putra mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="portfolio-inner rounded" style="height: 15em;">
+                        <img class="img-fluid h-100 w-100" src="{{ asset('assets/img/blog-1.jpg') }}" alt=""
+                            style="object-fit: cover;">
+
+                        <div class="portfolio-text px-3">
+                            <h5 class="text-white text-center mb-4">Sejarah {{ config('app.name') }}</h5>
+                            <div class="d-flex">
+                                <a class="btn btn-lg-square rounded-circle mx-2"
+                                    href="{{ asset('assets/img/blog-1.jpg') }}" data-lightbox="portfolio">
+                                    <i class="fa fa-eye mt-2"></i>
+                                </a>
+                                <a class="btn btn-lg-square rounded-circle mx-2" href="/">
+                                    <i class="fa fa-link mt-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item putra mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="portfolio-inner rounded" style="height: 15em;">
+                        <img class="img-fluid h-100 w-100" src="{{ asset('assets/img/blog-1.jpg') }}" alt=""
+                            style="object-fit: cover;">
+
+                        <div class="portfolio-text px-3">
+                            <h5 class="text-white text-center mb-4">Sejarah {{ config('app.name') }}</h5>
+                            <div class="d-flex">
+                                <a class="btn btn-lg-square rounded-circle mx-2"
+                                    href="{{ asset('assets/img/blog-1.jpg') }}" data-lightbox="portfolio">
+                                    <i class="fa fa-eye mt-2"></i>
+                                </a>
+                                <a class="btn btn-lg-square rounded-circle mx-2" href="/">
+                                    <i class="fa fa-link mt-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item putri mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="portfolio-inner rounded" style="height: 15em;">
+                        <img class="img-fluid h-100 w-100" src="{{ asset('assets/img/blog-1.jpg') }}" alt=""
+                            style="object-fit: cover;">
+
+                        <div class="portfolio-text px-3">
+                            <h5 class="text-white text-center mb-4">Sejarah {{ config('app.name') }}</h5>
+                            <div class="d-flex">
+                                <a class="btn btn-lg-square rounded-circle mx-2"
+                                    href="{{ asset('assets/img/blog-1.jpg') }}" data-lightbox="portfolio">
+                                    <i class="fa fa-eye mt-2"></i>
+                                </a>
+                                <a class="btn btn-lg-square rounded-circle mx-2" href="/">
+                                    <i class="fa fa-link mt-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item putra mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="portfolio-inner rounded" style="height: 15em;">
+                        <img class="img-fluid h-100 w-100" src="{{ asset('assets/img/blog-1.jpg') }}" alt=""
+                            style="object-fit: cover;">
+
+                        <div class="portfolio-text px-3">
+                            <h5 class="text-white text-center mb-4">Sejarah {{ config('app.name') }}</h5>
+                            <div class="d-flex">
+                                <a class="btn btn-lg-square rounded-circle mx-2"
+                                    href="{{ asset('assets/img/blog-1.jpg') }}" data-lightbox="portfolio">
+                                    <i class="fa fa-eye mt-2"></i>
+                                </a>
+                                <a class="btn btn-lg-square rounded-circle mx-2" href="/">
+                                    <i class="fa fa-link mt-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Projects End -->
+@endsection('content')
