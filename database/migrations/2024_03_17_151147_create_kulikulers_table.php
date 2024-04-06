@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('kulikulers', function (Blueprint $table) {
             $table->id();
-            $table->string('lembaga');
-            $table->string('singkatan');
-            $table->string('picture');
-            $table->text('excerpt');
-            $table->text('body');
+            $table->unsignedBigInteger('blog_id');
+            $table->unsignedBigInteger('santri_id');
+            $table->string('devisi', 50);
+            $table->string('description', 121);
             $table->timestamps();
+
+            $table->foreign('blog_id')->references('id')->on('blogs');
+            $table->foreign('santri_id')->references('id')->on('tholabas');
         });
     }
 

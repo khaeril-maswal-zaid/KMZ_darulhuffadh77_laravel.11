@@ -22,15 +22,15 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('users_id');
-            $table->string('title');
             $table->string('slug')->unique();
-            $table->text('excerpt');
+            $table->string('title');
+            $table->string('excerpt');
             $table->text('body1');
             $table->text('body2');
             $table->string('pucture1')->default('default.jpg');
             $table->string('pucture2')->nullable();
             $table->string('pucture3')->nullable();
-            $table->integer('album')->default(1);
+            $table->boolean('album');
             $table->integer('visit')->default(50);
             $table->timestamps();
 
