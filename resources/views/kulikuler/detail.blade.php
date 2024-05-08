@@ -39,7 +39,7 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="section-title position-relative pb-3 mb-4">
-                                <h1 class="mb-0">OSDHA</h1>
+                                <h1 class="mb-0">{{ $data['title'] }}</h1>
                                 <h5 class="fw-bold text-primary text-uppercase">Organisasi Santri {{ config('app.name') }}
                                 </h5>
                             </div>
@@ -51,44 +51,9 @@
                             </div>
                         </div>
                     </div>
-                    <img class="img-fluid w-100 rounded mb-4" src="{{ asset('assets/img/blog-1.jpg') }}" alt="">
-                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo atque non praesentium
-                        facilis, ex nisi quos accusamus quas adipisci, itaque voluptas culpa similique reprehenderit dolor
-                        impedit? Temporibus maiores quisquam veniam.Tempor erat elitr rebum at clita. Diam dolor diam ipsum
-                        et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no
-                        labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat ametLorem ipsum dolor
-                        sit amet consectetur adipisicing elit. Quo atque non praesentium facilis, ex nisi quos accusamus
-                        quas adipisci, itaque voluptas culpa similique reprehenderit dolor impedit? Temporibus maiores
-                        quisquam veniam.Tempor erat Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo atque non
-                        praesentium facilis, ex nisi quos accusamus quas adipisci, itaque voluptas culpa similique
-                        reprehenderit dolor impedit? Temporibus maiores quisquam veniam.Tempor erat elitr rebum at clita.
-                        Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem
-                        et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat
-                        ametLorem ipsum dolor sit amet consectetur adipisicing elit. Quo atque non praesentium facilis, ex
-                        nisi quos accusamus quas adipisci, itaque voluptas culpa similique reprehenderit dolor impedit?
-                        Temporibus maiores quisquam veniam.Tempor erat Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Quo atque non praesentium facilis, ex nisi quos accusamus quas adipisci, itaque voluptas culpa
-                        similique reprehenderit dolor impedit? Temporibus maiores quisquam veniam.Tempor erat elitr rebum at
-                        clita. Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et
-                        lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore
-                        erat ametLorem ipsum dolor sit amet consectetur adipisicing elit. Quo atque non praesentium facilis,
-                        ex nisi quos accusamus quas adipisci, itaque voluptas culpa similique reprehenderit dolor impedit?
-                        Temporibus maiores quisquam veniam.Tempor erat Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Quo atque non praesentium facilis, ex nisi quos accusamus quas adipisci, itaque voluptas culpa
-                        similique reprehenderit dolor impedit? Temporibus maiores quisquam veniam.Tempor erat elitr rebum at
-                        clita. Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et
-                        lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore
-                        erat ametLorem ipsum dolor sit amet consectetur adipisicing elit. Quo atque non praesentium facilis,
-                        ex nisi quos accusamus quas adipisci, itaque voluptas culpa similique reprehenderit dolor impedit?
-                        Temporibus maiores quisquam veniam.Tempor erat Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Quo atque non praesentium facilis, ex nisi quos accusamus quas adipisci, itaque voluptas culpa
-                        similique reprehenderit dolor impedit? Temporibus maiores quisquam veniam.Tempor erat elitr rebum at
-                        clita. Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et
-                        lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore
-                        erat ametLorem ipsum dolor sit amet consectetur adipisicing elit. Quo atque non praesentium facilis,
-                        ex nisi quos accusamus quas adipisci, itaque voluptas culpa similique reprehenderit dolor impedit?
-                        Temporibus maiores quisquam veniam.Tempor erat</p>
-
+                    <img class="img-fluid w-100 rounded mb-4" src="{{ asset('assets/img/' . $data['picture1']) }}"
+                        alt="">
+                    <div class="mb-4">{{ $data['body1'] }}</div>
                 </div>
 
                 <!-- Sidebar Start -->

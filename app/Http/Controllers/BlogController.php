@@ -12,8 +12,10 @@ class BlogController extends Controller
         //
     }
 
-    public function show(Blog $blog)
+    public function show(Blog $blog, String $slug)
     {
-        return view('blog.detail');
+        return view('blog.detail', [
+            'data' => $blog->where('slug', $slug)->first()->toArray()
+        ]);
     }
 }

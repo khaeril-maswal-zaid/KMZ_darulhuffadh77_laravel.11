@@ -34,9 +34,11 @@ class ProfilPimpinanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Blog $blog)
+    public function show(Blog $blog, String $slug)
     {
-        return view('profilpimpinan.index');
+        return view('profilpimpinan.index', [
+            'data' => $blog->where('slug', $slug)->first()->toArray()
+        ]);
     }
 
     /**

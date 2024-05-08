@@ -56,94 +56,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">03:30 - 04.00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">03:30 - 04.00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">03:30 - 04.00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">03:30 - 04.00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">03:30 - 04.00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">03:30 - 04.00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">03:30 - 04.00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">03:30 - 04.00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">03:30 - 04.00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">03:30 - 04.00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">03:30 - 04.00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
+                                @foreach ($harians as $harian)
+                                    <tr class="text-center">
+                                        <td scope="row" nowrap class="align-middle">{{ $harian['waktu'] }}</td>
+                                        <td class="align-middle">{{ $harian['agenda'] }}</td>
+                                        <td>
+                                            <img src="{{ asset('assets/img/' . $harian['picture']) }}" alt=""
+                                                class="img-fluid rounded">
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -166,105 +88,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">Jum`at</td>
-                                    <td nowrap class="align-middle">05:00 - 06:00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">Jum`at</td>
-                                    <td nowrap class="align-middle">05:00 - 06:00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">Jum`at</td>
-                                    <td nowrap class="align-middle">05:00 - 06:00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td nowrap class="align-middle">Jum`at</td>
-                                    <td nowrap class="al05:00 - 06:00ddle">Jum`at</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">Jum`at</td>
-                                    <td nowrap class="align-middle">05:00 - 06:00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">Jum`at</td>
-                                    <td nowrap class="align-middle">05:00 - 06:00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">Jum`at</td>
-                                    <td nowrap class="align-middle">05:00 - 06:00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">Jum`at</td>
-                                    <td nowrap class="align-middle">05:00 - 06:00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">Jum`at</td>
-                                    <td nowrap class="align-middle">05:00 - 06:00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">Jum`at</td>
-                                    <td nowrap class="align-middle">05:00 - 06:00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td scope="row" nowrap class="align-middle">Jum`at</td>
-                                    <td nowrap class="align-middle">05:00 - 06:00</td>
-                                    <td nowrap class="align-middle">Sholat Tahajjud</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/carousel-1.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </td>
-                                </tr>
+                                @foreach ($mingguans as $mingguan)
+                                    <tr class="text-center">
+                                        <td scope="row" nowrap class="align-middle">{{ $mingguan['hari'] }}</td>
+                                        <td nowrap class="align-middle">{{ $mingguan['waktu'] }}</td>
+                                        <td nowrap class="align-middle">{{ $mingguan['agenda'] }}</td>
+                                        <td>
+                                            <img src="{{ asset('assets/img/' . $mingguan['picture']) }}" alt=""
+                                                class="img-fluid rounded">
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -27,9 +27,9 @@ return new class extends Migration
             $table->string('excerpt');
             $table->text('body1');
             $table->text('body2');
-            $table->string('pucture1')->default('default.jpg');
-            $table->string('pucture2')->nullable();
-            $table->string('pucture3')->nullable();
+            $table->string('picture1')->default('default.jpg');
+            $table->string('picture2')->nullable();
+            $table->string('picture3')->nullable();
             $table->boolean('album');
             $table->integer('visit')->default(50);
             $table->timestamps();

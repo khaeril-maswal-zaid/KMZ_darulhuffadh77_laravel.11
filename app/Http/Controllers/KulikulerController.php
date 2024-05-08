@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kulikuler;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class KulikulerController extends Controller
@@ -14,8 +15,10 @@ class KulikulerController extends Controller
     }
 
     //Tentang
-    public function show(Kulikuler $profil_pimpinan)
+    public function show(Blog $blog, String $slug)
     {
-        return view('kulikuler.detail');
+        return view('kulikuler.detail', [
+            'data' => $blog->where('slug', $slug)->first()->toArray()
+        ]);
     }
 }
