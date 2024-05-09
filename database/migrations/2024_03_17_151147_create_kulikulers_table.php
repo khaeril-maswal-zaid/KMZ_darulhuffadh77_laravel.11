@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('blog_id')->references('id')->on('blogs');
-            $table->foreign('santri_id')->references('id')->on('tholabas');
+            $table->foreign('santri_id')->references('id')->on('tholabahs');
         });
     }
 

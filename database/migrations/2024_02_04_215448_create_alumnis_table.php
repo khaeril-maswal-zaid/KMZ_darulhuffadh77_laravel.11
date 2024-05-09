@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('alumnis', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('tholabah_id');
+            $table->string('kontak');
+            $table->year('tahun');
+            $table->string('marhalah');
+            $table->string('picture');
+
             $table->timestamps();
+
+            $table->foreign('tholabah_id')->references('id')->on('tholabahs');
         });
     }
 

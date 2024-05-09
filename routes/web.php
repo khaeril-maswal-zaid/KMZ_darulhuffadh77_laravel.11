@@ -33,11 +33,11 @@ Route::get('/sejarah-pendirian-maahad', [BlogController::class, 'show'])->defaul
 Route::get('/sejarah-pondok-lama', [BlogController::class, 'show'])->defaults('slug', 'sejarah-pondok-lama');
 Route::get('/sejarah-pondok-baru', [BlogController::class, 'show'])->defaults('slug', 'sejarah-pondok-baru');
 
-Route::get('/pembina-putra', [TholabaController::class, 'index'])->defaults('slug', 'pembina-putra');
-Route::get('/pembina-putri', [TholabaController::class, 'index'])->defaults('slug', 'pembina-putri');
-Route::get('/santri', [TholabaController::class, 'index'])->defaults('slug', 'santri');
-Route::get('/santriwati', [TholabaController::class, 'index'])->defaults('slug', 'santriwati');
-Route::get('/alumni', [TholabaController::class, 'index'])->defaults('slug', 'alumni');
+Route::get('/pembina-putra', [TholabahController::class, 'index'])->defaults('slug', 'pembina-putra');
+Route::get('/pembina-putri', [TholabahController::class, 'index'])->defaults('slug', 'pembina-putri');
+Route::get('/santri', [TholabahController::class, 'index'])->defaults('slug', 'santri');
+Route::get('/santriwati', [TholabahController::class, 'index'])->defaults('slug', 'santriwati');
+Route::get('/alumni', [TholabahController::class, 'index'])->defaults('slug', 'alumni');
 
 Route::get('/ikdh', [IkdhController::class, 'index']);
 

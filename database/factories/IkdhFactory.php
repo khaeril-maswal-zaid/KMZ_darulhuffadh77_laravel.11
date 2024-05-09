@@ -17,7 +17,8 @@ class IkdhFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            // 'cabang'=> fake(),
+            // 'alumni_id'=>
         ];
     }
 }

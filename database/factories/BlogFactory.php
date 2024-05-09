@@ -17,7 +17,7 @@ class BlogFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            // HAPUS SAJA KARENA TIDAK DIGUNAKAN, SUDAH CUKUP SEEDER
         ];
     }
 }

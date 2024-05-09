@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             IkdhSeeder::class,
             KontakSeeder::class,
             KulikulerSeeder::class,
-            TholabaSeeder::class,
+            TholabahSeeder::class,
         ]);
 
         //Run ALL : php artisan db:seed --class=DatabaseSeeder
