@@ -13,8 +13,9 @@ class AktivitasSantriController extends Controller
     public function index()
     {
         $data = [
-            'harians' => Aktivitas_santri::all()->where('kategori', 'harian')->toArray(),
-            'mingguans' => Aktivitas_santri::all()->where('kategori', 'mingguan')->toArray(),
+            'title' => 'Aktivitas Santri Santriwati',
+            'harians' => Aktivitas_santri::all()->where('kategori', 'harian'),
+            'mingguans' => Aktivitas_santri::all()->where('kategori', 'mingguan'),
         ];
         return view('aktivitas.index', $data);
     }

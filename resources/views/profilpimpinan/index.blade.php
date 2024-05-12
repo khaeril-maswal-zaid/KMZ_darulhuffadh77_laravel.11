@@ -22,10 +22,10 @@
                     <a href="/"><i class="bi bi-house-door-fill"></i></a>
                     <span class="px-1">/</span>
 
-                    <span class="px-1">Lembaga</span>
+                    <span class="px-1">Blog</span>
                     <span class="px-1">/</span>
 
-                    <a href="/">Lorem ipsum dolor</a>
+                    <a href="/{{ $blog->slug }}">{{ $blog->title }}</a>
                 </div>
             </div>
         </div>
@@ -38,16 +38,16 @@
             <div class="row g-5">
                 <div class="col-lg-7">
                     <div class="section-title position-relative pb-3 mb-4">
-                        <h5 class="fw-bold text-primary text-uppercase">{{ $data['title'] }}</h5>
-                        <h1 class="mb-0">{{ $data['excerpt'] }}</h1>
+                        <h5 class="fw-bold text-primary text-uppercase">{{ $blog->title }}</h5>
+                        <h1 class="mb-0">{{ $blog->excerpt }}</h1>
                     </div>
-                    <div class="mb-4">{{ $data['body1'] }}</div>
+                    <div class="mb-4">{{ $blog->body1 }}</div>
                 </div>
 
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-sticky" style="top: 6rem">
                         <img class="img-fluid w-100 rounded wow zoomIn" data-wow-delay="0.9s"
-                            src="{{ asset('assets/img/' . $data['picture1']) }}" style="object-fit: cover;">
+                            src="{{ asset('assets/img/' . $blog->picture1) }}" style="object-fit: cover;">
                     </div>
                 </div>
             </div>

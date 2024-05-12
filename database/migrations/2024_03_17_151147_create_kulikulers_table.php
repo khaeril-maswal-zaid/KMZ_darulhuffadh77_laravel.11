@@ -13,13 +13,22 @@ return new class extends Migration
     {
         Schema::create('kulikulers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('blog_id');
+            $table->string('enum');
+            $table->string('name');
+            $table->string('full_name');
+            $table->text('description');
+            $table->timestamps();
+        });
+
+        Schema::create('kulikuler_personils', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('kulikuler_id'); // Sekaligus sebagai kategori
             $table->unsignedBigInteger('santri_id');
             $table->string('devisi', 50);
-            $table->string('description', 121);
+            $table->string('description', 110);
             $table->timestamps();
 
-            $table->foreign('blog_id')->references('id')->on('blogs');
+            $table->foreign('kulikuler_id')->references('id')->on('kulikulers');
             $table->foreign('santri_id')->references('id')->on('tholabahs');
         });
     }

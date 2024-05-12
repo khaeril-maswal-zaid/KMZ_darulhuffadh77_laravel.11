@@ -82,388 +82,69 @@
                     </div>
                 </div>
             </div>
-            <div class="row g-5">
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
+            <div class="row g-5 mb-3">
+                @foreach ($tholabahs as $tholabah)
+                    <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
+                        <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
+                            <div class="team-img position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src="{{ asset('assets/img/' . $tholabah->picture) }}"
+                                    alt=" {{ $tholabah->nama }}" />
+                                <div class="team-social">
+                                    <a class="btn" href="#">
+                                        <p class="mb-0 text-white">NISDH : {{ $tholabah->nisdh }}</p>
+
+                                        <p class="mb-0 text-white">Kategori :
+                                            @if ($tholabah->kategori == 'Pembina')
+                                                {{ $tholabah->kelas }}
+                                            @elseif ($tholabah->kategori == 'Alumni' || $tholabah->kategori == 'Pengab. luar')
+                                                {{ $tholabah->kategori }}
+                                            @else
+                                                @if ($tholabah->jenis_kelamin == 'Laki-laki')
+                                                    Santri
+                                                @else
+                                                    Santriwati
+                                                @endif
+                                            @endif
+                                        </p>
+
+                                        <p class="mb-0 text-white">
+                                            @if ($tholabah->kategori == 'Tholabun')
+                                                Kelas : {{ $tholabah->kelas }}
+                                            @elseif ($tholabah->kategori == 'Pembina')
+                                                Depert. : {{ $tholabah->depertement }}
+                                            @elseif ($tholabah->kategori == 'Pengab. luar')
+                                                Depert. : Pengabdian Luar
+                                            @else
+                                                Marhalah : {{ $tholabah->marhalah }}
+                                            @endif
+                                        </p>
+
+
+                                        <p class="mb-0 text-white">
+                                            @if ($tholabah->kategori == 'Pembina' || $tholabah->kategori == 'Pengab. luar' || $tholabah->kategori == 'Alumni')
+                                                Alumni : {{ $tholabah->tahun_tamat }}
+                                            @else
+                                                @if ($tholabah->active)
+                                                    Status : Aktif
+                                                @else
+                                                    Status : Non Aktif
+                                                @endif
+                                            @endif
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="text-center py-4">
+                                {!! Str::length($tholabah->nama) < 16
+                                    ? '<h4 class="text-white">' . $tholabah->nama . '</h4>'
+                                    : '<h5 class="text-white">' . Str::limit($tholabah->nama, 19, '...') . '</h5>' !!}
+                                <p class="text-uppercase text-dark m-0">{{ $tholabah->kabupaten }}</p>
                             </div>
                         </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-primary border rounded border-primary rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                            <div class="team-social">
-                                <a class="btn" href="#">
-                                    <p class="mb-0 text-white">Kategori : Santri</p>
-                                    <p class="mb-0 text-white">NISDH : 081234567</p>
-                                    <p class="mb-0 text-white">Tingkatan : Fashlul Ula</p>
-                                    <p class="mb-0 text-white">Status : Aktif</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-white">Full Name</h4>
-                            <p class="text-uppercase text-dark m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
+            {{ $tholabahs->onEachSide(0)->links() }}
         </div>
     </section>
     <!-- Team End -->

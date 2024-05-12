@@ -36,6 +36,16 @@ class TholabahFactory extends Factory
             'nisn' => fake()->unique()->numberBetween(111111111, 999999999),
             'angkatan' => fake()->year(),
 
+            'kelas' => fake()->randomElement(['VII MTs', 'VIII MTs', 'IX MTs', 'X MA', 'XI MA', 'XII MA', 'Pengabdian', 'Pembesar Pondok']),
+            'active' => fake()->boolean(),
+
+            'kategori' => fake()->randomElement(['Tholabun', 'Pengab. luar', 'Pembina', 'Alumni']),
+            'depertement' => fake()->randomElement(['KMI', 'Mathbah', 'Riayah', 'Bahasa', 'Tahfidzh']),
+
+            'kontak' => fake()->phoneNumber(),
+            'marhalah' => fake()->word(),
+            'tahun_tamat' => fake()->year(),
+
             'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
         ];
     }

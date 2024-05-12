@@ -14,8 +14,13 @@ class BlogController extends Controller
 
     public function show(Blog $blog, String $slug)
     {
-        return view('blog.detail', [
-            'data' => $blog->where('slug', $slug)->first()->toArray()
-        ]);
+        $blogDetail = $blog->where('slug', $slug)->first();
+
+        $data = [
+            'title' => $blogDetail['title'],
+            'blog' => $blogDetail
+        ];
+
+        return view('blog.detail', $data);
     }
 }

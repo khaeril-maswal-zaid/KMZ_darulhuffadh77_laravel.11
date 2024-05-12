@@ -38,7 +38,7 @@
 <!-- Navbar Start -->
 <div class="container-fluid position-relative p-0">
     <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-        <a href="index.html" class="navbar-brand p-0">
+        <a href="/" class="navbar-brand p-0">
             <h1 class="m-0 h2"><i class="fa fa-user-tie me-2"></i>{{ config('app.name') }}</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -46,7 +46,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="/" class="nav-item nav-link active">Home</a>
 
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Tentang</a>
@@ -71,6 +71,7 @@
                                 <a href="/kulliyatul-muallimin-alislamiyah" class="dropdown-item">Kulliytul Mu`allimin
                                     Al-Islamiyah</a>
                                 <a href="/tahfidzhul-quran" class="dropdown-item">Tahfidzhul Qur`an</a>
+                                <a href="/pengabdian" class="dropdown-item">Pengabdian</a>
                             </div>
                         </div>
 
@@ -86,7 +87,7 @@
                             </div>
                         </div>
 
-                        <a href="/aktivitas-santri" class="dropdown-item">Aktivitas Santri</a>
+                        <a href="/aktivitas-santri-santriwati" class="dropdown-item">Aktivitas Santri</a>
                     </div>
                 </div>
 
@@ -107,7 +108,7 @@
                         <a href="/santri" class="dropdown-item">Santri</a>
                         <a href="/santriwati" class="dropdown-item">Santriwati</a>
                         <a href="/alumni" class="dropdown-item">Alumni</a>
-                        <a href="/ikdh" class="dropdown-item">IKDH</a>
+                        <a href="/ikatan-keluarga-darul-huffadh" class="dropdown-item">IKDH</a>
                     </div>
                 </div>
 

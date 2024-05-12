@@ -22,10 +22,10 @@
                     <a href="/"><i class="bi bi-house-door-fill"></i></a>
                     <span class="px-1">/</span>
 
-                    <span class="px-1">Lembaga</span>
+                    <span class="px-1">Blog</span>
                     <span class="px-1">/</span>
 
-                    <a href="/">Lorem ipsum dolor</a>
+                    <a href="/{{ $blog->slug }}">{{ $blog->title }}</a>
                 </div>
             </div>
         </div>
@@ -39,101 +39,101 @@
                 <div class="col-lg-8">
                     <!-- Blog Detail Start -->
                     <div class="mb-5">
-                        <img class="img-fluid w-100 rounded mb-3" src="{{ asset('assets/img/' . $data['picture1']) }}"
-                            alt="">
+                        <img class="img-fluid w-100 rounded mb-3" src="{{ asset('assets/img/' . $blog->picture1) }}"
+                            alt="{{ $blog->title }}">
                         <div class="d-flex mb-4">
                             <small class="me-3"><i class="far fa-calendar-alt text-primary me-2"></i>
-                                {{ $data['updated_at'] }}</small>
-                            <small class="me-3"><i class="far fa-eye text-primary me-2"></i> {{ $data['visit'] }}</small>
+                                {{ $blog->updated_at }}</small>
+                            <small class="me-3"><i class="far fa-eye text-primary me-2"></i> {{ $blog->visit }}</small>
                         </div>
-                        <h1 class="mb-4">{{ $data['title'] }}</h1>
-                        {{ $data['body1'] }}
+                        <h1 class="mb-4">{{ $blog->title }}</h1>
+                        {{ $blog->body1 }}
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="my-4">
                                     <img class="img-fluid w-100 rounded mb-3"
-                                        src="{{ asset('assets/img/' . $data['picture2']) }}" alt="">
+                                        src="{{ asset('assets/img/' . $blog->picture2) }}" alt="">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="my-4">
                                     <img class="img-fluid w-100 rounded mb-3"
-                                        src="{{ asset('assets/img/' . $data['picture3']) }}" alt="">
+                                        src="{{ asset('assets/img/' . $blog->picture3) }}" alt="">
                                 </div>
                             </div>
                         </div>
-                        {{ $data['body2'] }}
+                        {{ $blog->body2 }}
                     </div>
                     <!-- Blog Detail End -->
 
                     <!-- BELUM GUNAKAN DULU  FITUR COMMENT -->
                     <!-- Comment List Start --
-                                                                                                    <div class="mb-5">
-                                                                                                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                                                                                            <h3 class="mb-0">3 Comments</h3>
-                                                                                                        </div>
-                                                                                                        <div class="d-flex mb-4">
-                                                                                                            <img src="{{ asset('assets/img/user.jpg') }}" class="img-fluid rounded"
-                                                                                                                style="width: 45px; height: 45px;">
-                                                                                                            <div class="ps-3">
-                                                                                                                <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
-                                                                                                                <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
-                                                                                                                    accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
-                                                                                                                <button class="btn btn-sm btn-light">Reply</button>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                        <div class="d-flex mb-4">
-                                                                                                            <img src="{{ asset('assets/img/user.jpg') }}" class="img-fluid rounded"
-                                                                                                                style="width: 45px; height: 45px;">
-                                                                                                            <div class="ps-3">
-                                                                                                                <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
-                                                                                                                <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
-                                                                                                                    accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
-                                                                                                                <button class="btn btn-sm btn-light">Reply</button>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                        <div class="d-flex ms-5 mb-4">
-                                                                                                            <img src="{{ asset('assets/img/user.jpg') }}" class="img-fluid rounded"
-                                                                                                                style="width: 45px; height: 45px;">
-                                                                                                            <div class="ps-3">
-                                                                                                                <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
-                                                                                                                <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
-                                                                                                                    accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
-                                                                                                                <button class="btn btn-sm btn-light">Reply</button>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <!-- Comment List End -->
+                                                                                                                    <div class="mb-5">
+                                                                                                                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                                                                                                            <h3 class="mb-0">3 Comments</h3>
+                                                                                                                        </div>
+                                                                                                                        <div class="d-flex mb-4">
+                                                                                                                            <img src="{{ asset('assets/img/user.jpg') }}" class="img-fluid rounded"
+                                                                                                                                style="width: 45px; height: 45px;">
+                                                                                                                            <div class="ps-3">
+                                                                                                                                <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
+                                                                                                                                <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
+                                                                                                                                    accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
+                                                                                                                                <button class="btn btn-sm btn-light">Reply</button>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="d-flex mb-4">
+                                                                                                                            <img src="{{ asset('assets/img/user.jpg') }}" class="img-fluid rounded"
+                                                                                                                                style="width: 45px; height: 45px;">
+                                                                                                                            <div class="ps-3">
+                                                                                                                                <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
+                                                                                                                                <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
+                                                                                                                                    accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
+                                                                                                                                <button class="btn btn-sm btn-light">Reply</button>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="d-flex ms-5 mb-4">
+                                                                                                                            <img src="{{ asset('assets/img/user.jpg') }}" class="img-fluid rounded"
+                                                                                                                                style="width: 45px; height: 45px;">
+                                                                                                                            <div class="ps-3">
+                                                                                                                                <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
+                                                                                                                                <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
+                                                                                                                                    accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
+                                                                                                                                <button class="btn btn-sm btn-light">Reply</button>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    <!-- Comment List End -->
 
                     <!-- Comment Form Start --
-                                                                                                    <div class="bg-light rounded p-5">
-                                                                                                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                                                                                            <h3 class="mb-0">Leave A Comment</h3>
-                                                                                                        </div>
-                                                                                                        <form>
-                                                                                                            <div class="row g-3">
-                                                                                                                <div class="col-12 col-sm-6">
-                                                                                                                    <input type="text" class="form-control bg-white border-0" placeholder="Your Name"
-                                                                                                                        style="height: 55px;">
-                                                                                                                </div>
-                                                                                                                <div class="col-12 col-sm-6">
-                                                                                                                    <input type="email" class="form-control bg-white border-0" placeholder="Your Email"
-                                                                                                                        style="height: 55px;">
-                                                                                                                </div>
-                                                                                                                <div class="col-12">
-                                                                                                                    <input type="text" class="form-control bg-white border-0" placeholder="Website"
-                                                                                                                        style="height: 55px;">
-                                                                                                                </div>
-                                                                                                                <div class="col-12">
-                                                                                                                    <textarea class="form-control bg-white border-0" rows="5" placeholder="Comment"></textarea>
-                                                                                                                </div>
-                                                                                                                <div class="col-12">
-                                                                                                                    <button class="btn btn-primary w-100 py-3" type="submit">Leave Your Comment</button>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </form>
-                                                                                                    </div>
-                                                                                                    <!-- Comment Form End -->
+                                                                                                                    <div class="bg-light rounded p-5">
+                                                                                                                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                                                                                                            <h3 class="mb-0">Leave A Comment</h3>
+                                                                                                                        </div>
+                                                                                                                        <form>
+                                                                                                                            <div class="row g-3">
+                                                                                                                                <div class="col-12 col-sm-6">
+                                                                                                                                    <input type="text" class="form-control bg-white border-0" placeholder="Your Name"
+                                                                                                                                        style="height: 55px;">
+                                                                                                                                </div>
+                                                                                                                                <div class="col-12 col-sm-6">
+                                                                                                                                    <input type="email" class="form-control bg-white border-0" placeholder="Your Email"
+                                                                                                                                        style="height: 55px;">
+                                                                                                                                </div>
+                                                                                                                                <div class="col-12">
+                                                                                                                                    <input type="text" class="form-control bg-white border-0" placeholder="Website"
+                                                                                                                                        style="height: 55px;">
+                                                                                                                                </div>
+                                                                                                                                <div class="col-12">
+                                                                                                                                    <textarea class="form-control bg-white border-0" rows="5" placeholder="Comment"></textarea>
+                                                                                                                                </div>
+                                                                                                                                <div class="col-12">
+                                                                                                                                    <button class="btn btn-primary w-100 py-3" type="submit">Leave Your Comment</button>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </form>
+                                                                                                                    </div>
+                                                                                                                    <!-- Comment Form End -->
                 </div>
 
                 <!-- Sidebar Start -->

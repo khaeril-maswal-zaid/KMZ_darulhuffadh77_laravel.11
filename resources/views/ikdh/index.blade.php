@@ -22,10 +22,10 @@
                     <a href="/"><i class="bi bi-house-door-fill"></i></a>
                     <span class="px-1">/</span>
 
-                    <span class="px-1">Lembaga</span>
+                    <span class="px-1">Ma`ahad</span>
                     <span class="px-1">/</span>
 
-                    <a href="/">Lorem ipsum dolor</a>
+                    <a href="/ikatan-keluarga-darul-huffadh">IKDH</a>
                 </div>
             </div>
         </div>
@@ -40,123 +40,25 @@
             </div>
 
             <div class="row">
-                <div class="col-md-3">
-                    <div class="card bg-primary mb-3">
-                        <div class="card-header text-dark">
-                            IKDH Jakarta
-                        </div>
-                        <img src="{{ asset('assets/img/team-1.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title text-dark">Ketua: Khaeril Maswal Zaid</h6>
-                            <p class="card-text text-dark">Kontak: 08123456789</p>
-                            <p class="card-text text-dark">Alamat: Bulo-Bulo, Kab. Bulukumba</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card bg-primary mb-3">
-                        <div class="card-header text-dark">
-                            IKDH Jakarta
-                        </div>
-                        <img src="{{ asset('assets/img/team-1.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title text-dark">Ketua: Khaeril Maswal Zaid</h6>
-                            <p class="card-text text-dark">Kontak: 08123456789</p>
-                            <p class="card-text text-dark">Alamat: Bulo-Bulo, Kab. Bulukumba</p>
+                @foreach ($ikdhs as $ikdh)
+                    <div class="col-md-3">
+                        <div class="card bg-primary mb-3">
+                            <div class="card-header text-dark">
+                                IKDH {{ $ikdh->cabang }}
+                            </div>
+                            <img src="{{ asset('assets/img/' . $ikdh->ketua->picture) }}" class="card-img-top"
+                                alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title text-dark">Ketua: {{ $ikdh->ketua->nama }}</h6>
+                                <p class="card-text text-dark">Kontak: {{ $ikdh->ketua->kontak }}</p>
+                                <p class="card-text text-dark">Alamat:
+                                    {{ Str::limit($ikdh->ketua->kabupaten . ', ' . $ikdh->ketua->provinsi, 17, '...') }}
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card bg-primary mb-3">
-                        <div class="card-header text-dark">
-                            IKDH Jakarta
-                        </div>
-                        <img src="{{ asset('assets/img/team-1.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title text-dark">Ketua: Khaeril Maswal Zaid</h6>
-                            <p class="card-text text-dark">Kontak: 08123456789</p>
-                            <p class="card-text text-dark">Alamat: Bulo-Bulo, Kab. Bulukumba</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card bg-primary mb-3">
-                        <div class="card-header text-dark">
-                            IKDH Jakarta
-                        </div>
-                        <img src="{{ asset('assets/img/team-1.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title text-dark">Ketua: Khaeril Maswal Zaid</h6>
-                            <p class="card-text text-dark">Kontak: 08123456789</p>
-                            <p class="card-text text-dark">Alamat: Bulo-Bulo, Kab. Bulukumba</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card bg-primary mb-3">
-                        <div class="card-header text-dark">
-                            IKDH Jakarta
-                        </div>
-                        <img src="{{ asset('assets/img/team-1.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title text-dark">Ketua: Khaeril Maswal Zaid</h6>
-                            <p class="card-text text-dark">Kontak: 08123456789</p>
-                            <p class="card-text text-dark">Alamat: Bulo-Bulo, Kab. Bulukumba</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card bg-primary mb-3">
-                        <div class="card-header text-dark">
-                            IKDH Jakarta
-                        </div>
-                        <img src="{{ asset('assets/img/team-1.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title text-dark">Ketua: Khaeril Maswal Zaid</h6>
-                            <p class="card-text text-dark">Kontak: 08123456789</p>
-                            <p class="card-text text-dark">Alamat: Bulo-Bulo, Kab. Bulukumba</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card bg-primary mb-3">
-                        <div class="card-header text-dark">
-                            IKDH Jakarta
-                        </div>
-                        <img src="{{ asset('assets/img/team-1.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title text-dark">Ketua: Khaeril Maswal Zaid</h6>
-                            <p class="card-text text-dark">Kontak: 08123456789</p>
-                            <p class="card-text text-dark">Alamat: Bulo-Bulo, Kab. Bulukumba</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card bg-primary mb-3">
-                        <div class="card-header text-dark">
-                            IKDH Jakarta
-                        </div>
-                        <img src="{{ asset('assets/img/team-1.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title text-dark">Ketua: Khaeril Maswal Zaid</h6>
-                            <p class="card-text text-dark">Kontak: 08123456789</p>
-                            <p class="card-text text-dark">Alamat: Bulo-Bulo, Kab. Bulukumba</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card bg-primary mb-3">
-                        <div class="card-header text-dark">
-                            IKDH Jakarta
-                        </div>
-                        <img src="{{ asset('assets/img/team-1.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title text-dark">Ketua: Khaeril Maswal Zaid</h6>
-                            <p class="card-text text-dark">Kontak: 08123456789</p>
-                            <p class="card-text text-dark">Alamat: Bulo-Bulo, Kab. Bulukumba</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </section>

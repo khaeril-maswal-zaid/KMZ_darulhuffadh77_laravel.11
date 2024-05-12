@@ -23,13 +23,13 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             UsersSeeder::class,
+            TholabahSeeder::class,
             AktivitasSantriSeeder::class,
-            AlumniSeeder::class,
             BlogSeeder::class,
             IkdhSeeder::class,
             KontakSeeder::class,
             KulikulerSeeder::class,
-            TholabahSeeder::class,
+            KulikulerPersonilSeeder::class
         ]);
 
         //Run ALL : php artisan db:seed --class=DatabaseSeeder

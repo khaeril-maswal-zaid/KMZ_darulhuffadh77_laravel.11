@@ -22,10 +22,10 @@
                     <a href="/"><i class="bi bi-house-door-fill"></i></a>
                     <span class="px-1">/</span>
 
-                    <span class="px-1">Lembaga</span>
+                    <span class="px-1">Tentang</span>
                     <span class="px-1">/</span>
 
-                    <a href="/">Lorem ipsum dolor</a>
+                    <a href="/aktivitas-santri-santriwati">Aktivitas Santri Santriwari</a>
                 </div>
             </div>
         </div>
@@ -58,10 +58,10 @@
                             <tbody>
                                 @foreach ($harians as $harian)
                                     <tr class="text-center">
-                                        <td scope="row" nowrap class="align-middle">{{ $harian['waktu'] }}</td>
-                                        <td class="align-middle">{{ $harian['agenda'] }}</td>
+                                        <td scope="row" nowrap class="align-middle">{{ $harian->waktu }}</td>
+                                        <td class="align-middle">{{ $harian->agenda }}</td>
                                         <td>
-                                            <img src="{{ asset('assets/img/' . $harian['picture']) }}" alt=""
+                                            <img src="{{ asset('assets/img/' . $harian->picture) }}" alt=""
                                                 class="img-fluid rounded">
                                         </td>
                                     </tr>
@@ -90,11 +90,11 @@
                             <tbody>
                                 @foreach ($mingguans as $mingguan)
                                     <tr class="text-center">
-                                        <td scope="row" nowrap class="align-middle">{{ $mingguan['hari'] }}</td>
-                                        <td nowrap class="align-middle">{{ $mingguan['waktu'] }}</td>
-                                        <td nowrap class="align-middle">{{ $mingguan['agenda'] }}</td>
+                                        <td scope="row" nowrap class="align-middle">{{ $mingguan->hari }}</td>
+                                        <td nowrap class="align-middle">{{ $mingguan->waktu }}</td>
+                                        <td nowrap class="align-middle">{{ $mingguan->agenda }}</td>
                                         <td>
-                                            <img src="{{ asset('assets/img/' . $mingguan['picture']) }}" alt=""
+                                            <img src="{{ asset('assets/img/' . $mingguan->picture) }}" alt=""
                                                 class="img-fluid rounded">
                                         </td>
                                     </tr>

@@ -8,7 +8,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $data = [];
+        $data = [
+            'title' => ''
+        ];
 
         return view('home.index', $data);
     }

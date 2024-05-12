@@ -9,7 +9,13 @@ class KontakController extends Controller
 {
     public function index()
     {
-        $kontak = Kontak::all();
-        return view('kontak.index', ['kontaks' => $kontak->toArray()]);
+
+        $data = [
+            'title' => 'Kontak',
+            'kontaks' => Kontak::all()->where('medsos', '!=', 'Maps'),
+            'maps' => Kontak::select('link')->where('medsos', 'Maps')->first()
+        ];
+
+        return view('kontak.index', $data);
     }
 }

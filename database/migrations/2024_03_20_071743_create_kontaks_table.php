@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('medsos', 50);
             $table->string('akun', 100);
             $table->string('nama', 100)->nullable();
-            $table->string('link')->nullable();
+            $table->text('link')->nullable();
             $table->string('icon', 100);
             $table->timestamps();
         });

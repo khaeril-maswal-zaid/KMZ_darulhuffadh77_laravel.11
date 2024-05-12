@@ -32,7 +32,18 @@ return new class extends Migration
             $table->string('nisn');
             $table->year('angkatan');
 
+            $table->string('kelas');
+            $table->boolean('active');
+
+            $table->string('kategori');
+
+            $table->string('depertement');
+
+            $table->string('kontak');
+            $table->string('marhalah');
+            $table->string('tahun_tamat');
             $table->string('picture');
+
             $table->timestamps();
         });
     }

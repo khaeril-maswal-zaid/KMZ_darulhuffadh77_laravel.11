@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('ikdhs', function (Blueprint $table) {
             $table->id();
             $table->string('cabang');
-            $table->unsignedBigInteger('alumni_id');
+            $table->unsignedBigInteger('tholabah_id');
             $table->timestamps();
 
-            $table->foreign('alumni_id')->references('id')->on('alumnis');
+            $table->foreign('tholabah_id')->references('id')->on('tholabahs');
         });
     }
 
