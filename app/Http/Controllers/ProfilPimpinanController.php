@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Kontak;
 use Illuminate\Http\Request;
 
 class ProfilPimpinanController extends Controller
@@ -40,6 +41,7 @@ class ProfilPimpinanController extends Controller
 
         $data = [
             'title' => $blogDetail['title'],
+            'kontaks' => Kontak::all(),
             'blog' => $blogDetail
         ];
 

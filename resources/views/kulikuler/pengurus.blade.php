@@ -22,10 +22,12 @@
                     <a href="/"><i class="bi bi-house-door-fill"></i></a>
                     <span class="px-1">/</span>
 
-                    <span class="px-1">Lembaga</span>
+                    <span class="px-1">Tentang</span>
                     <span class="px-1">/</span>
 
-                    <a href="/">Lorem ipsum dolor</a>
+                    <a href="/pengurus-{{ $personilkulikulers[0]->kulikuler->enum }}">
+                        Pengurus {{ $personilkulikulers[0]->kulikuler->name }}
+                    </a>
                 </div>
             </div>
         </div>
@@ -37,8 +39,9 @@
             <div class="row">
                 <div class="col-md-7">
                     <div class="section-title position-relative pb-3 mb-4">
-                        <h1 class="mb-0">OSDHA</h1>
-                        <h5 class="fw-bold text-primary text-uppercase">Organisasi Santri Darul Huffadh</h5>
+                        <h1 class="mb-0">{{ $personilkulikulers[0]->kulikuler->name }}</h1>
+                        <h5 class="fw-bold text-primary text-uppercase">{{ $personilkulikulers[0]->kulikuler->full_name }}
+                        </h5>
                     </div>
                 </div>
                 <div class="col-md-5">

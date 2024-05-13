@@ -11,23 +11,19 @@
     <div class="row gx-0">
         <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
             <div class="d-inline-flex align-items-center" style="height: 45px;">
-                <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</small>
-                <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</small>
-                <small class="text-light"><i class="fa fa-envelope-open me-2"></i>info@example.com</small>
+                <small class="me-3 text-light"><i
+                        class="fa fa-map-marker-alt me-2"></i>{{ $kontaks[0]->medsos . ', ' . $kontaks[0]->akun }}</small>
+                <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>{{ $kontaks[4]->akun }}</small>
+                <small class="text-light"><i class="fa fa-envelope-open me-2"></i>{{ $kontaks[1]->akun }}</small>
             </div>
         </div>
         <div class="col-lg-4 text-center text-lg-end">
             <div class="d-inline-flex align-items-center" style="height: 45px;">
-                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
-                        class="fab fa-twitter fw-normal"></i></a>
-                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
-                        class="fab fa-facebook-f fw-normal"></i></a>
-                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
-                        class="fab fa-linkedin-in fw-normal"></i></a>
-                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
-                        class="fab fa-instagram fw-normal"></i></a>
-                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i
-                        class="fab fa-youtube fw-normal"></i></a>
+                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                    href="{{ $kontaks[2]->link }}"><i class="fab fa-facebook-f fw-normal"></i></a>
+                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                    href="{{ $kontaks[3]->link }}"><i class="fab fa-instagram fw-normal"></i></a>
+
             </div>
         </div>
     </div>
@@ -68,10 +64,11 @@
                             <a href="#" class="dropdown-item dropdown-toggle"
                                 data-bs-toggle="dropdown">Pendidikan</a>
                             <div class="dropdownKmz-menu ropdown-menu m-0 bg-primary rounded-1 start-100 top-0">
-                                <a href="/kulliyatul-muallimin-alislamiyah" class="dropdown-item">Kulliytul Mu`allimin
+                                <a href="/pendidikan/kulliyatul-muallimin-alislamiyah" class="dropdown-item">Kulliytul
+                                    Mu`allimin
                                     Al-Islamiyah</a>
-                                <a href="/tahfidzhul-quran" class="dropdown-item">Tahfidzhul Qur`an</a>
-                                <a href="/pengabdian" class="dropdown-item">Pengabdian</a>
+                                <a href="/pendidikan/tahfidzhul-quran" class="dropdown-item">Tahfidzhul Qur`an</a>
+                                <a href="/pendidikan/pengabdian" class="dropdown-item">Pengabdian</a>
                             </div>
                         </div>
 
@@ -79,11 +76,11 @@
                             <a href="#" class="dropdown-item dropdown-toggle"
                                 data-bs-toggle="dropdown">Kulikuler</a>
                             <div class="dropdownKmz-menu ropdown-menu m-0 bg-primary rounded-1 start-100 top-0">
-                                <a href="/osdha" class="dropdown-item">OSDHA</a>
-                                <a href="/persidha" class="dropdown-item">Persidha</a>
-                                <a href="/pramuka" class="dropdown-item">Pramuka</a>
-                                <a href="/djour" class="dropdown-item">D`Jour</a>
-                                <a href="/seni" class="dropdown-item">Seni</a>
+                                <a href="/tentang-osdha" class="dropdown-item">OSDHA</a>
+                                <a href="/tentang-persidha" class="dropdown-item">Persidha</a>
+                                <a href="/tentang-pramuka" class="dropdown-item">Pramuka</a>
+                                <a href="/tentang-djour" class="dropdown-item">D`Jour</a>
+                                <a href="/tentang-seni" class="dropdown-item">Seni</a>
                             </div>
                         </div>
 
@@ -117,8 +114,7 @@
             </div>
             <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal"
                 data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
-            <a href="https://htmlcodex.com/startup-company-website-template"
-                class="btn btn-primary py-2 px-4 ms-3">Daftar</a>
+            <a href="/penerimaan-santri-baru" class="btn btn-primary py-2 px-4 ms-3">Daftar</a>
         </div>
     </nav>
 </div>

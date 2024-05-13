@@ -40,14 +40,14 @@
                         <div class="col-md-8">
                             <div class="section-title position-relative pb-3 mb-4">
                                 <h1 class="mb-0">{{ $blog->title }}</h1>
-                                <h5 class="fw-bold text-primary text-uppercase">Organisasi Santri {{ config('app.name') }}
+                                <h5 class="fw-bold text-primary text-uppercase">{{ $blog->excerpt }}
                                 </h5>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="d-flex gap-2 justify-content-end mt-5">
                                 <div class="btn btn-dark">Tentang</div>
-                                <a href="/pengurus-osdha" class="btn btn-success">Pengurus</a>
+                                <a href="/blog/{{ $blog->slug }}" class="btn btn-success">Pengurus</a>
                             </div>
                         </div>
                     </div>

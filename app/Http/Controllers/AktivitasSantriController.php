@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aktivitas_santri;
+use App\Models\Kontak;
 use Illuminate\Http\Request;
 
 class AktivitasSantriController extends Controller
@@ -14,9 +15,13 @@ class AktivitasSantriController extends Controller
     {
         $data = [
             'title' => 'Aktivitas Santri Santriwati',
+
+            'kontaks' => Kontak::all(),
+
             'harians' => Aktivitas_santri::all()->where('kategori', 'harian'),
             'mingguans' => Aktivitas_santri::all()->where('kategori', 'mingguan'),
         ];
+
         return view('aktivitas.index', $data);
     }
     /**

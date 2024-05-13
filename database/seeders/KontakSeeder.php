@@ -34,14 +34,14 @@ class KontakSeeder extends Seeder
                 'akun' => 'Acq Darul Huffadh',
                 'nama' =>  null,
                 'link' => 'https://facebook.com/acq-darul-hufadh',
-                'icon' => 'fa fa-facebook-fb'
+                'icon' => 'fab fa-facebook-f'
             ],
             [
                 'medsos' => 'Instagram',
                 'akun' => 'Darul Huffadh 77',
                 'nama' =>  null,
                 'link' => 'https://instagram.com/acq-darul-hufadh',
-                'icon' => 'fa fa-instagram-ig'
+                'icon' => 'fab fa-instagram'
             ],
             [
                 'medsos' => 'Kontak Pimpinan',

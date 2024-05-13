@@ -29,19 +29,19 @@ class KulikulerSeeder extends Seeder
             [
                 'name' => 'Pramuka',
                 'enum' => 'pramuka',
-                'full_name' => 'Pramuka Darul Huffadh',
+                'full_name' => 'Pondok Pesanter Darul Huffadh 77',
                 'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quae obcaecati, soluta dolor est vitae eligendi iusto qui cumque hic, iure deserunt nemo maxime consequuntur mollitia id natus blanditiis possimus quis quasi. Placeat molestiae suscipit consequatur. Consectetur mollitia ipsam qui.',
             ],
             [
                 'name' => 'D`Jour',
                 'enum' => 'djour',
-                'full_name' => 'D`Jour Darul Huffadh',
+                'full_name' => 'Pondok Pesanter Darul Huffadh 77',
                 'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quae obcaecati, soluta dolor est vitae eligendi iusto qui cumque hic, iure deserunt nemo maxime consequuntur mollitia id natus blanditiis possimus quis quasi. Placeat molestiae suscipit consequatur. Consectetur mollitia ipsam qui.',
             ],
             [
                 'name' => 'Seni',
                 'enum' => 'seni',
-                'full_name' => 'Seni Darul Huffadh',
+                'full_name' => 'Pondok Pesanter Darul Huffadh 77',
                 'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quae obcaecati, soluta dolor est vitae eligendi iusto qui cumque hic, iure deserunt nemo maxime consequuntur mollitia id natus blanditiis possimus quis quasi. Placeat molestiae suscipit consequatur. Consectetur mollitia ipsam qui.',
             ],
         ];

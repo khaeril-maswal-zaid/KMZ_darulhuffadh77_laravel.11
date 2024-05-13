@@ -14,18 +14,26 @@ Route::get('/profil-pimpinan-ust-saad-said', [ProfilpimpinanController::class, '
 Route::get('/profil-direktur-putra', [ProfilpimpinanController::class, 'show'])->defaults('slug', 'profil-direktur-putra');
 Route::get('/profil-direktur-putri', [ProfilpimpinanController::class, 'show'])->defaults('slug', 'profil-direktur-putri');
 
-Route::get('/kulliyatul-muallimin-alislamiyah', [BlogController::class, 'show'])->defaults('slug', 'kulliyatul-muallimin-alislamiyah');
-Route::get('/tahfidzhul-quran', [BlogController::class, 'show'])->defaults('slug', 'tahfidzhul-quran');
-Route::get('/pengabdian', [BlogController::class, 'show'])->defaults('slug', 'pengabdian');
+Route::get('/pendidikan/{var}', [BlogController::class, 'show']);
+
+// Route::get('/kulliyatul-muallimin-alislamiyah', [BlogController::class, 'show'])->defaults('slug', 'kulliyatul-muallimin-alislamiyah');
+// Route::get('/tahfidzhul-quran', [BlogController::class, 'show'])->defaults('slug', 'tahfidzhul-quran');
+// Route::get('/pengabdian', [BlogController::class, 'show'])->defaults('slug', 'pengabdian');
 
 
-Route::get('/osdha', [KulikulerController::class, 'show'])->defaults('slug', 'osdha');
-Route::get('/persidha', [KulikulerController::class, 'show'])->defaults('slug', 'persidha');
-Route::get('/pramuka', [KulikulerController::class, 'show'])->defaults('slug', 'pramuka');
-Route::get('/djour', [KulikulerController::class, 'show'])->defaults('slug', 'djour');
-Route::get('/seni', [KulikulerController::class, 'show'])->defaults('slug', 'seni');
+Route::get('/tentang-osdha', [KulikulerController::class, 'tentang'])->defaults('slug', 'osdha');
+Route::get('/tentang-persidha', [KulikulerController::class, 'tentang'])->defaults('slug', 'persidha');
+Route::get('/tentang-pramuka', [KulikulerController::class, 'tentang'])->defaults('slug', 'pramuka');
+Route::get('/tentang-djour', [KulikulerController::class, 'tentang'])->defaults('slug', 'djour');
+Route::get('/tentang-seni', [KulikulerController::class, 'tentang'])->defaults('slug', 'seni');
 
-Route::get('/pengurus-osdha', [KulikulerController::class, 'index'])->defaults('nameKulikuler', 'osdha');
+Route::get('/kulikuler/{var}', [KulikulerController::class, 'show']);
+
+// Route::get('/pengurus-osdha', [KulikulerController::class, 'index'])->defaults('nameKulikuler', 'osdha');
+// Route::get('/pengurus-persidha', [KulikulerController::class, 'index'])->defaults('nameKulikuler', 'persidha');
+// Route::get('/pengurus-pramuka', [KulikulerController::class, 'index'])->defaults('nameKulikuler', 'pramuka');
+// Route::get('/pengurus-djour', [KulikulerController::class, 'index'])->defaults('nameKulikuler', 'djour');
+// Route::get('/pengurus-seni', [KulikulerController::class, 'index'])->defaults('nameKulikuler', 'seni');
 
 
 Route::get('/aktivitas-santri-santriwati', [AktivitasSantriController::class, 'index']);
@@ -45,3 +53,6 @@ Route::get('/ikatan-keluarga-darul-huffadh', [IkdhController::class, 'index']);
 Route::get('/galery', [GaleryController::class, 'index']);
 
 Route::get('/kontak', [KontakController::class, 'index']);
+
+Route::get('/penerimaan-santri-baru', [TholabahController::class, 'penerimaan']);
+Route::get('/penerimaan-santri-baru/pendaftaran', [TholabahController::class, 'pendaftaran']);
