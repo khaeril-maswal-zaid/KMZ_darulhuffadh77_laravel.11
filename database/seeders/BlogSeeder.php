@@ -50,6 +50,8 @@ class BlogSeeder extends Seeder
                 'picture3' => 'default.jpg',
                 'album' => 1,
                 'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
             ], [
                 'category_id' => 4,
                 'users_id' => 1,
@@ -63,6 +65,8 @@ class BlogSeeder extends Seeder
                 'picture3' => 'default.jpg',
                 'album' => 1,
                 'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
             ], [
                 'category_id' => 4,
                 'users_id' => 1,
@@ -76,6 +80,8 @@ class BlogSeeder extends Seeder
                 'picture3' => 'default.jpg',
                 'album' => 1,
                 'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
             ], [
                 'category_id' => 4,
                 'users_id' => 1,
@@ -89,6 +95,8 @@ class BlogSeeder extends Seeder
                 'picture3' => 'default.jpg',
                 'album' => 1,
                 'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
             ], [
                 'category_id' => 6,
                 'users_id' => 1,
@@ -102,6 +110,8 @@ class BlogSeeder extends Seeder
                 'picture3' => 'blog-3.jpg',
                 'album' => 1,
                 'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
             ], [
                 'category_id' => 6,
                 'users_id' => 1,
@@ -115,6 +125,8 @@ class BlogSeeder extends Seeder
                 'picture3' => 'blog-3.jpg',
                 'album' => 1,
                 'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
             ], [
                 'category_id' => 6,
                 'users_id' => 1,
@@ -128,6 +140,8 @@ class BlogSeeder extends Seeder
                 'picture3' => 'blog-3.jpg',
                 'album' => 1,
                 'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
             ], [
                 'category_id' => 5,
                 'users_id' => 1,
@@ -141,6 +155,8 @@ class BlogSeeder extends Seeder
                 'picture3' => 'blog-3.jpg',
                 'album' => 1,
                 'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
             ], [
                 'category_id' => 5,
                 'users_id' => 1,
@@ -154,6 +170,8 @@ class BlogSeeder extends Seeder
                 'picture3' => 'blog-3.jpg',
                 'album' => 1,
                 'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
             ], [
                 'category_id' => 5,
                 'users_id' => 1,
@@ -167,6 +185,8 @@ class BlogSeeder extends Seeder
                 'picture3' => 'blog-3.jpg',
                 'album' => 1,
                 'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
             ], [
                 'category_id' => 5,
                 'users_id' => 1,
@@ -180,6 +200,8 @@ class BlogSeeder extends Seeder
                 'picture3' => 'blog-3.jpg',
                 'album' => 1,
                 'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
             ], [
                 'category_id' => 5,
                 'users_id' => 1,
@@ -193,6 +215,8 @@ class BlogSeeder extends Seeder
                 'picture3' => 'blog-3.jpg',
                 'album' => 1,
                 'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
             ], [
                 'category_id' => 6,
                 'users_id' => 1,
@@ -206,6 +230,8 @@ class BlogSeeder extends Seeder
                 'picture3' => 'blog-3.jpg',
                 'album' => 1,
                 'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
             ], [
                 'category_id' => 6,
                 'users_id' => 1,
@@ -219,6 +245,8 @@ class BlogSeeder extends Seeder
                 'picture3' => 'blog-3.jpg',
                 'album' => 1,
                 'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
             ], [
                 'category_id' => 6,
                 'users_id' => 1,
@@ -232,6 +260,8 @@ class BlogSeeder extends Seeder
                 'picture3' => 'blog-3.jpg',
                 'album' => 1,
                 'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
         ];
 

@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Kulikuler_personil;
+use App\Models\KulikulerPersonil;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,6 +13,6 @@ class KulikulerPersonilSeeder extends Seeder
      */
     public function run(): void
     {
-        Kulikuler_personil::factory(100)->create();
+        KulikulerPersonil::factory(100)->create();
     }
 }

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Aktivitas_santri extends Model
+class AktivitasSantri extends Model
 {
     use HasFactory;
 }

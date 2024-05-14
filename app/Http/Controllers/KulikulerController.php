@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kulikuler_personil;
+use App\Models\KulikulerPersonil;
 use App\Models\Blog;
 use App\Models\Kontak;
 use Illuminate\Database\Eloquent\Builder;
@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class KulikulerController extends Controller
 {
     //Pengurus
-    public function show(Kulikuler_personil $personil, $nameKulikuler)
+    public function show(KulikulerPersonil $personil, $nameKulikuler)
     {
         $personilKulikuler = $personil::whereHas('kulikuler', function (Builder $query) use ($nameKulikuler) {
             $query->where('enum', $nameKulikuler);

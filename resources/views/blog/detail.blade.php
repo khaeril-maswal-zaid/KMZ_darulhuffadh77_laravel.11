@@ -42,9 +42,10 @@
                         <img class="img-fluid w-100 rounded mb-3" src="{{ asset('assets/img/' . $blog->picture1) }}"
                             alt="{{ $blog->title }}">
                         <div class="d-flex mb-4">
-                            <small class="me-3"><i class="far fa-calendar-alt text-primary me-2"></i>
-                                {{ $blog->updated_at }}</small>
-                            <small class="me-3"><i class="far fa-eye text-primary me-2"></i> {{ $blog->visit }}</small>
+                            <small class="me-3"><i class="far fa-calendar-alt text-primary me-1"></i>
+                                {{ $blog->updated_at->diffForHumans() }}</small>
+                            <small class="me-3"><i class="far fa-eye text-primary me-1"></i>
+                                {{ $blog->visit }}</small>
                         </div>
                         <h1 class="mb-4">{{ $blog->title }}</h1>
                         {{ $blog->body1 }}

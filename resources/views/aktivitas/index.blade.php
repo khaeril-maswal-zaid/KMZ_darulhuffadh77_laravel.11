@@ -47,7 +47,7 @@
                             <h4>Rutinitas Sehari-hari</h4>
                         </div>
 
-                        <table class="table table-primary table-striped table-bordered">
+                        <table class="table table-primary table-striped table-bordered wow zoomIn" data-wow-delay="0.9s">
                             <thead>
                                 <tr>
                                     <th scope="col" class="text-center">Waktu</th>
@@ -78,7 +78,7 @@
                             <h4>Rutinitas Perpekan</h4>
                         </div>
 
-                        <table class="table table-primary table-striped table-bordered">
+                        <table class="table table-primary table-striped table-bordered wow zoomIn" data-wow-delay="0.9s">
                             <thead>
                                 <tr>
                                     <th scope="col" class="text-center">Hari</th>
