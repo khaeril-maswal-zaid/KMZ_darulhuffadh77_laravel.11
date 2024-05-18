@@ -77,7 +77,7 @@
                   <div class="d-flex align-items-center justify-content-center" style="height: 75px">
                       <p class="mb-0">
                           &copy;
-                          <a class="text-white border-bottom" href="/">{{ config('app.name') }}</a>,
+                          <a class="text-white border-bottom" href="/admindh">{{ config('app.name') }}</a>,
                           <span>All Rights Reserved.</span>
 
                           <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
@@ -92,4 +92,4 @@
   <!-- Footer End -->
 
   <!-- Back to Top -->
-  <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+  <a href="/admindh" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>

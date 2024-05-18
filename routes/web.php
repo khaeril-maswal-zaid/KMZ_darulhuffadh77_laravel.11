@@ -56,3 +56,11 @@ Route::get('/kontak', [KontakController::class, 'index']);
 
 Route::get('/penerimaan-santri-baru', [TholabahController::class, 'penerimaan']);
 Route::get('/penerimaan-santri-baru/pendaftaran', [TholabahController::class, 'pendaftaran']);
+
+Route::get('/blog/{blog:slug}', [BlogController::class, 'show']);
+
+
+//ADMIN---------------------------------------
+Route::get('/admindh', [AdminController::class, 'index']);
+Route::get('/admindh/master-data/santri-baru', [TholabahController::class, 'adminSantriBaru']);
+Route::get('/admindh/master-data/{tholabah:nisdh}', [TholabahController::class, 'show']);

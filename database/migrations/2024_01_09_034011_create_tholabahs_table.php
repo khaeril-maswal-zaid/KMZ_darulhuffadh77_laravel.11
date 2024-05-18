@@ -13,35 +13,40 @@ return new class extends Migration
     {
         Schema::create('tholabahs', function (Blueprint $table) {
             $table->id();
+            $table->string('nik', 16);
             $table->string('nama');
             $table->string('jenis_kelamin');
-            $table->string('nisdh');
             $table->string('tempat_lahir');
             $table->string('tanggal_lahir');
             $table->string('provinsi');
             $table->string('kabupaten');
             $table->string('kecamatan');
             $table->string('desa');
-
             $table->string('nama_ayah');
             $table->string('nama_ibu');
             $table->string('pekerjaan_ayah');
             $table->string('pekerjaan_ibu');
 
-            $table->string('asal_sekolah');
             $table->string('nisn');
-            $table->year('angkatan');
+            $table->string('asal_sekolah');
+            $table->year('tahun_tamat_sd');
 
+            $table->string('kategori_santri_baru'); //Daftar, Pengembalian, Tholabun
+
+            $table->boolean('experiment');
+            $table->string('nisdh');
+            $table->year('angkatan');
             $table->string('kelas');
             $table->boolean('active');
 
-            $table->string('kategori');
+            $table->string('kategori'); // 'Tholabun', 'Pengab. luar', 'Pembina', 'Alumni'
 
             $table->string('depertement');
 
             $table->string('kontak');
             $table->string('marhalah');
             $table->string('tahun_tamat');
+
             $table->string('picture');
 
             $table->timestamps();
