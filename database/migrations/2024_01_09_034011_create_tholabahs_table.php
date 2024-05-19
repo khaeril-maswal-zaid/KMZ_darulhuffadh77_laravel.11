@@ -26,26 +26,28 @@ return new class extends Migration
             $table->string('nama_ibu');
             $table->string('pekerjaan_ayah');
             $table->string('pekerjaan_ibu');
-
+            $table->string('kontak_ayah');
+            $table->string('kontak_ibu');
             $table->string('nisn');
             $table->string('asal_sekolah');
             $table->year('tahun_tamat_sd');
 
-            $table->string('kategori_santri_baru'); //Daftar, Pengembalian, Tholabun
-
             $table->boolean('experiment');
             $table->string('nisdh');
             $table->year('angkatan');
+
+            $table->string('kategori_santri_baru'); //Daftar, Pengembalian, Tholabun
+
             $table->string('kelas');
             $table->boolean('active');
 
-            $table->string('kategori'); // 'Tholabun', 'Pengab. luar', 'Pembina', 'Alumni'
+            $table->string('kategori'); // 'Tholabun', 'Pengabdian luar', 'Pembina', 'Alumni'
 
             $table->string('depertement');
 
             $table->string('kontak');
             $table->string('marhalah');
-            $table->string('tahun_tamat');
+            $table->string('tahun_alumni');
 
             $table->string('picture');
 

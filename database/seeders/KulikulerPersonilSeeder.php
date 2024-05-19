@@ -13,6 +13,6 @@ class KulikulerPersonilSeeder extends Seeder
      */
     public function run(): void
     {
-        KulikulerPersonil::factory(100)->create();
+        KulikulerPersonil::factory(50)->create();
     }
 }

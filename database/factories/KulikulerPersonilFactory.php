@@ -18,7 +18,7 @@ class KulikulerPersonilFactory extends Factory
     {
         return [
             'kulikuler_id' => fake()->numberBetween(1, 5),
-            'santri_id' => fake()->unique()->numberBetween(1, 300),
+            'santri_id' => fake()->numberBetween(1, 55),
             'devisi' => fake()->word,
             'description' => 'Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor
             stet amet eirmod eos labore diam',

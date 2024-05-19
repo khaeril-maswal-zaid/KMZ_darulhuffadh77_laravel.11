@@ -42,8 +42,8 @@ Route::get('/sejarah-pendirian-maahad', [BlogController::class, 'show'])->defaul
 Route::get('/sejarah-pondok-lama', [BlogController::class, 'show'])->defaults('slug', 'sejarah-pondok-lama');
 Route::get('/sejarah-pondok-baru', [BlogController::class, 'show'])->defaults('slug', 'sejarah-pondok-baru');
 
-Route::get('/pembina-putra', [TholabahController::class, 'index'])->defaults('tingkatan', 'Pembina')->defaults('jk', 'Perempuan');
-Route::get('/pembina-putri', [TholabahController::class, 'index'])->defaults('tingkatan', 'Pembina')->defaults('jk', 'Laki-laki');
+Route::get('/pembina-putri', [TholabahController::class, 'index'])->defaults('tingkatan', 'Pembina')->defaults('jk', 'Perempuan');
+Route::get('/pembina-putra', [TholabahController::class, 'index'])->defaults('tingkatan', 'Pembina')->defaults('jk', 'Laki-laki');
 Route::get('/santri', [TholabahController::class, 'index'])->defaults('tingkatan', 'Tholabun')->defaults('jk', 'Laki-laki');
 Route::get('/santriwati', [TholabahController::class, 'index'])->defaults('tingkatan', 'Tholabun')->defaults('jk', 'Perempuan');
 Route::get('/alumni', [TholabahController::class, 'index'])->defaults('tingkatan', 'Alumni');
@@ -62,5 +62,11 @@ Route::get('/blog/{blog:slug}', [BlogController::class, 'show']);
 
 //ADMIN---------------------------------------
 Route::get('/admindh', [AdminController::class, 'index']);
-Route::get('/admindh/master-data/santri-baru', [TholabahController::class, 'adminSantriBaru']);
+Route::get('/admindh/master-data/santri-baru', [TholabahController::class, 'masterData'])->defaults('tingkatan', false)->defaults('santriBaru', true);
+Route::get('/admindh/master-data/santri', [TholabahController::class, 'masterData'])->defaults('tingkatan', 'Tholabun')->defaults('santriBaru', false);
+Route::get('/admindh/master-data/santriwati', [TholabahController::class, 'masterData'])->defaults('tingkatan', 'Tholabun')->defaults('santriBaru', false);
+Route::get('/admindh/master-data/pembina', [TholabahController::class, 'masterData'])->defaults('tingkatan', 'Pembina')->defaults('santriBaru', false);
+Route::get('/admindh/master-data/pengabdian-luar', [TholabahController::class, 'masterData'])->defaults('tingkatan', 'Pengabdian luar')->defaults('santriBaru', false);
+Route::get('/admindh/master-data/alumni', [TholabahController::class, 'masterData'])->defaults('tingkatan', 'Alumni')->defaults('santriBaru', false);
+
 Route::get('/admindh/master-data/{tholabah:nisdh}', [TholabahController::class, 'show']);

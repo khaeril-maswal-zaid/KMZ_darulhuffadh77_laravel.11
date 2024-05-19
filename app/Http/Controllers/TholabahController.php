@@ -11,10 +11,12 @@ class TholabahController extends Controller
 {
     public function index(Tholabah $tholabah, String $tingkatan, String $jk = 'all'): View
     {
-        $getTholabah = $tholabah::where('kategori_santri_baru', 'santri')->where('jenis_kelamin', $jk)->where('kategori', $tingkatan)->paginate(24);
+        // dd($tingkatan, $jk);
+
+        $getTholabah = $tholabah::where('kategori_santri_baru', 'Done')->where('jenis_kelamin', $jk)->where('kategori', $tingkatan)->paginate(24);
 
         if ($jk == 'all') {
-            $getTholabah = $tholabah::where('kategori_santri_baru', 'santri')->where('kategori', $tingkatan)->paginate(24);
+            $getTholabah = $tholabah::where('kategori_santri_baru', 'Done')->where('kategori', $tingkatan)->paginate(24);
         }
 
         $data = [
@@ -50,12 +52,42 @@ class TholabahController extends Controller
     //-----------------------------------------------
     public function adminSantriBaru(Tholabah $tholabah): View
     {
+        $jkAdmin = 'Laki-laki';
 
         $data = [
-            'santribarus' => $tholabah::whereNot('kategori_santri_baru', 'Tholabun')->orderBy('id', 'desc')->paginate(10),
+            'santribarus' => $tholabah::where('jenis_kelamin', $jkAdmin)->where('kategori', 'csb-165')->whereNot('kategori_santri_baru', 'Done')->orderBy('id', 'desc')->paginate(10),
         ];
 
         return view('admin.master-data-santri-baru', $data);
+    }
+
+    public function santriSantriwati(Tholabah $tholabah): View
+    {
+        $jkAdmin = 'Laki-laki';
+
+        $data = [
+            'tholabahs' => $tholabah::where('jenis_kelamin', $jkAdmin)->where('kategori', 'Tholabun')->where('kategori_santri_baru', 'Tholabun')->orderBy('id', 'desc')->paginate(10),
+        ];
+
+        return view('admin.master-data-santri-santriwati', $data);
+    }
+
+    public function masterData(Tholabah $tholabah, $tingkatan, $santriBaru): View
+    {
+        $jkAdmin = 'Laki-laki';
+
+        if ($santriBaru) {
+            $datamaster = $tholabah::where('jenis_kelamin', $jkAdmin)->where('kategori', 'csb-165')->whereNot('kategori_santri_baru', 'Done')->orderBy('id', 'desc')->paginate(10);
+        } else {
+            $datamaster = $tholabah::where('jenis_kelamin', $jkAdmin)->where('kategori', $tingkatan)->where('kategori_santri_baru', 'Done')->orderBy('id', 'desc')->paginate(10);
+        }
+
+
+        $data = [
+            'datamasters' => $datamaster
+        ];
+
+        return view('admin.master-data', $data);
     }
 
     public function show(Tholabah $tholabah): View

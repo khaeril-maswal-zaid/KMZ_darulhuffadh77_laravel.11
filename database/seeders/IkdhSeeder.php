@@ -13,6 +13,6 @@ class IkdhSeeder extends Seeder
      */
     public function run(): void
     {
-        Ikdh::factory(50)->create();
+        Ikdh::factory(30)->create();
     }
 }

@@ -18,7 +18,7 @@ class IkdhFactory extends Factory
     {
         return [
             'cabang' => fake()->city(),
-            'tholabah_id' => fake()->unique()->numberBetween(1, 100)
+            'tholabah_id' => fake()->unique()->numberBetween(1, 30)
         ];
     }
 }

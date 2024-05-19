@@ -96,7 +96,7 @@
                                         <p class="mb-0 text-white">Kategori :
                                             @if ($tholabah->kategori == 'Pembina')
                                                 {{ $tholabah->kelas }}
-                                            @elseif ($tholabah->kategori == 'Alumni' || $tholabah->kategori == 'Pengab. luar')
+                                            @elseif ($tholabah->kategori == 'Alumni' || $tholabah->kategori == 'Pengabdian luar')
                                                 {{ $tholabah->kategori }}
                                             @else
                                                 @if ($tholabah->jenis_kelamin == 'Laki-laki')
@@ -112,7 +112,7 @@
                                                 Kelas : {{ $tholabah->kelas }}
                                             @elseif ($tholabah->kategori == 'Pembina')
                                                 Depert. : {{ $tholabah->depertement }}
-                                            @elseif ($tholabah->kategori == 'Pengab. luar')
+                                            @elseif ($tholabah->kategori == 'Pengabdian luar')
                                                 Depert. : Pengabdian Luar
                                             @else
                                                 Marhalah : {{ $tholabah->marhalah }}
@@ -121,8 +121,8 @@
 
 
                                         <p class="mb-0 text-white">
-                                            @if ($tholabah->kategori == 'Pembina' || $tholabah->kategori == 'Pengab. luar' || $tholabah->kategori == 'Alumni')
-                                                Alumni : {{ $tholabah->tahun_tamat }}
+                                            @if ($tholabah->kategori == 'Pembina' || $tholabah->kategori == 'Pengabdian luar' || $tholabah->kategori == 'Alumni')
+                                                Alumni : {{ $tholabah->tahun_alumni }}
                                             @else
                                                 @if ($tholabah->active)
                                                     Status : Aktif

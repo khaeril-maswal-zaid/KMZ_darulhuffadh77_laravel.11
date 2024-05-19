@@ -13,6 +13,6 @@ class TholabahSeeder extends Seeder
      */
     public function run(): void
     {
-        Tholabah::factory(300)->create();
+        Tholabah::factory(55)->create();
     }
 }
