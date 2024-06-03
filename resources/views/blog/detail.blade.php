@@ -48,7 +48,7 @@
                                 {{ $blog->visit }}</small>
                         </div>
                         <h1 class="mb-4">{{ $blog->title }}</h1>
-                        {{ $blog->body1 }}
+                        <div class="body-1">{{ $blog->body1 }}</div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="my-4">
@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                         </div>
-                        {{ $blog->body2 }}
+                        <div class="body-2">{{ $blog->body2 }}</div>
                     </div>
                     <!-- Blog Detail End -->
                 </div>

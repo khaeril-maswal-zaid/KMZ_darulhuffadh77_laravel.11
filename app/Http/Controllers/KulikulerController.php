@@ -3,40 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\KulikulerPersonil;
-use App\Models\Blog;
 use App\Models\Kontak;
+use App\Models\Kulikuler;
+use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 class KulikulerController extends Controller
 {
-    //Pengurus
-    public function show(KulikulerPersonil $personil, $nameKulikuler)
+    public function index(): View
     {
-        $personilKulikuler = $personil::whereHas('kulikuler', function (Builder $query) use ($nameKulikuler) {
-            $query->where('enum', $nameKulikuler);
-        })->get();
-
+        $kulikulers =  Kulikuler::all();
         $data = [
-            'title' => $personilKulikuler[0]->kulikuler->name,
-            'kontaks' => Kontak::all(),
-            'personilkulikulers' => $personilKulikuler
+            'kulikulers' => $kulikulers
         ];
 
-        return view('kulikuler.pengurus', $data);
-    }
-
-    //Tentang
-    public function tentang(Blog $blog, String $slug)
-    {
-        $blogDetail = $blog->where('slug', $slug)->first();
-
-        $data = [
-            'title' => $blogDetail['title'],
-            'kontaks' => Kontak::all(),
-            'blog' => $blogDetail
-        ];
-
-        return view('kulikuler.detail', $data);
+        return view('admin.master-kulikuler', $data);
     }
 }

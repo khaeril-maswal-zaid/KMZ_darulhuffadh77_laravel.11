@@ -52,11 +52,12 @@
                             <a href="#" class="dropdown-item dropdown-toggle"
                                 data-bs-toggle="dropdown">Eksekutif</a>
                             <div class="dropdownKmz-menu ropdown-menu m-0 bg-primary rounded-1 start-100 top-0">
-                                <a href="/struktur-eksekutif" class="dropdown-item">Struktur Eksekutif</a>
-                                <a href="/profil-pendiri-kh-lanre-said" class="dropdown-item">Profil Pendiri</a>
-                                <a href="/profil-pimpinan-ust-saad-said" class="dropdown-item">Profil Pimpinan</a>
-                                <a href="/profil-direktur-putra" class="dropdown-item">Profil Direktur Putra</a>
-                                <a href="/profil-direktur-putri" class="dropdown-item">Profil Direktur Putri</a>
+                                <a href="/tentang/struktur-eksekutif" class="dropdown-item">Struktur Eksekutif</a>
+                                <a href="/tentang/profil-pendiri-kh-lanre-said" class="dropdown-item">Profil Pendiri</a>
+                                <a href="/tentang/profil-pimpinan-ust-saad-said" class="dropdown-item">Profil
+                                    Pimpinan</a>
+                                <a href="/tentang/profil-direktur-putra" class="dropdown-item">Profil Direktur Putra</a>
+                                <a href="/tentang/profil-direktur-putri" class="dropdown-item">Profil Direktur Putri</a>
                             </div>
                         </div>
 
@@ -73,14 +74,14 @@
                         </div>
 
                         <div class="dropdown-item dropdownKmz-toggle m-0 p-0 position-relative">
-                            <a href="#" class="dropdown-item dropdown-toggle"
-                                data-bs-toggle="dropdown">Kulikuler</a>
+                            <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Hard &
+                                Soft Skill</a>
                             <div class="dropdownKmz-menu ropdown-menu m-0 bg-primary rounded-1 start-100 top-0">
-                                <a href="/tentang-osdha" class="dropdown-item">OSDHA</a>
-                                <a href="/tentang-persidha" class="dropdown-item">Persidha</a>
-                                <a href="/tentang-pramuka" class="dropdown-item">Pramuka</a>
-                                <a href="/tentang-djour" class="dropdown-item">D`Jour</a>
-                                <a href="/tentang-seni" class="dropdown-item">Seni</a>
+                                <a href="/hard-and-soft-skill/osdha" class="dropdown-item">OSDHA</a>
+                                <a href="/hard-and-soft-skill/persidha" class="dropdown-item">Persidha</a>
+                                <a href="/hard-and-soft-skill/pramuka" class="dropdown-item">Pramuka</a>
+                                <a href="/hard-and-soft-skill/djour" class="dropdown-item">D`Jour</a>
+                                <a href="/hard-and-soft-skill/seni" class="dropdown-item">Seni</a>
                             </div>
                         </div>
 
@@ -91,9 +92,9 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sejarah</a>
                     <div class="dropdown-menu m-0 bg-primary">
-                        <a href="/sejarah-pendirian-maahad" class="dropdown-item">Pendirian Ma`ahad</a>
-                        <a href="/sejarah-pondok-lama" class="dropdown-item">Pondok Lama</a>
-                        <a href="/sejarah-pondok-baru" class="dropdown-item">Pondok Baru</a>
+                        <a href="/blog/sejarah-pendirian-maahad" class="dropdown-item">Pendirian Ma`ahad</a>
+                        <a href="/blog/sejarah-pondok-lama" class="dropdown-item">Pondok Lama</a>
+                        <a href="/blog/sejarah-pondok-baru" class="dropdown-item">Pondok Baru</a>
                     </div>
                 </div>
 

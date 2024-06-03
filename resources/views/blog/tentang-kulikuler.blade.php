@@ -47,13 +47,28 @@
                         <div class="col-md-4">
                             <div class="d-flex gap-2 justify-content-end mt-5">
                                 <div class="btn btn-dark">Tentang</div>
-                                <a href="/blog/{{ $blog->slug }}" class="btn btn-success">Pengurus</a>
+                                <a href="/pengurus/{{ $blog->slug }}" class="btn btn-success">Pengurus</a>
                             </div>
                         </div>
                     </div>
                     <img class="img-fluid w-100 rounded mb-4" src="{{ asset('assets/img/' . $blog->picture1) }}"
                         alt="">
-                    <div class="mb-4">{{ $blog->body1 }}</div>
+                    <div class="body-1">{{ $blog->body1 }}</div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="my-4">
+                                <img class="img-fluid w-100 rounded mb-3" src="{{ asset('assets/img/' . $blog->picture2) }}"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="my-4">
+                                <img class="img-fluid w-100 rounded mb-3" src="{{ asset('assets/img/' . $blog->picture3) }}"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body-2">{{ $blog->body2 }}</div>
                 </div>
 
                 <!-- Sidebar Start -->

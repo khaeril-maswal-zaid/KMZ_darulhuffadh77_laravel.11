@@ -13,6 +13,12 @@ class TholabahSeeder extends Seeder
      */
     public function run(): void
     {
-        Tholabah::factory(55)->create();
+        Tholabah::factory(13)->create();
+        Tholabah::factory(13)->pembesar()->create();
+        Tholabah::factory(13)->alumni()->create();
+        Tholabah::factory(13)->pengabdianLuar()->create();
+        Tholabah::factory(13)->pembina()->create();
+        Tholabah::factory(13)->santriBaru()->create();
+        // Tholabah::factory(13)->create()->rundom;
     }
 }

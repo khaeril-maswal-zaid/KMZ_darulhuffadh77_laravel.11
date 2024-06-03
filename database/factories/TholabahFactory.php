@@ -16,49 +16,7 @@ class TholabahFactory extends Factory
      */
     public function definition()
     {
-        $santriBaru = [
-            'nik' => fake()->unique()->numberBetween(1111111111111111, 9999999999999999),
-            'nama' => fake()->name(),
-            'jenis_kelamin' => fake()->randomElement(['Laki-laki', 'Perempuan']),
-            'tempat_lahir' => fake()->citySuffix(),
-            'tanggal_lahir' => fake()->date('d-m-Y'),
-            'provinsi' => fake()->city(),
-            'kabupaten' => fake()->citySuffix(),
-            'kecamatan' => fake()->city(),
-            'desa' => fake()->citySuffix(),
-            'nama_ayah' => fake()->name(),
-            'nama_ibu' => fake()->name(),
-            'pekerjaan_ayah' => fake()->jobTitle(),
-            'pekerjaan_ibu' => fake()->jobTitle(),
-            'kontak_ayah' => fake()->phoneNumber(),
-            'kontak_ibu' => fake()->phoneNumber(),
-            'nisn' => fake()->unique()->numberBetween(111111111, 999999999),
-            'asal_sekolah' => fake()->word(),
-            'tahun_tamat_sd' => fake()->year(),
-
-            'experiment' => fake()->boolean(),
-            'nisdh' => fake()->unique()->numberBetween(1111111, 9999999),
-            'angkatan' => fake()->year(),
-
-
-            'kategori_santri_baru' => fake()->randomElement(['Daftar', 'Pengembalian']),
-
-
-            'kelas' => 'Calon Santri Baru',
-            'active' => false,
-
-            'kategori' => 'csb-165',
-
-            'depertement' => 'csb-165',
-
-            'kontak' => fake()->phoneNumber(),
-            'marhalah' => 'csb-165',
-            'tahun_alumni' => fake()->year(),
-
-            'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
-        ];
-
-        $santriSantriwati = [
+        return [
             'nik' => fake()->unique()->numberBetween(1111111111111111, 9999999999999999),
             'nama' => fake()->name(),
             'jenis_kelamin' => fake()->randomElement(['Laki-laki', 'Perempuan']),
@@ -99,8 +57,56 @@ class TholabahFactory extends Factory
 
             'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
         ];
+    }
 
-        $pembina = [
+    public function santriBaru()
+    {
+        return  $this->state(fn (array $attributes) =>  [
+            'nik' => fake()->unique()->numberBetween(1111111111111111, 9999999999999999),
+            'nama' => fake()->name(),
+            'jenis_kelamin' => fake()->randomElement(['Laki-laki', 'Perempuan']),
+            'tempat_lahir' => fake()->citySuffix(),
+            'tanggal_lahir' => fake()->date('d-m-Y'),
+            'provinsi' => fake()->city(),
+            'kabupaten' => fake()->citySuffix(),
+            'kecamatan' => fake()->city(),
+            'desa' => fake()->citySuffix(),
+            'nama_ayah' => fake()->name(),
+            'nama_ibu' => fake()->name(),
+            'pekerjaan_ayah' => fake()->jobTitle(),
+            'pekerjaan_ibu' => fake()->jobTitle(),
+            'kontak_ayah' => fake()->phoneNumber(),
+            'kontak_ibu' => fake()->phoneNumber(),
+            'nisn' => fake()->unique()->numberBetween(111111111, 999999999),
+            'asal_sekolah' => fake()->word(),
+            'tahun_tamat_sd' => fake()->year(),
+
+            'experiment' => fake()->boolean(),
+            'nisdh' => fake()->unique()->numberBetween(1111111, 9999999),
+            'angkatan' => fake()->year(),
+
+
+            'kategori_santri_baru' => fake()->randomElement(['Daftar', 'Pengembalian']),
+
+
+            'kelas' => 'Calon Santri Baru',
+            'active' => false,
+
+            'kategori' => 'csb-165',
+
+            'depertement' => 'csb-165',
+
+            'kontak' => fake()->phoneNumber(),
+            'marhalah' => 'csb-165',
+            'tahun_alumni' => fake()->year(),
+
+            'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
+        ]);
+    }
+
+    public function pembina()
+    {
+        return  $this->state(fn (array $attributes) =>  [
             'nik' => fake()->unique()->numberBetween(1111111111111111, 9999999999999999),
             'nama' => fake()->name(),
             'jenis_kelamin' => fake()->randomElement(['Laki-laki', 'Perempuan']),
@@ -140,9 +146,13 @@ class TholabahFactory extends Factory
             'tahun_alumni' => fake()->year(),
 
             'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
-        ];
+        ]);
+    }
 
-        $pengabdianLuar = [
+    public function pengabdianLuar()
+    {
+
+        return  $this->state(fn (array $attributes) =>  [
             'nik' => fake()->unique()->numberBetween(1111111111111111, 9999999999999999),
             'nama' => fake()->name(),
             'jenis_kelamin' => fake()->randomElement(['Laki-laki', 'Perempuan']),
@@ -182,9 +192,12 @@ class TholabahFactory extends Factory
             'tahun_alumni' => fake()->year(),
 
             'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
-        ];
+        ]);
+    }
 
-        $alumni = [
+    public function alumni()
+    {
+        return  $this->state(fn (array $attributes) =>  [
             'nik' => fake()->unique()->numberBetween(1111111111111111, 9999999999999999),
             'nama' => fake()->name(),
             'jenis_kelamin' => fake()->randomElement(['Laki-laki', 'Perempuan']),
@@ -224,9 +237,12 @@ class TholabahFactory extends Factory
             'tahun_alumni' => fake()->year(),
 
             'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
-        ];
+        ]);
+    }
 
-        $pembesar = [
+    public function pembesar()
+    {
+        return  $this->state(fn (array $attributes) =>  [
             'nik' => fake()->unique()->numberBetween(1111111111111111, 9999999999999999),
             'nama' => fake()->name(),
             'jenis_kelamin' => fake()->randomElement(['Laki-laki', 'Perempuan']),
@@ -266,9 +282,12 @@ class TholabahFactory extends Factory
             'tahun_alumni' => fake()->year(),
 
             'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
-        ];
+        ]);
+    }
 
-        $rundom = [
+    public function rundom()
+    {
+        return  $this->state(fn (array $attributes) =>  [
             'nik' => fake()->unique()->numberBetween(1111111111111111, 9999999999999999),
             'nama' => fake()->name(),
             'jenis_kelamin' => fake()->randomElement(['Laki-laki', 'Perempuan']),
@@ -308,15 +327,6 @@ class TholabahFactory extends Factory
             'tahun_alumni' => fake()->year(),
 
             'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
-        ];
-
-
-        // return $santriBaru;
-        // return $santriSantriwati;
-        // return $pembina;
-        // return $pengabdianLuar;
-        // return $alumni;
-        return $pembesar;
-        // return $rundom;
+        ]);
     }
 }

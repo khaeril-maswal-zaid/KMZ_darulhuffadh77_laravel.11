@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="navbar-nav w-100">
-                <a href="index.html" class="nav-item nav-link active"><i
+                <a href="/admindh" class="nav-item nav-link active"><i
                         class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
@@ -47,10 +47,10 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                             class="far fa-file-alt me-2"></i>Blog</a>
                     <div class="dropdown-menu bg-transparent border-0">
-                        <a href="signin.html" class="dropdown-item">Sign In</a>
-                        <a href="signup.html" class="dropdown-item">Sign Up</a>
-                        <a href="404.html" class="dropdown-item">404 Error</a>
-                        <a href="blank.html" class="dropdown-item">Blank Page</a>
+                        <a href="/admindh/blog/islamiyah" class="dropdown-item">Islamiyah</a>
+                        <a href="/admindh/blog/news-dh" class="dropdown-item">News DH</a>
+                        <a href="/admindh/blog/story-dh" class="dropdown-item">Story DH</a>
+                        <a href="/admindh/blog/default" class="dropdown-item">Default</a>
                     </div>
                 </div>
 
@@ -58,15 +58,16 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                             class="far fa-file-alt me-2"></i>Eksekutif</a>
                     <div class="dropdown-menu bg-transparent border-0">
-                        <a href="signin.html" class="dropdown-item">Struktur Eksekutif</a>
-                        <a href="signup.html" class="dropdown-item">Profil Pendiri</a>
-                        <a href="404.html" class="dropdown-item">Profil Pimpinan</a>
-                        <a href="blank.html" class="dropdown-item">Profil Direktur Putra</a>
-                        <a href="blank.html" class="dropdown-item">Profil Direktur Putri</a>
+                        <a href="/admindh/tentang/struktur-eksekutif" class="dropdown-item">Struktur Eksekutif</a>
+                        <a href="/admindh/tentang/profil-pendiri-kh-lanre-said" class="dropdown-item">Profil Pendiri</a>
+                        <a href="/admindh/tentang/profil-pimpinan" class="dropdown-item">Profil Pimpinan</a>
+                        <a href="/admindh/tentang/profil-direktur-putra" class="dropdown-item">Profil Direktur Putra</a>
+                        <a href="/admindh/tentang/profil-direktur-putri" class="dropdown-item">Profil Direktur Putri</a>
                     </div>
                 </div>
 
-                <a href="/admindh/kulikuler" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Kulikuler Santri</a>
+                <a href="/admindh/hard-soft-skill" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Hard & Soft
+                    Skill</a>
                 <a href="/admindh/aktivitas-santri" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Aktivitas
                     <a href="/admindh/kontak" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Kontak</a>
 

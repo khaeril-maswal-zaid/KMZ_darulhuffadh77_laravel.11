@@ -44,30 +44,41 @@
 
             <div class="row g-5 pt-4">
                 <div class="col-lg-7">
-                    <form action="" method="get">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul class="m-0">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form action="{{ url('/pendaftaran-santri-baru') }}" method="post">
+                        @csrf
                         <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="floatingInput0"
+                            <input value="{{ old('nik') }}" type="number" class="form-control" id="floatingInput0"
                                 placeholder="Nomor Induk Kependudukan" name="nik" maxlength="16" minlength="16"
-                                required>
+                                requiredX>
                             <label for="floatingInput0">Nomor Induk Kependudukan</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput1" placeholder="Nama lengkap"
-                                required name="nama">
+                            <input value="{{ old('nama') }}" type="text" class="form-control" id="floatingInput1"
+                                placeholder="Nama lengkap" requiredX name="nama">
                             <label for="floatingInput1">Nama lengkap</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput2" placeholder="Tempat Lahir"
-                                required name="tempatlahir">
+                            <input value="{{ old('tempatlahir') }}" type="text" class="form-control" id="floatingInput2"
+                                placeholder="Tempat Lahir" requiredX name="tempatlahir">
                             <label for="floatingInput2">Tempat Lahir</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="date" class="form-control" id="floatingInput3" placeholder="Tanggal Lahir"
-                                required name="taggallahir">
+                            <input value="{{ old('tanggallahir') }}" type="date" class="form-control" id="floatingInput3"
+                                placeholder="Tanggal Lahir" requiredX name="tanggallahir">
                             <label for="floatingInput3">Tanggal Lahir</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <select class="form-select" id="floatingSelect1" aria-label="Floating label select example">
+                            <select class="form-select" id="floatingSelect1" aria-label="Floating label select example"
+                                name="jeniskelamin">
                                 <option selected>Pilih</option>
                                 <option value="Laki-laki">Laki-laki</option>
                                 <option value="Perempuan">Perempuan</option>
@@ -76,82 +87,103 @@
                         </div>
 
                         <div class="form-floating mb-3">
-                            <select class="form-select" id="floatingSelect2" aria-label="Floating label select example">
+                            <select class="form-select" id="floatingSelect2" aria-label="Floating label select example"
+                                name="provinsi">
                                 <option selected>Pilih</option>
-                                <option value="">Sulawesi Selatan</option>
+                                <option value="ulawesi Selatan">Sulawesi Selatan</option>
                             </select>
                             <label for="floatingSelect2">Provinsi</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <select class="form-select" id="floatingSelect3" aria-label="Floating label select example">
+                            <select class="form-select" id="floatingSelect3" aria-label="Floating label select example"
+                                name="kabupaten">
                                 <option selected>Pilih</option>
-                                <option value="">Bulukumba</option>
+                                <option value="Bulukumba">Bulukumba</option>
                             </select>
                             <label for="floatingSelect3">Kabupaten</label>
                         </div>
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <select class="form-select" id="floatingSelect4" aria-label="Floating label select example">
+                            <select class="form-select" id="floatingSelect4" aria-label="Floating label select example"
+                                name="kecamatan">
                                 <option selected>Pilih</option>
-                                <option value="">Bulukumpa</option>
+                                <option value="Bulukumpa">Bulukumpa</option>
                             </select>
                             <label for="floatingSelect4">Kecamatan</label>
                         </div>
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <select class="form-select" id="floatingSelect5" aria-label="Floating label select example">
+                            <select class="form-select" id="floatingSelect5" aria-label="Floating label select example"
+                                name="desa">
                                 <option selected>Pilih</option>
-                                <option value="">Bulo-Bulo</option>
+                                <option value="Bulo-Bulo">Bulo-Bulo</option>
                             </select>
                             <label for="floatingSelect5">Desa</label>
                         </div>
 
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input type="text" class="form-control" id="floatingInput4" placeholder="Nama Ayah" required
-                                name="namaayah">
+                            <input value="{{ old('namaayah') }}" type="text" class="form-control" id="floatingInput4"
+                                placeholder="Nama Ayah" requiredX name="namaayah">
                             <label for="floatingInput4">Nama Ayah</label>
                         </div>
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input type="text" class="form-control" id="floatingInput5" placeholder="Nama Ibu"
-                                required name="namaibu">
+                            <input value="{{ old('namaibu') }}" type="text" class="form-control" id="floatingInput5"
+                                placeholder="Nama Ibu" requiredX name="namaibu">
                             <label for="floatingInput5">Nama Ibu</label>
                         </div>
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input type="text" class="form-control" id="floatingInput6" placeholder="Pekerjaan Ayah"
-                                required name="pekerjaanayah">
+                            <input value="{{ old('pekerjaanayah') }}" type="text" class="form-control"
+                                id="floatingInput6" placeholder="Pekerjaan Ayah" requiredX name="pekerjaanayah">
                             <label for="floatingInput6">Pekerjaan Ayah</label>
                         </div>
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input type="text" class="form-control" id="floatingInput7" placeholder="Pekerjaan Ibu"
-                                required name="pekerjaanibu">
+                            <input value="{{ old('pekerjaanibu') }}" type="text" class="form-control"
+                                id="floatingInput7" placeholder="Pekerjaan Ibu" requiredX name="pekerjaanibu">
                             <label for="floatingInput7">Pekerjaan Ibu</label>
                         </div>
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input type="text" class="form-control" id="floatingInput8" placeholder="Asal Sekolah"
-                                required name="asalsekolah">
+                            <input value="{{ old('kontakayah') }}" type="text" class="form-control"
+                                id="floatingInput6" placeholder="Kontak Ayah" requiredX name="kontakayah">
+                            <label for="floatingInput6">Kontak Ayah</label>
+                        </div>
+                        <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
+                            <input value="{{ old('kontakibu') }}" type="text" class="form-control"
+                                id="floatingInput7" placeholder="kontak Ibu" requiredX name="kontakibu">
+                            <label for="floatingInput7">Kontak Ibu</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <select class="form-select" id="floatingSelect2" aria-label="Floating label select example"
+                                name="experiment">
+                                <option selected>Pilih</option>
+                                <option value="false">SD</option>
+                                <option value="true">SMP</option>
+                            </select>
+                            <label for="floatingSelect2">Tamatan Sekolah</label>
+                        </div>
+
+                        <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
+                            <input value="{{ old('asalsekolah') }}" type="text" class="form-control"
+                                id="floatingInput8" placeholder="Asal Sekolah" requiredX name="asalsekolah">
                             <label for="floatingInput8">Asal Sekolah</label>
                         </div>
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input type="text" class="form-control" id="floatingInput9" placeholder="NISN" required
-                                name="nisn">
+                            <input value="{{ old('nisn') }}" type="text" class="form-control" id="floatingInput9"
+                                placeholder="NISN" requiredX name="nisn">
                             <label for="floatingInput9">NISN</label>
                         </div>
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input type="text" class="form-control" id="floatingInput10" placeholder="Jurusan"
-                                required name="nisn">
-                            <label for="floatingInput10">Jurusan</label>
-                        </div>
-                        <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input type="year" maxlength="4" minlength="4" class="form-control"
-                                id="floatingInput11" placeholder="Tahun Tamat" required name="tahuntamat">
+                            <input value="{{ old('tahuntamat') }}" type="year" maxlength="4" minlength="4"
+                                class="form-control" id="floatingInput11" placeholder="Tahun Tamat" requiredX
+                                name="tahuntamat">
                             <label for="floatingInput11">Tahun Tamat</label>
                         </div>
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input type="file" class="form-control" id="floatingInput11" placeholder="Foto" required
-                                name="foto">
+                            <input value="{{ old('foto') }}" type="file" class="form-control" id="floatingInput11"
+                                placeholder="Foto" requiredX name="foto">
                             <label for="floatingInput11">Foto</label>
                         </div>
 
                         <div class="d-grid">
-                            <button class="btn btn-success btn-lg">Kirim</button>
+                            <button class="btn btn-success btn-lg" type="submit">Kirim</button>
                         </div>
                     </form>
                 </div>

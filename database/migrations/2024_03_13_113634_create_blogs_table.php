@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blog_categorys', function (Blueprint $table) {
+        Schema::create('blog_categories', function (Blueprint $table) {
             $table->id();
             $table->string('category');
             $table->text('description');
@@ -21,7 +21,7 @@ return new class extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('users_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('slug')->unique();
             $table->string('title');
             $table->string('excerpt');
@@ -34,8 +34,8 @@ return new class extends Migration
             $table->integer('visit')->default(50);
             $table->timestamps();
 
-            $table->foreign('category_id')->references('id')->on('blog_categorys');
-            $table->foreign('users_id')->references('id')->on('users');
+            $table->foreign('category_id')->references('id')->on('blog_categories');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

@@ -16,13 +16,13 @@ class BlogSeeder extends Seeder
     {
         $categorys = [
             [
-                'category' => 'umum-165',
+                'category' => 'islamiyah',
                 'description' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum illo dignissimos vero accusamus. Tenetur quam ad sequi nihil temporibus soluta dolore reprehenderit ratione nisi voluptas sunt quos, architecto amet suscipit impedit inventore voluptatibus et reiciendis rerum cumque accusantium doloribus alias a commodi. Voluptas tenetur laudantium vel asperiores dolor praesentium, mollitia consequatur omnis doloremque? Maxime voluptates dolor hic assumenda doloremque fugit sunt itaque, velit voluptatem eos nesciunt sit! Eligendi quae deleniti labore eaque qui reiciendis. Illo minus nobis totam velit quod vel hic, eveniet eos ut inventore magni officiis et ducimus voluptatem unde officia obcaecati sint qui quae aliquid doloremque exercitationem.',
             ], [
-                'category' => 'news-165',
+                'category' => 'news-dh',
                 'description' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum illo dignissimos vero accusamus. Tenetur quam ad sequi nihil temporibus soluta dolore reprehenderit ratione nisi voluptas sunt quos, architecto amet suscipit impedit inventore voluptatibus et reiciendis rerum cumque accusantium doloribus alias a commodi. Voluptas tenetur laudantium vel asperiores dolor praesentium, mollitia consequatur omnis doloremque? Maxime voluptates dolor hic assumenda doloremque fugit sunt itaque, velit voluptatem eos nesciunt sit! Eligendi quae deleniti labore eaque qui reiciendis. Illo minus nobis totam velit quod vel hic, eveniet eos ut inventore magni officiis et ducimus voluptatem unde officia obcaecati sint qui quae aliquid doloremque exercitationem.',
             ], [
-                'category' => 'the-story-165',
+                'category' => 'story-dh',
                 'description' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum illo dignissimos vero accusamus. Tenetur quam ad sequi nihil temporibus soluta dolore reprehenderit ratione nisi voluptas sunt quos, architecto amet suscipit impedit inventore voluptatibus et reiciendis rerum cumque accusantium doloribus alias a commodi. Voluptas tenetur laudantium vel asperiores dolor praesentium, mollitia consequatur omnis doloremque? Maxime voluptates dolor hic assumenda doloremque fugit sunt itaque, velit voluptatem eos nesciunt sit! Eligendi quae deleniti labore eaque qui reiciendis. Illo minus nobis totam velit quod vel hic, eveniet eos ut inventore magni officiis et ducimus voluptatem unde officia obcaecati sint qui quae aliquid doloremque exercitationem.',
             ], [
                 'category' => 'khusus-1-165',
@@ -38,8 +38,53 @@ class BlogSeeder extends Seeder
 
         $isiblogs = [
             [
+                'category_id' => 1,
+                'user_id' => 1,
+                'slug' => 'metode-hisab-penentuan-1-syawal',
+                'title' => 'Metode Hisab, Penentuan 1 Syawal',
+                'excerpt' => 'Metode Hisab, Penentuan 1 Syawal',
+                'body1' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis commodi, ratione soluta, accusamus beatae quidem nesciunt doloribus consequatur animi veritatis molestias atque. Cumque adipisci inventore totam reprehenderit ratione molestiae magnam? Libero ipsam qui rem deleniti explicabo vel commodi molestias reiciendis expedita aliquam asperiores nihil quibusdam eveniet voluptates iure cum illo molestiae repudiandae in perspiciatis, voluptate hic culpa? Accusantium repellat nihil voluptate est, beatae facere eveniet temporibus. Quisquam, consequuntur optio consectetur illum neque id nihil? Explicabo, magni autem labore eum fuga molestias amet numquam possimus! Beatae est ullam, facilis numquam consequatur, quasi deleniti iusto dolorem voluptatem iste impedit officia sequi veniam distinctio, recusandae laboriosam autem labore incidunt a. Ipsum, exercitationem dolor! Rerum praesentium, voluptatibus nostrum aliquam id fuga necessitatibus quasi reiciendis nisi recusandae. Iure fuga magnam nesciunt placeat, eum provident alias fugiat natus dolores, porro ratione, nihil nostrum minus? Eos sed magnam dicta nostrum maxime id nesciunt dignissimos sapiente tempora nihil dolores excepturi architecto quis doloribus nemo ab in quasi officia, illum aliquam iure. Nam ipsam rem, saepe repudiandae sint possimus dolore sapiente debitis perferendis dignissimos non animi culpa eaque temporibus ab, blanditiis placeat nisi ducimus. Facere fugiat id cumque sunt iusto. Amet saepe sequi asperiores temporibus soluta? Facilis suscipit, vero ut sed deleniti accusantium nam eligendi maiores earum perferendis labore officiis hic nemo dolor explicabo animi at? Nisi hic, voluptate quasi ut adipisci modi unde sit minus harum iste est, deleniti nulla! A eligendi placeat odit, perferendis atque odio quo. Optio sequi quae quo corporis aut, doloribus eius. Consequuntur corporis illum optio delectus debitis harum odit quos animi. Ipsam, natus sed. Sunt quas voluptatem veritatis inventore non dolor qui vel, nemo quam mollitia aut delectus cumque. Cupiditate reiciendis ullam inventore. Quo perferendis temporibus saepe eveniet. Architecto quasi atque eveniet voluptatem nobis quae id excepturi pariatur, debitis animi omnis dolorem eos?',
+                'body2' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis commodi, ratione soluta, accusamus beatae quidem nesciunt doloribus consequatur animi veritatis molestias atque. Cumque adipisci inventore totam reprehenderit ratione molestiae magnam? Libero ipsam qui rem deleniti explicabo vel commodi molestias reiciendis expedita aliquam asperiores nihil quibusdam eveniet voluptates iure cum illo molestiae repudiandae in perspiciatis, voluptate hic culpa? Accusantium repellat nihil voluptate est, beatae facere eveniet temporibus. Quisquam, consequuntur optio consectetur illum neque id nihil? Explicabo, magni autem labore eum fuga molestias amet numquam possimus! Beatae est ullam, facilis numquam consequatur, quasi deleniti iusto dolorem voluptatem iste impedit officia sequi veniam distinctio, recusandae laboriosam autem labore incidunt a. Ipsum, exercitationem dolor! Rerum praesentium, voluptatibus nostrum aliquam id fuga necessitatibus quasi reiciendis nisi recusandae. Iure fuga magnam nesciunt placeat, eum provident alias fugiat natus dolores, porro ratione, nihil nostrum minus? Eos sed magnam dicta nostrum maxime id nesciunt dignissimos sapiente tempora nihil dolores excepturi architecto quis doloribus nemo ab in quasi officia, illum aliquam iure. Nam ipsam rem, saepe repudiandae sint possimus dolore sapiente debitis perferendis dignissimos non animi culpa eaque temporibus ab, blanditiis placeat nisi ducimus. Facere fugiat id cumque sunt iusto. Amet saepe sequi asperiores temporibus soluta? Facilis suscipit, vero ut sed deleniti accusantium nam eligendi maiores earum perferendis labore officiis hic nemo dolor explicabo animi at? Nisi hic, voluptate quasi ut adipisci modi unde sit minus harum iste est, deleniti nulla! A eligendi placeat odit, perferendis atque odio quo. Optio sequi quae quo corporis aut, doloribus eius. Consequuntur corporis illum optio delectus debitis harum odit quos animi. Ipsam, natus sed. Sunt quas voluptatem veritatis inventore non dolor qui vel, nemo quam mollitia aut delectus cumque. Cupiditate reiciendis ullam inventore. Quo perferendis temporibus saepe eveniet. Architecto quasi atque eveniet voluptatem nobis quae id excepturi pariatur, debitis animi omnis dolorem eos?',
+                'picture1' => 'default.jpg',
+                'picture2' => 'default.jpg',
+                'picture3' => 'default.jpg',
+                'album' => 1,
+                'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],   [
+                'category_id' => 2,
+                'user_id' => 1,
+                'slug' => 'tasyakkur-ke-56-darul-huffadh-cetak-puluhan-kader-ummat',
+                'title' => 'Tasyakkur ke 56, Darul Huffadh cetak puluhan kader Ummat',
+                'excerpt' => 'Tasyakkur ke 56, Darul Huffadh cetak puluhan kader Ummat',
+                'body1' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis commodi, ratione soluta, accusamus beatae quidem nesciunt doloribus consequatur animi veritatis molestias atque. Cumque adipisci inventore totam reprehenderit ratione molestiae magnam? Libero ipsam qui rem deleniti explicabo vel commodi molestias reiciendis expedita aliquam asperiores nihil quibusdam eveniet voluptates iure cum illo molestiae repudiandae in perspiciatis, voluptate hic culpa? Accusantium repellat nihil voluptate est, beatae facere eveniet temporibus. Quisquam, consequuntur optio consectetur illum neque id nihil? Explicabo, magni autem labore eum fuga molestias amet numquam possimus! Beatae est ullam, facilis numquam consequatur, quasi deleniti iusto dolorem voluptatem iste impedit officia sequi veniam distinctio, recusandae laboriosam autem labore incidunt a. Ipsum, exercitationem dolor! Rerum praesentium, voluptatibus nostrum aliquam id fuga necessitatibus quasi reiciendis nisi recusandae. Iure fuga magnam nesciunt placeat, eum provident alias fugiat natus dolores, porro ratione, nihil nostrum minus? Eos sed magnam dicta nostrum maxime id nesciunt dignissimos sapiente tempora nihil dolores excepturi architecto quis doloribus nemo ab in quasi officia, illum aliquam iure. Nam ipsam rem, saepe repudiandae sint possimus dolore sapiente debitis perferendis dignissimos non animi culpa eaque temporibus ab, blanditiis placeat nisi ducimus. Facere fugiat id cumque sunt iusto. Amet saepe sequi asperiores temporibus soluta? Facilis suscipit, vero ut sed deleniti accusantium nam eligendi maiores earum perferendis labore officiis hic nemo dolor explicabo animi at? Nisi hic, voluptate quasi ut adipisci modi unde sit minus harum iste est, deleniti nulla! A eligendi placeat odit, perferendis atque odio quo. Optio sequi quae quo corporis aut, doloribus eius. Consequuntur corporis illum optio delectus debitis harum odit quos animi. Ipsam, natus sed. Sunt quas voluptatem veritatis inventore non dolor qui vel, nemo quam mollitia aut delectus cumque. Cupiditate reiciendis ullam inventore. Quo perferendis temporibus saepe eveniet. Architecto quasi atque eveniet voluptatem nobis quae id excepturi pariatur, debitis animi omnis dolorem eos?',
+                'body2' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis commodi, ratione soluta, accusamus beatae quidem nesciunt doloribus consequatur animi veritatis molestias atque. Cumque adipisci inventore totam reprehenderit ratione molestiae magnam? Libero ipsam qui rem deleniti explicabo vel commodi molestias reiciendis expedita aliquam asperiores nihil quibusdam eveniet voluptates iure cum illo molestiae repudiandae in perspiciatis, voluptate hic culpa? Accusantium repellat nihil voluptate est, beatae facere eveniet temporibus. Quisquam, consequuntur optio consectetur illum neque id nihil? Explicabo, magni autem labore eum fuga molestias amet numquam possimus! Beatae est ullam, facilis numquam consequatur, quasi deleniti iusto dolorem voluptatem iste impedit officia sequi veniam distinctio, recusandae laboriosam autem labore incidunt a. Ipsum, exercitationem dolor! Rerum praesentium, voluptatibus nostrum aliquam id fuga necessitatibus quasi reiciendis nisi recusandae. Iure fuga magnam nesciunt placeat, eum provident alias fugiat natus dolores, porro ratione, nihil nostrum minus? Eos sed magnam dicta nostrum maxime id nesciunt dignissimos sapiente tempora nihil dolores excepturi architecto quis doloribus nemo ab in quasi officia, illum aliquam iure. Nam ipsam rem, saepe repudiandae sint possimus dolore sapiente debitis perferendis dignissimos non animi culpa eaque temporibus ab, blanditiis placeat nisi ducimus. Facere fugiat id cumque sunt iusto. Amet saepe sequi asperiores temporibus soluta? Facilis suscipit, vero ut sed deleniti accusantium nam eligendi maiores earum perferendis labore officiis hic nemo dolor explicabo animi at? Nisi hic, voluptate quasi ut adipisci modi unde sit minus harum iste est, deleniti nulla! A eligendi placeat odit, perferendis atque odio quo. Optio sequi quae quo corporis aut, doloribus eius. Consequuntur corporis illum optio delectus debitis harum odit quos animi. Ipsam, natus sed. Sunt quas voluptatem veritatis inventore non dolor qui vel, nemo quam mollitia aut delectus cumque. Cupiditate reiciendis ullam inventore. Quo perferendis temporibus saepe eveniet. Architecto quasi atque eveniet voluptatem nobis quae id excepturi pariatur, debitis animi omnis dolorem eos?',
+                'picture1' => 'default.jpg',
+                'picture2' => 'default.jpg',
+                'picture3' => 'default.jpg',
+                'album' => 1,
+                'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],  [
+                'category_id' => 3,
+                'user_id' => 1,
+                'slug' => 'ke-darul-huffadh-untuk-apa?',
+                'title' => 'Ke Darul Huffadh, Untuk apa?',
+                'excerpt' => 'Ke Darul Huffadh, Untuk apa?',
+                'body1' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis commodi, ratione soluta, accusamus beatae quidem nesciunt doloribus consequatur animi veritatis molestias atque. Cumque adipisci inventore totam reprehenderit ratione molestiae magnam? Libero ipsam qui rem deleniti explicabo vel commodi molestias reiciendis expedita aliquam asperiores nihil quibusdam eveniet voluptates iure cum illo molestiae repudiandae in perspiciatis, voluptate hic culpa? Accusantium repellat nihil voluptate est, beatae facere eveniet temporibus. Quisquam, consequuntur optio consectetur illum neque id nihil? Explicabo, magni autem labore eum fuga molestias amet numquam possimus! Beatae est ullam, facilis numquam consequatur, quasi deleniti iusto dolorem voluptatem iste impedit officia sequi veniam distinctio, recusandae laboriosam autem labore incidunt a. Ipsum, exercitationem dolor! Rerum praesentium, voluptatibus nostrum aliquam id fuga necessitatibus quasi reiciendis nisi recusandae. Iure fuga magnam nesciunt placeat, eum provident alias fugiat natus dolores, porro ratione, nihil nostrum minus? Eos sed magnam dicta nostrum maxime id nesciunt dignissimos sapiente tempora nihil dolores excepturi architecto quis doloribus nemo ab in quasi officia, illum aliquam iure. Nam ipsam rem, saepe repudiandae sint possimus dolore sapiente debitis perferendis dignissimos non animi culpa eaque temporibus ab, blanditiis placeat nisi ducimus. Facere fugiat id cumque sunt iusto. Amet saepe sequi asperiores temporibus soluta? Facilis suscipit, vero ut sed deleniti accusantium nam eligendi maiores earum perferendis labore officiis hic nemo dolor explicabo animi at? Nisi hic, voluptate quasi ut adipisci modi unde sit minus harum iste est, deleniti nulla! A eligendi placeat odit, perferendis atque odio quo. Optio sequi quae quo corporis aut, doloribus eius. Consequuntur corporis illum optio delectus debitis harum odit quos animi. Ipsam, natus sed. Sunt quas voluptatem veritatis inventore non dolor qui vel, nemo quam mollitia aut delectus cumque. Cupiditate reiciendis ullam inventore. Quo perferendis temporibus saepe eveniet. Architecto quasi atque eveniet voluptatem nobis quae id excepturi pariatur, debitis animi omnis dolorem eos?',
+                'body2' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis commodi, ratione soluta, accusamus beatae quidem nesciunt doloribus consequatur animi veritatis molestias atque. Cumque adipisci inventore totam reprehenderit ratione molestiae magnam? Libero ipsam qui rem deleniti explicabo vel commodi molestias reiciendis expedita aliquam asperiores nihil quibusdam eveniet voluptates iure cum illo molestiae repudiandae in perspiciatis, voluptate hic culpa? Accusantium repellat nihil voluptate est, beatae facere eveniet temporibus. Quisquam, consequuntur optio consectetur illum neque id nihil? Explicabo, magni autem labore eum fuga molestias amet numquam possimus! Beatae est ullam, facilis numquam consequatur, quasi deleniti iusto dolorem voluptatem iste impedit officia sequi veniam distinctio, recusandae laboriosam autem labore incidunt a. Ipsum, exercitationem dolor! Rerum praesentium, voluptatibus nostrum aliquam id fuga necessitatibus quasi reiciendis nisi recusandae. Iure fuga magnam nesciunt placeat, eum provident alias fugiat natus dolores, porro ratione, nihil nostrum minus? Eos sed magnam dicta nostrum maxime id nesciunt dignissimos sapiente tempora nihil dolores excepturi architecto quis doloribus nemo ab in quasi officia, illum aliquam iure. Nam ipsam rem, saepe repudiandae sint possimus dolore sapiente debitis perferendis dignissimos non animi culpa eaque temporibus ab, blanditiis placeat nisi ducimus. Facere fugiat id cumque sunt iusto. Amet saepe sequi asperiores temporibus soluta? Facilis suscipit, vero ut sed deleniti accusantium nam eligendi maiores earum perferendis labore officiis hic nemo dolor explicabo animi at? Nisi hic, voluptate quasi ut adipisci modi unde sit minus harum iste est, deleniti nulla! A eligendi placeat odit, perferendis atque odio quo. Optio sequi quae quo corporis aut, doloribus eius. Consequuntur corporis illum optio delectus debitis harum odit quos animi. Ipsam, natus sed. Sunt quas voluptatem veritatis inventore non dolor qui vel, nemo quam mollitia aut delectus cumque. Cupiditate reiciendis ullam inventore. Quo perferendis temporibus saepe eveniet. Architecto quasi atque eveniet voluptatem nobis quae id excepturi pariatur, debitis animi omnis dolorem eos?',
+                'picture1' => 'default.jpg',
+                'picture2' => 'default.jpg',
+                'picture3' => 'default.jpg',
+                'album' => 1,
+                'visit' => 50,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ], [
                 'category_id' => 4,
-                'users_id' => 1,
+                'user_id' => 1,
                 'slug' => 'profil-pendiri-kh-lanre-said',
                 'title' => 'Profil Pendiri Darul Huffadh 77',
                 'excerpt' => 'KH. Lanre Said',
@@ -54,7 +99,7 @@ class BlogSeeder extends Seeder
                 'updated_at' => now(),
             ], [
                 'category_id' => 4,
-                'users_id' => 1,
+                'user_id' => 1,
                 'slug' => 'profil-pimpinan-ust-saad-said',
                 'title' => 'Profil Pimpinan',
                 'excerpt' => 'Ust. Saad Said',
@@ -69,7 +114,7 @@ class BlogSeeder extends Seeder
                 'updated_at' => now(),
             ], [
                 'category_id' => 4,
-                'users_id' => 1,
+                'user_id' => 1,
                 'slug' => 'profil-direktur-putra',
                 'title' => 'Profil Direktur Putra',
                 'excerpt' => 'Ust. Mustari Gaffar, S.Pd.I',
@@ -84,7 +129,7 @@ class BlogSeeder extends Seeder
                 'updated_at' => now(),
             ], [
                 'category_id' => 4,
-                'users_id' => 1,
+                'user_id' => 1,
                 'slug' => 'profil-direktur-putri',
                 'title' => 'Profil Direktur Putri',
                 'excerpt' => 'Usth. Saddiyah Said',
@@ -99,7 +144,7 @@ class BlogSeeder extends Seeder
                 'updated_at' => now(),
             ], [
                 'category_id' => 6,
-                'users_id' => 1,
+                'user_id' => 1,
                 'slug' => 'kulliyatul-muallimin-alislamiyah',
                 'title' => 'Kulliyatul Muallimin Alislamiyah, Darul Huffadh 77',
                 'excerpt' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate odit sapiente voluptatum provident asperiores, commodi eos! Commodi iusto obcaecati ut mollitia, eveniet quidem iste maiores, veritatis et amet officia? Totam?',
@@ -114,7 +159,7 @@ class BlogSeeder extends Seeder
                 'updated_at' => now(),
             ], [
                 'category_id' => 6,
-                'users_id' => 1,
+                'user_id' => 1,
                 'slug' => 'tahfidzhul-quran',
                 'title' => 'Program Tahfidzh, Darul Huffadh 77',
                 'excerpt' => 'KH. Lanre Said',
@@ -129,7 +174,7 @@ class BlogSeeder extends Seeder
                 'updated_at' => now(),
             ], [
                 'category_id' => 6,
-                'users_id' => 1,
+                'user_id' => 1,
                 'slug' => 'pengabdian',
                 'title' => 'Pendidikan is pengabdian',
                 'excerpt' => 'Pondok Pesantren Darul Huffadh 77',
@@ -144,7 +189,7 @@ class BlogSeeder extends Seeder
                 'updated_at' => now(),
             ], [
                 'category_id' => 5,
-                'users_id' => 1,
+                'user_id' => 1,
                 'slug' => 'osdha',
                 'title' => 'OSDHA',
                 'excerpt' => 'Organisai Santri Darul Huffadh 77',
@@ -159,7 +204,7 @@ class BlogSeeder extends Seeder
                 'updated_at' => now(),
             ], [
                 'category_id' => 5,
-                'users_id' => 1,
+                'user_id' => 1,
                 'slug' => 'persidha',
                 'title' => 'PERSIDHA',
                 'excerpt' => 'Persatuan Silat Darul Huffadh 77',
@@ -174,7 +219,7 @@ class BlogSeeder extends Seeder
                 'updated_at' => now(),
             ], [
                 'category_id' => 5,
-                'users_id' => 1,
+                'user_id' => 1,
                 'slug' => 'pramuka',
                 'title' => 'PRAMUKA',
                 'excerpt' => 'Pondok Pesantren Darul Huffadh 77',
@@ -189,7 +234,7 @@ class BlogSeeder extends Seeder
                 'updated_at' => now(),
             ], [
                 'category_id' => 5,
-                'users_id' => 1,
+                'user_id' => 1,
                 'slug' => 'djour',
                 'title' => 'D`Jour',
                 'excerpt' => 'Pondok Pesantren Darul Huffadh 77',
@@ -204,7 +249,7 @@ class BlogSeeder extends Seeder
                 'updated_at' => now(),
             ], [
                 'category_id' => 5,
-                'users_id' => 1,
+                'user_id' => 1,
                 'title' => 'SENI',
                 'slug' => 'seni',
                 'excerpt' => 'Pondok Pesantren Darul Huffadh 77',
@@ -219,7 +264,7 @@ class BlogSeeder extends Seeder
                 'updated_at' => now(),
             ], [
                 'category_id' => 6,
-                'users_id' => 1,
+                'user_id' => 1,
                 'title' => 'Sejarah Pendirian Maahad',
                 'slug' => 'sejarah-pendirian-maahad',
                 'excerpt' => 'Pondok Pesantren Darul Huffadh 77',
@@ -234,7 +279,7 @@ class BlogSeeder extends Seeder
                 'updated_at' => now(),
             ], [
                 'category_id' => 6,
-                'users_id' => 1,
+                'user_id' => 1,
                 'title' => 'Sejarah Pondok Lama',
                 'slug' => 'sejarah-pondok-lama',
                 'excerpt' => 'Pondok Pesantren Darul Huffadh 77',
@@ -249,7 +294,7 @@ class BlogSeeder extends Seeder
                 'updated_at' => now(),
             ], [
                 'category_id' => 6,
-                'users_id' => 1,
+                'user_id' => 1,
                 'title' => 'Sejarah Pondok Baru',
                 'slug' => 'sejarah-pondok-baru',
                 'excerpt' => 'Pondok Pesantren Darul Huffadh 77',
@@ -268,7 +313,7 @@ class BlogSeeder extends Seeder
 
 
         foreach ($categorys as $category) {
-            DB::table('blog_categorys')->insert($category);
+            DB::table('blog_categories')->insert($category);
         }
 
         foreach ($isiblogs as $isiblog) {
