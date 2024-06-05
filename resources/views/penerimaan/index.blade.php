@@ -103,7 +103,7 @@
                         </div>
                     </div>
                     <div class="d-grid">
-                        <a href="/penerimaan-santri-baru/pendaftaran" class="btn btn-success btn-lg">Daftar Sekarang</a>
+                        <a href="{{ route('pendaftaran') }}" class="btn btn-success btn-lg">Daftar Sekarang</a>
                     </div>
                 </div>
 

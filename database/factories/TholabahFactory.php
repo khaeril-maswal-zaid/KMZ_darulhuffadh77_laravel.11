@@ -41,18 +41,18 @@ class TholabahFactory extends Factory
             'angkatan' => fake()->year(),
 
 
-            'kategori_santri_baru' => 'Done',
+            'kategori_santri_baru' => 'Done', //ini
 
 
-            'kelas' => fake()->randomElement(['VII MTs', 'VIII MTs', 'IX MTs', 'X MA', 'XI MA', 'XII MA']),
+            'kelas' => fake()->randomElement(['VII MTs', 'VIII MTs', 'IX MTs', 'X MA', 'XI MA', 'XII MA']), //ini salah satu
             'active' => fake()->boolean(),
 
-            'kategori' => 'Tholabun',
+            'kategori' => 'Tholabun', //ini
 
-            'depertement' => 'Tholabun',
+            'depertement' => 'Tholabun', //ini
 
             'kontak' => fake()->phoneNumber(),
-            'marhalah' => 'Tholabun',
+            'marhalah' => 'Tholabun', //ini
             'tahun_alumni' => fake()->year(),
 
             'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
@@ -86,18 +86,18 @@ class TholabahFactory extends Factory
             'angkatan' => fake()->year(),
 
 
-            'kategori_santri_baru' => fake()->randomElement(['Daftar', 'Pengembalian']),
+            'kategori_santri_baru' => fake()->randomElement(['Daftar', 'Verified']), //ini
 
 
-            'kelas' => 'Calon Santri Baru',
-            'active' => false,
+            'kelas' => 'Calon Santri Baru', //ini
+            'active' => false, //ini
 
-            'kategori' => 'csb-165',
+            'kategori' => 'csb-165', //ini
 
-            'depertement' => 'csb-165',
+            'depertement' => 'csb-165', //ini
 
             'kontak' => fake()->phoneNumber(),
-            'marhalah' => 'csb-165',
+            'marhalah' => 'csb-165', //ini
             'tahun_alumni' => fake()->year(),
 
             'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),

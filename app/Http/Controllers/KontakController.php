@@ -13,7 +13,7 @@ class KontakController extends Controller
 
         $data = [
             'title' => 'Kontak',
-            'kontaks' => Kontak::all()->whereNot('medsos', 'Maps'),
+            'kontaks' => Kontak::whereNot('medsos', 'Maps')->get(),
             'maps' => Kontak::select('link')->where('medsos', 'Maps')->first()
         ];
 

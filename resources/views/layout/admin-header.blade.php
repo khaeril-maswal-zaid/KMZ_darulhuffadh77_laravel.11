@@ -35,9 +35,9 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                             class="fa fa-laptop me-2"></i>Master Data</a>
                     <div class="dropdown-menu bg-transparent border-0">
-                        <a href="/admindh/master-data/santri-baru" class="dropdown-item">Santri Baru</a>
-                        <a href="/admindh/master-data/santri" class="dropdown-item">Santri</a>
-                        <a href="/admindh/master-data/pembina" class="dropdown-item">Pembina Putra</a>
+                        <a href="/admindh/master-data/santri-baru" class="dropdown-item">SantriX Baru</a>
+                        <a href="/admindh/master-data/santri" class="dropdown-item">SantriX</a>
+                        <a href="/admindh/master-data/pembina" class="dropdown-item">Pembina</a>
                         <a href="/admindh/master-data/pengabdian-luar" class="dropdown-item">Pengabdian Luar</a>
                         <a href="/admindh/master-data/alumni" class="dropdown-item">Alumni</a>
                     </div>

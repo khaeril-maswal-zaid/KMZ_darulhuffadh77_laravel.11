@@ -8,7 +8,7 @@
                 <h1 class="h4 id-table">Detail </h1>
 
                 <!-- Button trigger modal -->
-                <a href="/" class="btn btn-sm btn-primary">
+                <a href="{{ route('masterdata.santribaru') }}" class="btn btn-sm btn-primary">
                     Kembali
                 </a>
             </div>
@@ -17,7 +17,7 @@
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-sticky" style="top: 5rem">
                         <img class="img-fluid w-100 rounded wow zoomIn" data-wow-delay="0.9s"
-                            src="{{ asset('assets/img/' . $details->picture) }}" style="object-fit: cover;">
+                            src="{{ asset('storage/' . $details->picture) }}" style="object-fit: cover;">
                     </div>
                 </div>
 

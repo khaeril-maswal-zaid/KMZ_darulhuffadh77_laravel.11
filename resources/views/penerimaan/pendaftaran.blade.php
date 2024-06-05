@@ -42,159 +42,334 @@
                 </h1>
             </div>
 
-            <div class="row g-5 pt-4">
-                <div class="col-lg-7">
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul class="m-0">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    <form action="{{ url('/pendaftaran-santri-baru') }}" method="post">
+            <form action="{{ url('/pendaftaran-santri-baru') }}" method="post"
+                class="needs-validation"enctype="multipart/form-data">
+
+                <div class="row g-5 pt-4">
+                    <div class="col-lg-7">
                         @csrf
                         <div class="form-floating mb-3">
-                            <input value="{{ old('nik') }}" type="number" class="form-control" id="floatingInput0"
-                                placeholder="Nomor Induk Kependudukan" name="nik" maxlength="16" minlength="16"
-                                requiredX>
+                            <input value="{{ old('nik') }}" type="text"
+                                class="form-control @error('nik') is-invalid @enderror" id="floatingInput0"
+                                placeholder="Nomor Induk Kependudukan" name="nik" maxlength="16" minlength="16">
                             <label for="floatingInput0">Nomor Induk Kependudukan</label>
+
+                            @error('nik')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
+
                         <div class="form-floating mb-3">
-                            <input value="{{ old('nama') }}" type="text" class="form-control" id="floatingInput1"
-                                placeholder="Nama lengkap" requiredX name="nama">
+                            <input value="{{ old('nama') }}" type="text"
+                                class="form-control @error('nama') is-invalid @enderror" id="floatingInput1"
+                                placeholder="Nama lengkap" name="nama">
                             <label for="floatingInput1">Nama lengkap</label>
+
+                            @error('nama')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
+
                         <div class="form-floating mb-3">
-                            <input value="{{ old('tempatlahir') }}" type="text" class="form-control" id="floatingInput2"
-                                placeholder="Tempat Lahir" requiredX name="tempatlahir">
+                            <input value="{{ old('tempatlahir') }}" type="text"
+                                class="form-control @error('tempatlahir') is-invalid @enderror" id="floatingInput2"
+                                placeholder="Tempat Lahir" name="tempatlahir">
                             <label for="floatingInput2">Tempat Lahir</label>
+
+                            @error('tempatlahir')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
+
                         <div class="form-floating mb-3">
-                            <input value="{{ old('tanggallahir') }}" type="date" class="form-control" id="floatingInput3"
-                                placeholder="Tanggal Lahir" requiredX name="tanggallahir">
+                            <input value="{{ old('tanggallahir') }}" type="date"
+                                class="form-control @error('tanggallahir') is-invalid @enderror" id="floatingInput3"
+                                placeholder="Tanggal Lahir" name="tanggallahir">
                             <label for="floatingInput3">Tanggal Lahir</label>
+
+                            @error('tanggallahir')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
+
                         <div class="form-floating mb-3">
-                            <select class="form-select" id="floatingSelect1" aria-label="Floating label select example"
-                                name="jeniskelamin">
-                                <option selected>Pilih</option>
-                                <option value="Laki-laki">Laki-laki</option>
-                                <option value="Perempuan">Perempuan</option>
+                            <select class="form-select @error('jeniskelamin') is-invalid @enderror" id="floatingSelect1"
+                                aria-label="Floating label select example" name="jeniskelamin">
+                                <option value="">Pilih</option>
+                                <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>
+                                    Laki-laki</option>
+                                <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>
+                                    Perempuan</option>
                             </select>
                             <label for="floatingSelect1">Jenis Kelamin</label>
+
+                            @error('jeniskelamin')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
 
                         <div class="form-floating mb-3">
-                            <select class="form-select" id="floatingSelect2" aria-label="Floating label select example"
-                                name="provinsi">
-                                <option selected>Pilih</option>
-                                <option value="ulawesi Selatan">Sulawesi Selatan</option>
+                            <select class="form-select @error('provinsi') is-invalid @enderror" id="floatingSelect2"
+                                aria-label="Floating label select example" name="provinsi">
+                                <option value="">Pilih</option>
+                                <option value="Sulawesi Selatan"
+                                    {{ old('provinsi') == 'Sulawesi Selatan' ? 'selected' : '' }}>
+                                    Sulawesi Selatan
+                                </option>
                             </select>
                             <label for="floatingSelect2">Provinsi</label>
+
+                            @error('provinsi')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
+
                         <div class="form-floating mb-3">
-                            <select class="form-select" id="floatingSelect3" aria-label="Floating label select example"
-                                name="kabupaten">
-                                <option selected>Pilih</option>
-                                <option value="Bulukumba">Bulukumba</option>
+                            <select class="form-select @error('kabupaten') is-invalid @enderror" id="floatingSelect3"
+                                aria-label="Floating label select example" name="kabupaten">
+                                <option value="">Pilih</option>
+                                <option value="Bulukumba" {{ old('kabupaten') == 'Bulukumba' ? 'selected' : '' }}>
+                                    Bulukumba
+                                </option>
                             </select>
                             <label for="floatingSelect3">Kabupaten</label>
-                        </div>
-                        <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <select class="form-select" id="floatingSelect4" aria-label="Floating label select example"
-                                name="kecamatan">
-                                <option selected>Pilih</option>
-                                <option value="Bulukumpa">Bulukumpa</option>
-                            </select>
-                            <label for="floatingSelect4">Kecamatan</label>
-                        </div>
-                        <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <select class="form-select" id="floatingSelect5" aria-label="Floating label select example"
-                                name="desa">
-                                <option selected>Pilih</option>
-                                <option value="Bulo-Bulo">Bulo-Bulo</option>
-                            </select>
-                            <label for="floatingSelect5">Desa</label>
+
+                            @error('kabupaten')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
 
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input value="{{ old('namaayah') }}" type="text" class="form-control" id="floatingInput4"
-                                placeholder="Nama Ayah" requiredX name="namaayah">
+                            <select class="form-select @error('kecamatan') is-invalid @enderror" id="floatingSelect4"
+                                aria-label="Floating label select example" name="kecamatan">
+                                <option value="">Pilih</option>
+                                <option value="Bulukumpa" {{ old('kecamatan') == 'Bulukumpa' ? 'selected' : '' }}>
+                                    Bulukumpa
+                                </option>
+                            </select>
+                            <label for="floatingSelect4">Kecamatan</label>
+
+                            @error('kecamatan')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
+                            <select class="form-select @error('desa') is-invalid @enderror" id="floatingSelect5"
+                                aria-label="Floating label select example" name="desa">
+                                <option value="">Pilih</option>
+                                <option value="Bulo-Bulo" {{ old('desa') == 'Bulo-Bulo' ? 'selected' : '' }}>Bulo-Bulo
+                                </option>
+                            </select>
+                            <label for="floatingSelect5">Desa</label>
+
+                            @error('desa')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
+                            <input value="{{ old('namaayah') }}" type="text"
+                                class="form-control @error('namaayah') is-invalid @enderror" id="floatingInput4"
+                                placeholder="Nama Ayah" name="namaayah">
                             <label for="floatingInput4">Nama Ayah</label>
+
+                            @error('namaayah')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
+
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input value="{{ old('namaibu') }}" type="text" class="form-control" id="floatingInput5"
-                                placeholder="Nama Ibu" requiredX name="namaibu">
+                            <input value="{{ old('namaibu') }}" type="text"
+                                class="form-control @error('namaibu') is-invalid @enderror" id="floatingInput5"
+                                placeholder="Nama Ibu" name="namaibu">
                             <label for="floatingInput5">Nama Ibu</label>
+
+                            @error('namaibu')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
+
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input value="{{ old('pekerjaanayah') }}" type="text" class="form-control"
-                                id="floatingInput6" placeholder="Pekerjaan Ayah" requiredX name="pekerjaanayah">
+                            <input value="{{ old('pekerjaanayah') }}" type="text"
+                                class="form-control @error('pekerjaanayah') is-invalid @enderror" id="floatingInput6"
+                                placeholder="Pekerjaan Ayah" name="pekerjaanayah">
                             <label for="floatingInput6">Pekerjaan Ayah</label>
+
+                            @error('pekerjaanayah')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
+
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input value="{{ old('pekerjaanibu') }}" type="text" class="form-control"
-                                id="floatingInput7" placeholder="Pekerjaan Ibu" requiredX name="pekerjaanibu">
+                            <input value="{{ old('pekerjaanibu') }}" type="text"
+                                class="form-control @error('pekerjaanibu') is-invalid @enderror" id="floatingInput7"
+                                placeholder="Pekerjaan Ibu" name="pekerjaanibu">
                             <label for="floatingInput7">Pekerjaan Ibu</label>
+
+                            @error('pekerjaanibu')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
+
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input value="{{ old('kontakayah') }}" type="text" class="form-control"
-                                id="floatingInput6" placeholder="Kontak Ayah" requiredX name="kontakayah">
+                            <input value="{{ old('kontakayah') }}" type="text"
+                                class="form-control @error('kontakayah') is-invalid @enderror" id="floatingInput6"
+                                placeholder="Kontak Ayah" name="kontakayah">
                             <label for="floatingInput6">Kontak Ayah</label>
+
+                            @error('kontakayah')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
+
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input value="{{ old('kontakibu') }}" type="text" class="form-control"
-                                id="floatingInput7" placeholder="kontak Ibu" requiredX name="kontakibu">
+                            <input value="{{ old('kontakibu') }}" type="text"
+                                class="form-control @error('kontakibu') is-invalid @enderror" id="floatingInput7"
+                                placeholder="kontak Ibu" name="kontakibu">
                             <label for="floatingInput7">Kontak Ibu</label>
+
+                            @error('kontakibu')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
 
                         <div class="form-floating mb-3">
-                            <select class="form-select" id="floatingSelect2" aria-label="Floating label select example"
-                                name="experiment">
-                                <option selected>Pilih</option>
-                                <option value="false">SD</option>
-                                <option value="true">SMP</option>
+                            <select class="form-select @error('experiment') is-invalid @enderror" id="floatingSelect2"
+                                aria-label="Floating label select example" name="experiment">
+                                <option value="">Pilih</option>
+                                <option value="0" {{ old('experiment') == '0' ? 'selected' : '' }}>SD
+                                </option>
+                                <option value="1"{{ old('experiment') == '1' ? 'selected' : '' }}>SMP</option>
                             </select>
                             <label for="floatingSelect2">Tamatan Sekolah</label>
+
+                            @error('experiment')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
 
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input value="{{ old('asalsekolah') }}" type="text" class="form-control"
-                                id="floatingInput8" placeholder="Asal Sekolah" requiredX name="asalsekolah">
+                            <input value="{{ old('asalsekolah') }}" type="text"
+                                class="form-control @error('asalsekolah') is-invalid @enderror" id="floatingInput8"
+                                placeholder="Asal Sekolah" name="asalsekolah">
                             <label for="floatingInput8">Asal Sekolah</label>
+
+                            @error('asalsekolah')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
+
                         <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input value="{{ old('nisn') }}" type="text" class="form-control" id="floatingInput9"
-                                placeholder="NISN" requiredX name="nisn">
+                            <input value="{{ old('nisn') }}" type="text"
+                                class="form-control @error('nisn') is-invalid @enderror" id="floatingInput9"
+                                placeholder="NISN" name="nisn">
                             <label for="floatingInput9">NISN</label>
-                        </div>
-                        <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input value="{{ old('tahuntamat') }}" type="year" maxlength="4" minlength="4"
-                                class="form-control" id="floatingInput11" placeholder="Tahun Tamat" requiredX
-                                name="tahuntamat">
-                            <label for="floatingInput11">Tahun Tamat</label>
-                        </div>
-                        <div class="form-floating mb-3  wow slideInUp" data-wow-delay="0.3s">
-                            <input value="{{ old('foto') }}" type="file" class="form-control" id="floatingInput11"
-                                placeholder="Foto" requiredX name="foto">
-                            <label for="floatingInput11">Foto</label>
+
+                            @error('nisn')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
 
-                        <div class="d-grid">
-                            <button class="btn btn-success btn-lg" type="submit">Kirim</button>
+                        <div class="form-floating mb-3">
+                            <select class="form-select @error('tahuntamat') is-invalid @enderror" id="floatingSelect13"
+                                aria-label="Floating label select example" name="tahuntamat">
+                                <option value="">Pilih</option>
+                                @for ($i = date('Y') - 2; $i < date('Y'); $i++)
+                                    <option value="{{ $i }}" {{ old('tahuntamat') == $i ? 'selected' : '' }}>
+                                        {{ $i }}</option>
+                                @endfor
+                            </select>
+                            <label for="floatingSelect13">Tahun Tamat</label>
+
+                            @error('tahuntamat')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
-                    </form>
-                </div>
 
+                        <div class="form-floating  wow slideInUp" data-wow-delay="0.3s">
+                            <input value="{{ old('foto') }}" type="file"
+                                class="form-control @error('foto') is-invalid @enderror" id="sampul"
+                                placeholder="Foto" name="foto" onchange="imgPreview()">
+                            <label for="sampul" class="custom-file-label">Foto</label>
 
-                <div class="col-lg-5" style="min-height: 500px;">
-                    <div class="position-sticky" style="top: 6rem">
-                        <img class="img-fluid w-100 rounded wow zoomIn" data-wow-delay="0.9s"
-                            src="{{ asset('assets/img/team-1.jpg') }}" style="object-fit: cover;">
+                            @error('foto')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 mt-md-5 mt-4" style="min-height: 500px;">
+                        <div class="position-sticky" style="top: 6rem">
+                            <img class="img-fluid w-100 rounded wow zoomIn img-preview" data-wow-delay="0.9s"
+                                src="{{ asset('assets/img/team-1.jpg') }}" style="object-fit: cover;">
+                        </div>
+                    </div>
+
+                    <div class="d-grid">
+                        <button class="btn btn-success btn-lg" type="submit">Kirim</button>
                     </div>
                 </div>
-            </div>
+            </form>
+        </div>
     </section>
+
+    <script>
+        function imgPreview() {
+            const sampul = document.querySelector('#sampul');
+            const imgPreview = document.querySelector('.img-preview');
+
+            const file = sampul.files[0];
+
+            // Cek apakah file ada dan apakah tipe file adalah gambar
+            if (file && file.type.startsWith('image/')) {
+                const fileReader = new FileReader();
+                fileReader.readAsDataURL(file);
+
+                fileReader.onload = function(e) {
+                    imgPreview.src = e.target.result;
+                }
+            }
+        }
+    </script>
 @endsection()

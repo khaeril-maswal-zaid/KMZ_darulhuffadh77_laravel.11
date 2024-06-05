@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Kontak;
 use App\Models\Tholabah;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\File;
+use Illuminate\Support\Str;
 
 class TholabahController extends Controller
 {
@@ -28,21 +31,92 @@ class TholabahController extends Controller
         return view('tholabah.index', $data);
     }
 
-    public function store(Request $request)
+    public function create(): View
+    {
+        $data = [
+            'title' => 'Pendaftaran Calon Santri Baru',
+            'kontaks' => Kontak::all()
+        ];
+
+        return view('penerimaan.pendaftaran', $data);
+    }
+
+    public function store(Request $request): RedirectResponse
     {
         //Validasi ------------------------------
         $request->validate(
             [
-                'nik' => 'required|min:16|max:16'
+                'nik' => 'required|min_digits:16|max_digits:16|unique:tholabahs|numeric',
+                'nama' => 'required|max:254',
+                'jeniskelamin' => 'required',
+                'tempatlahir' => 'required',
+                'tanggallahir' => 'required',
+                'provinsi' => 'required',
+                'kabupaten' => 'required',
+                'kecamatan' => 'required',
+                'desa' => 'required',
+                'namaayah' => 'required',
+                'namaibu' => 'required',
+                'pekerjaanayah' => 'required',
+                'pekerjaanibu' => 'required',
+                'kontakayah' => 'required',
+                'kontakibu' => 'required',
+                'experiment' => 'required',
+                'nisn' => 'required|min_digits:10|max_digits:11|unique:tholabahs|numeric',
+                'asalsekolah' => 'required',
+                'tahuntamat' => 'required',
+
+                'foto' => [
+                    'required', File::image()->max(1024)
+                ],
             ],
 
             //pesan
             [
                 'nik.required' => 'NIK wajib diisi',
-                'nik.min' => 'NIK tidak valid'
+                'nik.numeric' => 'NIK wajib tidak valid, mesti angka',
+                'nik.min_digits' => 'NIK tidak valid, mesti 16 karakter',
+                'nik.max_digits' => 'NIK tidak valid, mesti 16 karakter',
+                'nik.unique' => 'NIK telah terdaftar sebelumnya',
+
+                'nama' => 'Nama wajib diisi',
+                'jeniskelamin' => 'Jenis kelamin wajib diisi',
+                'tempatlahir' => 'Tempat lahir wajib diisi',
+                'tanggallahir' => 'Tanggal lahir wajib diisi',
+                'provinsi' => 'Provinsi wajib diisi',
+                'kabupaten' => 'Kabupaten wajib diisi',
+                'kecamatan' => 'Kecamatan wajib diisi',
+                'desa' => 'Desa wajib diisi',
+                'namaayah' => 'Nama ayah wajib diisi',
+                'namaibu' => 'Nama Ibu wajib diisi',
+                'pekerjaanayah' => 'Pekerjaan Ayah wajib diisi',
+                'pekerjaanibu' => 'Pekerjaan Ibu wajib diisi',
+                'kontakayah' => 'Kontak Ibu wajib diisi',
+                'kontakibu' => 'Kontak Ibu wajib diisi',
+                'experiment' => 'Tamatan sekolah wajib diisi',
+
+                'nisn.required' => 'NISN wajib diisi',
+                'nisn.numeric' => 'NISN tidak valid, mesti angka',
+                'nisn.unique' => 'NISN telah terdaftar sebelumnya',
+                'nisn.min_digits' => 'NISN tidak valid, mesti 10 karakter',
+                'nisn.max_digits' => 'NISN tidak valid, mesti 10 karakter',
+
+                'asalsekolah' => 'Asal sekolah wajib diisi',
+                'tahuntamat' => 'Tahun tamat wajib diisi',
+
+                'foto.image' => 'Unggahan harus format picture',
+                'foto.required' => 'Wajib unggah foto',
+                'foto.max' => 'Size maksimal 1 MB',
             ]
         );
 
+        //Ambil index pendaftar unutk NISDH berdasarkan JK
+        $lastNisdh = Tholabah::select('nisdh')->where('jenis_kelamin', $request->input('jeniskelamin'))->orderBy('id', 'desc')->first();
+        $lastIndex = $lastNisdh ? substr($lastNisdh->nisdh, -3) : '000';
+        $newIndex = str_pad((int)$lastIndex + 1, 3, '0', STR_PAD_LEFT);
+
+        //KODE JK
+        $kodeJk = $request->input('jeniskelamin') == 'Laki-laki' ? 1 : 0;
 
         $data = [
             'nik' => $request->input('nik'),
@@ -65,7 +139,7 @@ class TholabahController extends Controller
             'tahun_tamat_sd' => $request->input('tahuntamat'),
 
             'experiment' => $request->input('experiment'),
-            'nisdh' => 'XXXX',
+            'nisdh' => date('Y') . $kodeJk . $request->input('experiment') . '77' . $newIndex, // Tahun + experiment + jk + index
             'angkatan' => date('Y'),
 
             'kategori_santri_baru' => 'Daftar',
@@ -81,13 +155,14 @@ class TholabahController extends Controller
             'marhalah' => 'csb-165',
             'tahun_alumni' => date('Y'),
 
-            'picture' => $request->input('foto'),
+            'picture' => $request->file('foto')->store('tholabahs'), //Sekaligus UPLOAD IMAGE
         ];
 
         Tholabah::create($data);
+        return redirect()->route('pendaftaran.informasi')->with('success', true);
     }
 
-    public function penerimaan(): View
+    public function informasiPendaftaran(): View
     {
         $data = [
             'title' => 'Penerimaan Santri Baru',
@@ -96,42 +171,7 @@ class TholabahController extends Controller
         return view('penerimaan.index', $data);
     }
 
-    public function pendaftaran(): View
-    {
-        $data = [
-            'title' => 'Pendaftaran Calon Santri Baru',
-            'kontaks' => Kontak::all()
-        ];
-
-        return view('penerimaan.pendaftaran', $data);
-    }
-
-
-    //ADMIN-----------------------------------------
-    //-----------------------------------------------
-    // public function adminSantriBaru(Tholabah $tholabah): View
-    // {
-    //     $jkAdmin = 'Laki-laki';
-
-    //     $data = [
-    //         'santribarus' => $tholabah::where('jenis_kelamin', $jkAdmin)->where('kategori', 'csb-165')->whereNot('kategori_santri_baru', 'Done')->orderBy('id', 'desc')->paginate(10),
-    //     ];
-
-    //     return view('admin.master-data-santri-baru', $data);
-    // }
-
-    // public function santriSantriwati(Tholabah $tholabah): View
-    // {
-    //     $jkAdmin = 'Laki-laki';
-
-    //     $data = [
-    //         'tholabahs' => $tholabah::where('jenis_kelamin', $jkAdmin)->where('kategori', 'Tholabun')->where('kategori_santri_baru', 'Tholabun')->orderBy('id', 'desc')->paginate(10),
-    //     ];
-
-    //     return view('admin.master-data-santri-santriwati', $data);
-    // }
-
-    public function masterData(Request $request, Tholabah $tholabah, $tingkatan, $santriBaru): View
+    public function masterData(Tholabah $tholabah, $tingkatan, $santriBaru): View
     {
         // $jkAdmin =$request->user()->jenis_kelamin;
         $jkAdmin = 'Laki-laki';
@@ -158,5 +198,26 @@ class TholabahController extends Controller
         ];
 
         return view('admin.master-data-detail', $data);
+    }
+
+    public function terimaSantriBaru(Request $request, Tholabah $tholabah): RedirectResponse
+    {
+        $request->validate(
+            [
+                'kategorisantribaru' => 'required',
+            ],
+            [
+                'kategorisantribaru' => 'Proses gagal !' //Belum digunakan
+            ]
+        );
+
+        $tholabah->update(['kategori_santri_baru' => $request->input('kategorisantribaru')]);
+        return redirect()->route('masterdata.santribaru')->with('success', true);
+    }
+
+    public function destroy(Tholabah $tholabah)
+    {
+        $tholabah->delete();
+        return redirect()->route('masterdata.santribaru')->with('success', true);
     }
 }
