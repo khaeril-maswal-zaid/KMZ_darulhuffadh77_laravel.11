@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kontak;
+use App\Models\Kulikuler;
 use App\Models\KulikulerPersonil;
+use App\Models\Tholabah;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KulikulerPersonilController extends Controller
 {
@@ -26,17 +30,55 @@ class KulikulerPersonilController extends Controller
         return view('kulikuler.pengurus', $data);
     }
 
-    public function forAdmin(KulikulerPersonil $personil, $nameKulikuler): View
+    public function create(KulikulerPersonil $personil, $nameKulikuler): View
     {
+        //Ambil nama pengurus berdasarkan kulikuler
         $personilKulikuler = $personil::whereHas('kulikuler', function (Builder $query) use ($nameKulikuler) {
             $query->where('enum', $nameKulikuler);
         })->orderBy('id', 'desc')->paginate(10);
 
+        //Ambil kulikuler
+        $kulikuler = Kulikuler::where('enum', $nameKulikuler)->first();
+
         $data = [
             'title' => '',
-            'personilkulikulers' => $personilKulikuler
+            'personilkulikulers' => $personilKulikuler,
+            'kulikuler' => $kulikuler,
         ];
 
         return view('admin.personil-kulikuler', $data);
+    }
+
+    public function store(Tholabah $tholabah, Request $request): RedirectResponse
+    {
+        //Jika yang login tidak sesuai jk admin dan jk tholabah
+        if (Auth::user()->jenis_kelamin != $tholabah->jenis_kelamin) {
+            return  view('errors.404');
+        }
+
+        //Validasi ------------------------------
+        $request->validate([
+            'kulikuler' => 'required|alpha',
+            'devisi' => 'required',
+            'deskripsi' => 'required|max:100'
+        ], [
+            'devisi' => 'Devisi Wajib diisi',
+            'deskripsi.required' => 'Description Wajib diisi',
+            'deskripsi.max' => 'Description max 100 characters',
+        ]);
+
+
+        //Ambil kulikuler
+        $kulikuler = Kulikuler::where('enum', $request->input('kulikuler'))->first();
+
+        $data = [
+            'kulikuler_id' => $kulikuler->id,
+            'santri_id' => $tholabah->id,
+            'devisi' => $request->input('devisi'),
+            'description' => $request->input('deskripsi'),
+        ];
+
+        KulikulerPersonil::create($data);
+        return redirect()->route('kulikulerpersonil', $kulikuler->enum)->with('success', 'Personile Addition Successful');
     }
 }

@@ -33,6 +33,18 @@ class UserFactory extends Factory
         ];
     }
 
+    public function kmz()
+    {
+        return $this->state(fn (array $attributes) =>  [
+            'name' => 'Khaeril Maswal Zaid',
+            'jenis_kelamin' => 'Laki-laki',
+            'email' => 'muhammadkhaerilzaid@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('maahadii165'),
+            'remember_token' => Str::random(10),
+        ]);
+    }
+
     /**
      * Indicate that the model's email address should be unverified.
      */

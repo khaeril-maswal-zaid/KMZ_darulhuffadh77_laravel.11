@@ -21,7 +21,8 @@ return new class extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id'); //maker
+            $table->string('oleh'); //poster
             $table->string('slug')->unique();
             $table->string('title');
             $table->string('excerpt');

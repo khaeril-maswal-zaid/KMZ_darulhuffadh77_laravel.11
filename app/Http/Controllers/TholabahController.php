@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\File;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class TholabahController extends Controller
 {
@@ -67,7 +68,7 @@ class TholabahController extends Controller
                 'tahuntamat' => 'required',
 
                 'foto' => [
-                    'required', File::image()->max(1024)
+                    'required', File::image()->max(400)
                 ],
             ],
 
@@ -106,7 +107,7 @@ class TholabahController extends Controller
 
                 'foto.image' => 'Unggahan harus format picture',
                 'foto.required' => 'Wajib unggah foto',
-                'foto.max' => 'Size maksimal 1 MB',
+                'foto.max' => 'Size maksimal 400 kb',
             ]
         );
 
@@ -173,9 +174,7 @@ class TholabahController extends Controller
 
     public function masterData(Tholabah $tholabah, $tingkatan, $santriBaru): View
     {
-        // $jkAdmin =$request->user()->jenis_kelamin;
-        $jkAdmin = 'Laki-laki';
-
+        $jkAdmin = Auth::user()->jenis_kelamin;
 
         if ($santriBaru) {
             $datamaster = $tholabah::where('jenis_kelamin', $jkAdmin)->where('kategori', 'csb-165')->whereNot('kategori_santri_baru', 'Done')->orderBy('id', 'desc')->paginate(10);
@@ -193,6 +192,11 @@ class TholabahController extends Controller
 
     public function show(Tholabah $tholabah): View
     {
+        //Jika yang login tidak sesuai jk admin dan jk tholabah
+        if (Auth::user()->jenis_kelamin != $tholabah->jenis_kelamin) {
+            return  view('errors.404');
+        }
+
         $data = [
             'details' => $tholabah,
         ];

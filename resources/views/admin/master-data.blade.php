@@ -4,27 +4,28 @@
     <!-- Table Start -->
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
-            @switch($datamasters[0]->kategori)
+            @switch($datamasters->first()->kategori)
                 @case('csb-165')
-                    <h1 class="mb-4 h5">Calon {{ $datamasters[0]->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati' }} Baru</h1>
+                    <h1 class="mb-4 h5">Calon {{ $datamasters->first()->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati' }}
+                        Baru</h1>
                 @break
 
                 @case('Tholabun')
-                    <h1 class="mb-4 h5">{{ $datamasters[0]->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati' }}</h1>
+                    <h1 class="mb-4 h5">{{ $datamasters->first()->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati' }}</h1>
                 @break
 
                 @case('Pembina')
                     <h1 class="mb-4 h5">
-                        {{ $datamasters[0]->jenis_kelamin == 'Laki-laki' ? $datamasters[0]->kategori . ' Santri' : $datamasters[0]->kategori . ' Santriwati' }}
+                        {{ $datamasters->first()->jenis_kelamin == 'Laki-laki' ? $datamasters->first()->kategori . ' Santri' : $datamasters->first()->kategori . ' Santriwati' }}
                     </h1>
                 @break
 
                 @case('Pengabdian luar')
-                    <h1 class="mb-4 h5">{{ $datamasters[0]->kategori }}</h1>
+                    <h1 class="mb-4 h5">{{ $datamasters->first()->kategori }}</h1>
                 @break
 
                 @default
-                    <h1 class="mb-4 h5"> {{ $datamasters[0]->kategori }}</h1>
+                    <h1 class="mb-4 h5"> {{ $datamasters->first()->kategori }}</h1>
             @endswitch
             <table class="table">
                 <thead>
@@ -63,7 +64,7 @@
                                                 href="{{ route('masterdata.detail', $datamaster->nisdh) }}">View</a>
                                         </li>
 
-                                        @switch($datamasters[0]->kategori)
+                                        @switch($datamasters->first()->kategori)
                                             @case('csb-165')
                                                 <li>
                                                     <form action="{{ route('santribaru.terima', $datamaster->id) }}"

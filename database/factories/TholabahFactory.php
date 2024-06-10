@@ -55,7 +55,7 @@ class TholabahFactory extends Factory
             'marhalah' => 'Tholabun', //ini
             'tahun_alumni' => fake()->year(),
 
-            'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
+            'picture' => 'tholabahs/' . fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
         ];
     }
 
@@ -100,7 +100,7 @@ class TholabahFactory extends Factory
             'marhalah' => 'csb-165', //ini
             'tahun_alumni' => fake()->year(),
 
-            'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
+            'picture' => 'tholabahs/' . fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
         ]);
     }
 
@@ -145,7 +145,7 @@ class TholabahFactory extends Factory
             'marhalah' => fake()->word(),
             'tahun_alumni' => fake()->year(),
 
-            'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
+            'picture' => 'tholabahs/' . fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
         ]);
     }
 
@@ -191,7 +191,7 @@ class TholabahFactory extends Factory
             'marhalah' => fake()->word(),
             'tahun_alumni' => fake()->year(),
 
-            'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
+            'picture' => 'tholabahs/' . fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
         ]);
     }
 
@@ -236,7 +236,7 @@ class TholabahFactory extends Factory
             'marhalah' => fake()->word(),
             'tahun_alumni' => fake()->year(),
 
-            'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
+            'picture' => 'tholabahs/' . fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
         ]);
     }
 
@@ -281,7 +281,7 @@ class TholabahFactory extends Factory
             'marhalah' => fake()->word(),
             'tahun_alumni' => fake()->year(),
 
-            'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
+            'picture' => 'tholabahs/' . fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
         ]);
     }
 
@@ -326,7 +326,7 @@ class TholabahFactory extends Factory
             'marhalah' => fake()->word(),
             'tahun_alumni' => fake()->year(),
 
-            'picture' => fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
+            'picture' => 'tholabahs/' . fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
         ]);
     }
 }

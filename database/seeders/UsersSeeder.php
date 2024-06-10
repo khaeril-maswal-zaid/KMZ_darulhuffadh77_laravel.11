@@ -17,28 +17,6 @@ class UsersSeeder extends Seeder
     {
         //------------------------------------------------------------------------------
         User::factory(3)->create();
-
-        //------------------------------------------------------------------------------
-
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
-
-        //------------------------------------------------------------------------------
-        // $datas = [[
-        //     'name' => 'Khaeril Maswal Zaid',
-        //     'email' => 'muhammadkhaerilzaid@gmail.com',
-        //     'password' => '$2y$10$N.GpYy0w7qPbUqZ7Lps7Se3O0yH8nfs.ZXnHOilEspeArvM2WIho2'
-        // ]];
-
-        // foreach ($datas as $data) {
-        //     DB::table('users')->insert($data);
-        // }
-
-        //PINDAHKAN KE CONTROLLER:
-        //dd(password_hash('maahadii165', PASSWORD_DEFAULT));
-        //PASSWORD: maahadii165
+        User::factory(1)->kmz()->create();
     }
 }

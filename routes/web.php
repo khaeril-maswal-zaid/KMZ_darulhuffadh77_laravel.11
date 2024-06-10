@@ -37,36 +37,42 @@ Route::get('/penerimaan-santri-baru', [TholabahController::class, 'informasiPend
 Route::get('/penerimaan-santri-baru/pendaftaran', [TholabahController::class, 'create'])->name('pendaftaran');
 Route::post('/pendaftaran-santri-baru', [TholabahController::class, 'store']);
 
-
-//ADMIN---------------------------------------
-Route::get('/admindh', [AdminController::class, 'index']);
-Route::get('/admindh/master-data/santri-baru', [TholabahController::class, 'masterData'])->defaults('tingkatan', false)->defaults('santriBaru', true)->name('masterdata.santribaru');
-Route::get('/admindh/master-data/santri', [TholabahController::class, 'masterData'])->defaults('tingkatan', 'Tholabun')->defaults('santriBaru', false);
-Route::get('/admindh/master-data/santriwati', [TholabahController::class, 'masterData'])->defaults('tingkatan', 'Tholabun')->defaults('santriBaru', false);
-Route::get('/admindh/master-data/pembina', [TholabahController::class, 'masterData'])->defaults('tingkatan', 'Pembina')->defaults('santriBaru', false);
-Route::get('/admindh/master-data/pengabdian-luar', [TholabahController::class, 'masterData'])->defaults('tingkatan', 'Pengabdian luar')->defaults('santriBaru', false);
-Route::get('/admindh/master-data/alumni', [TholabahController::class, 'masterData'])->defaults('tingkatan', 'Alumni')->defaults('santriBaru', false);
-
-Route::get('/admindh/master-data/{tholabah:nisdh}', [TholabahController::class, 'show'])->name('masterdata.detail');
-
-Route::put('/admindh/master-data/{tholabah}', [TholabahController::class, 'terimaSantriBaru'])->name('santribaru.terima');
-Route::delete('/admindh/master-data/{tholabah}', [TholabahController::class, 'destroy'])->name('santribaru.delete');
-
-Route::get('/admindh/blog/{var}', [BlogController::class, 'blogger']);
-
-Route::get('/admindh/tentang/{blog:slug}', [BlogController::class, 'tentangProfil']);
-
-Route::get('/admindh/hard-soft-skill', [KulikulerController::class, 'index']);
-Route::get('/admindh/hard-soft-skill/{blog:slug}', [BlogController::class, 'forAdminKulikuler']);
-Route::get('/admindh/pengurus/{kulikuler_personil:var}', [KulikulerPersonilController::class, 'forAdmin']);
-
-Route::get('/admindh/aktivitas-santri', [AktivitasSantriController::class, 'forAdmin']);
-Route::get('/admindh/kontak', [KontakController::class, 'forAdmin']);
-
+//------------------------------------------------------------------------------------------
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    //ADMIN---------------------------------------
+    Route::get('/admindh', [AdminController::class, 'index']);
+    Route::get('/admindh/master-data/santri-baru', [TholabahController::class, 'masterData'])->defaults('tingkatan', false)->defaults('santriBaru', true)->name('masterdata.santribaru');
+    Route::get('/admindh/master-data/santri', [TholabahController::class, 'masterData'])->defaults('tingkatan', 'Tholabun')->defaults('santriBaru', false);
+    Route::get('/admindh/master-data/santriwati', [TholabahController::class, 'masterData'])->defaults('tingkatan', 'Tholabun')->defaults('santriBaru', false);
+    Route::get('/admindh/master-data/pembina', [TholabahController::class, 'masterData'])->defaults('tingkatan', 'Pembina')->defaults('santriBaru', false);
+    Route::get('/admindh/master-data/pengabdian-luar', [TholabahController::class, 'masterData'])->defaults('tingkatan', 'Pengabdian luar')->defaults('santriBaru', false);
+    Route::get('/admindh/master-data/alumni', [TholabahController::class, 'masterData'])->defaults('tingkatan', 'Alumni')->defaults('santriBaru', false);
+
+    Route::get('/admindh/master-data/{tholabah:nisdh}', [TholabahController::class, 'show'])->name('masterdata.detail');
+
+    Route::put('/admindh/master-data/{tholabah}', [TholabahController::class, 'terimaSantriBaru'])->name('santribaru.terima');
+    Route::delete('/admindh/master-data/{tholabah}', [TholabahController::class, 'destroy'])->name('santribaru.delete');
+
+
+    Route::get('/admindh/blog/{var}', [BlogController::class, 'blogger'])->name('blogger');
+    Route::post('/admindh/blog/create', [BlogController::class, 'store'])->name('blogger.create');
+
+    Route::get('/admindh/tentang/{blog:slug}', [BlogController::class, 'tentangProfil']);
+
+    Route::get('/admindh/hard-soft-skill', [KulikulerController::class, 'index']);
+    Route::get('/admindh/hard-soft-skill/{blog:slug}', [BlogController::class, 'forAdminKulikuler']);
+    // Route::get('/admindh/pengurus/{var}', [KulikulerPersonilController::class, 'forAdmin']);
+    Route::get('/admindh/pengurus/{kulikuler_personil:var}', [KulikulerPersonilController::class, 'create'])->name('kulikulerpersonil');
+    Route::post('/admindh/kulikuler-add/{tholabah:nisdh}', [KulikulerPersonilController::class, 'store'])->name('kulikuler.addpersonil');
+
+    Route::get('/admindh/aktivitas-santri', [AktivitasSantriController::class, 'forAdmin']);
+    Route::get('/admindh/kontak', [KontakController::class, 'forAdmin']);
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

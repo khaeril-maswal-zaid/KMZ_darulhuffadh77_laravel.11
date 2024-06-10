@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class KulikulerPersonil extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'kulikuler_id', 'santri_id', 'devisi', 'description',
+    ];
 
     function kulikuler(): BelongsTo
     {
