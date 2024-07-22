@@ -27,7 +27,7 @@
                 @default
                     <h1 class="mb-4 h5"> {{ $datamasters->first()->kategori }}</h1>
             @endswitch
-            <table class="table">
+            <table class="table table-hover ">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -116,14 +116,14 @@
                                                     undone.</p>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger"
+                                                <button type="button" class="btn btn-primary"
                                                     data-bs-dismiss="modal">Cencel</button>
 
                                                 <form action="{{ route('santribaru.delete', $datamaster->id) }}"
                                                     method="post">
                                                     @csrf
                                                     @method('delete')
-                                                    <button type="submit" class="btn btn-primary">Delete</button>
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
                                                 </form>
                                             </div>
                                         </div>

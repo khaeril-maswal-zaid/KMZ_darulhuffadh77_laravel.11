@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\AktivitasSantri;
 use App\Models\Kontak;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\File;
 
 class AktivitasSantriController extends Controller
 {
@@ -26,7 +28,11 @@ class AktivitasSantriController extends Controller
         return view('aktivitas.index', $data);
     }
 
-    public function forAdmin(): View
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
     {
         $data = [
             'harians' => AktivitasSantri::all()->where('kategori', 'harian'),
@@ -38,19 +44,43 @@ class AktivitasSantriController extends Controller
 
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+        //Validasi ------------------------------
+        $request->validate([
+            'time1' => 'required',
+            'time2' => 'required',
+            'agenda' => 'required|max:35',
+            'image' => ['required', File::image()->max(400)]
+        ], [
+            'time1' => 'Waktu Wajib diisi',
+            'time2' => 'Waktu Wajib diisi',
+            'agenda' => 'Agenda Wajib diisi',
+
+            'image.image' => 'Unggahan harus format picture',
+            'image.required' => 'Wajib unggah image',
+            'image.max' => 'Size maksimal 400 kb',
+        ]);
+
+
+        if ($request->input('hari') == 'Setiap hari') {
+            $kategori = 'harian';
+        } else {
+            $kategori = 'mingguan';
+        }
+
+        $data = [
+            'kategori' => $kategori,
+            'hari' => $request->input('hari'),
+            'waktu' => $request->input('time1') . ' - ' . $request->input('time2'),
+            'agenda' => $request->input('agenda'),
+            'picture' => $request->file('image')->store('aktivitas'),
+        ];
+
+        AktivitasSantri::create($data);
+        return redirect()->route('aktivitassantri.admin')->with('success', 'Activities Addition Successful');
     }
 
     /**
@@ -82,6 +112,7 @@ class AktivitasSantriController extends Controller
      */
     public function destroy(AktivitasSantri $aktivitas_santri)
     {
-        //
+        $aktivitas_santri->delete();
+        return redirect()->route('aktivitassantri.admin')->with('success', 'Data has been successfully deleted');
     }
 }

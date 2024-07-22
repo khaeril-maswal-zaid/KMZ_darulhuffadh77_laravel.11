@@ -9,7 +9,7 @@
 
                 <!-- Button trigger modal -->
                 <a href="{{ route('masterdata.santribaru') }}" class="btn btn-sm btn-primary">
-                    Kembali
+                    Kembali BELUMX
                 </a>
             </div>
 

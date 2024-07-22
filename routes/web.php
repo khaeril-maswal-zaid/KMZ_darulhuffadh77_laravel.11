@@ -10,7 +10,7 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/tentang/{blog:slug}', [BlogController::class, 'profilPimpinan']);
 
-Route::get('/pendidikan/{blog:slug}', [BlogController::class, 'show']);
+Route::get('/pendidikan/{blog:slug}', [BlogController::class, 'show']); // sengaja berdiri sendiri meskipun tampilan sama
 
 Route::get('/hard-and-soft-skill/{blog:slug}', [BlogController::class, 'tentangKulikuler']);
 
@@ -18,7 +18,7 @@ Route::get('/pengurus/{kulikuler}', [KulikulerPersonilController::class, 'index'
 
 Route::get('/aktivitas-santri-santriwati', [AktivitasSantriController::class, 'index']);
 
-Route::get('/blog/{blog:slug}', [BlogController::class, 'show']);
+Route::get('/blog/{blog:slug}', [BlogController::class, 'show'])->name('blog.detail');
 
 
 Route::get('/pembina-putri', [TholabahController::class, 'index'])->defaults('tingkatan', 'Pembina')->defaults('jk', 'Perempuan');
@@ -59,18 +59,22 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/admindh/master-data/{tholabah}', [TholabahController::class, 'destroy'])->name('santribaru.delete');
 
 
-    Route::get('/admindh/blog/{var}', [BlogController::class, 'blogger'])->name('blogger');
+    Route::get('/admindh/blog/{var}', [BlogController::class, 'create'])->name('blogger');
     Route::post('/admindh/blog/create', [BlogController::class, 'store'])->name('blogger.create');
+    Route::put('/admindh/blog/{blog:slug}', [BlogController::class, 'update'])->name('blogger.update');
+    Route::delete('/admindh/blog/{blog}', [BlogController::class, 'destroy'])->name('blogger.delete');
 
     Route::get('/admindh/tentang/{blog:slug}', [BlogController::class, 'tentangProfil']);
 
     Route::get('/admindh/hard-soft-skill', [KulikulerController::class, 'index']);
     Route::get('/admindh/hard-soft-skill/{blog:slug}', [BlogController::class, 'forAdminKulikuler']);
-    // Route::get('/admindh/pengurus/{var}', [KulikulerPersonilController::class, 'forAdmin']);
     Route::get('/admindh/pengurus/{kulikuler_personil:var}', [KulikulerPersonilController::class, 'create'])->name('kulikulerpersonil');
     Route::post('/admindh/kulikuler-add/{tholabah:nisdh}', [KulikulerPersonilController::class, 'store'])->name('kulikuler.addpersonil');
 
-    Route::get('/admindh/aktivitas-santri', [AktivitasSantriController::class, 'forAdmin']);
+    Route::get('/admindh/aktivitas-santri', [AktivitasSantriController::class, 'create'])->name('aktivitassantri.admin');
+    Route::post('/admindh/add-aktivitas-santri', [AktivitasSantriController::class, 'store'])->name('aktivitassantri.create');
+    Route::delete('/admindh/delete-aktivitas-santri/{aktivitas_santri}', [AktivitasSantriController::class, 'destroy'])->name('akttvitas.delete');
+
     Route::get('/admindh/kontak', [KontakController::class, 'forAdmin']);
 });
 

@@ -53,7 +53,7 @@
                     </div>
                     <img class="img-fluid w-100 rounded mb-4" src="{{ asset('assets/img/' . $blog->picture1) }}"
                         alt="">
-                    <div class="body-1">{{ $blog->body1 }}</div>
+                    <div class="body-1">{!! $blog->body1 !!}</div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="my-4">
@@ -68,7 +68,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="body-2">{{ $blog->body2 }}</div>
+                    <div class="body-2">{!! $blog->body2 !!}</div>
                 </div>
 
                 <!-- Sidebar Start -->

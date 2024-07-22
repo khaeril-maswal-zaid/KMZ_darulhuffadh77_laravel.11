@@ -4,10 +4,10 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light px-4 rounded">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                <h1 class="h5">PENGURUS {{ $kulikuler->name }}</h1>
+                <h1 class="h5">MANAGEMENT {{ $kulikuler->name }}</h1>
 
                 <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    Create new
+                    Add new
                 </button>
             </div>
         </div>
@@ -68,7 +68,7 @@
                     <input type="hidden" name="kulikuler" value="{{ $kulikuler->enum }}">
 
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Personil {{ $kulikuler->name }}</h1>
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Management {{ $kulikuler->name }}</h1>
                         <button type="button" autocomplete="off" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
@@ -136,7 +136,7 @@
                     </div>
 
                     <div class="modal-footer d-none">
-                        <button type="submit" class="btn btn-primary">Add Personil</button>
+                        <button type="submit" class="btn btn-primary">Add Management</button>
                     </div>
                 </form>
             </div>

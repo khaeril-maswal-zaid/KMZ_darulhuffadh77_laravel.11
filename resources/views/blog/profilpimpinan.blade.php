@@ -41,7 +41,7 @@
                         <h5 class="fw-bold text-primary text-uppercase">{{ $blog->title }}</h5>
                         <h1 class="mb-0">{{ $blog->excerpt }}</h1>
                     </div>
-                    <div class="mb-4">{{ $blog->body1 }}</div>
+                    <div class="mb-4">{!! $blog->body1 !!}</div>
                 </div>
 
                 <div class="col-lg-5" style="min-height: 500px;">

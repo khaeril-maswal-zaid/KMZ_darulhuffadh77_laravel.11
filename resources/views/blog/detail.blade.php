@@ -39,7 +39,7 @@
                 <div class="col-lg-8">
                     <!-- Blog Detail Start -->
                     <div class="mb-5">
-                        <img class="img-fluid w-100 rounded mb-3" src="{{ asset('assets/img/' . $blog->picture1) }}"
+                        <img class="img-fluid w-100 rounded mb-3" src="{{ asset('storage/' . $blog->picture1) }}"
                             alt="{{ $blog->title }}">
                         <div class="d-flex mb-4">
                             <small class="me-3"><i class="far fa-calendar-alt text-primary me-1"></i>
@@ -48,22 +48,22 @@
                                 {{ $blog->visit }}</small>
                         </div>
                         <h1 class="mb-4">{{ $blog->title }}</h1>
-                        <div class="body-1">{{ $blog->body1 }}</div>
+                        <div class="body-1">{!! $blog->body1 !!}</div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="my-4">
                                     <img class="img-fluid w-100 rounded mb-3"
-                                        src="{{ asset('assets/img/' . $blog->picture2) }}" alt="">
+                                        src="{{ asset('storage/' . $blog->picture2) }}" alt="">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="my-4">
                                     <img class="img-fluid w-100 rounded mb-3"
-                                        src="{{ asset('assets/img/' . $blog->picture3) }}" alt="">
+                                        src="{{ asset('storage/' . $blog->picture3) }}" alt="">
                                 </div>
                             </div>
                         </div>
-                        <div class="body-2">{{ $blog->body2 }}</div>
+                        <div class="body-2">{!! $blog->body2 !!}</div>
                     </div>
                     <!-- Blog Detail End -->
                 </div>

@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class AktivitasSantri extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'kategori',
+        'hari',
+        'waktu',
+        'agenda',
+        'picture',
+    ];
 }

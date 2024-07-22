@@ -47,7 +47,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                             class="far fa-file-alt me-2"></i>Blog</a>
                     <div class="dropdown-menu bg-transparent border-0">
-                        <a href="/admindh/blog/islamiyah" class="dropdown-item">Islamiyah</a>
+                        <a href="/admindh/blog/islamic" class="dropdown-item">Islamic</a>
                         <a href="/admindh/blog/news-dh" class="dropdown-item">News DH</a>
                         <a href="/admindh/blog/story-dh" class="dropdown-item">Story DH</a>
                         <a href="/admindh/blog/default" class="dropdown-item">Default</a>

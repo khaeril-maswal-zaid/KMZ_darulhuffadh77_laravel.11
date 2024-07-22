@@ -79,6 +79,6 @@ class KulikulerPersonilController extends Controller
         ];
 
         KulikulerPersonil::create($data);
-        return redirect()->route('kulikulerpersonil', $kulikuler->enum)->with('success', 'Personile Addition Successful');
+        return redirect()->route('kulikulerpersonil', $kulikuler->enum)->with('success', 'Management Addition Successful');
     }
 }
