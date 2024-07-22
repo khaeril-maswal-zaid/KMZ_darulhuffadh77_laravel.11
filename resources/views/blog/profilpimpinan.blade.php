@@ -18,7 +18,7 @@
         <!-- Petunjuk URL Start -->
         <div class="container-xxl">
             <div class="container">
-                <div class="alert alert-success py-2 label-url" role="alert">
+                <div class="alert alert-primary py-2 label-url" role="alert">
                     <a href="/"><i class="bi bi-house-door-fill"></i></a>
                     <span class="px-1">/</span>
 
@@ -47,7 +47,7 @@
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-sticky" style="top: 6rem">
                         <img class="img-fluid w-100 rounded wow zoomIn" data-wow-delay="0.9s"
-                            src="{{ asset('assets/img/' . $blog->picture1) }}" style="object-fit: cover;">
+                            src="{{ asset('storage/' . $blog->picture1) }}" style="object-fit: cover;">
                     </div>
                 </div>
             </div>

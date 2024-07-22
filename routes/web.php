@@ -64,7 +64,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('/admindh/blog/{blog:slug}', [BlogController::class, 'update'])->name('blogger.update');
     Route::delete('/admindh/blog/{blog}', [BlogController::class, 'destroy'])->name('blogger.delete');
 
-    Route::get('/admindh/tentang/{blog:slug}', [BlogController::class, 'tentangProfil']);
+    Route::get('/admindh/tentang/{blog:slug}', [BlogController::class, 'tentangProfil'])->name('blogger.eksekutif');
 
     Route::get('/admindh/hard-soft-skill', [KulikulerController::class, 'index']);
     Route::get('/admindh/hard-soft-skill/{blog:slug}', [BlogController::class, 'forAdminKulikuler']);

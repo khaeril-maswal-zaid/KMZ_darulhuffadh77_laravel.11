@@ -9,6 +9,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\File;
 
@@ -202,18 +203,30 @@ class BlogController extends Controller
         if (!$request->file('imageUpdate1')) {
             $picture1 = $blog->picture1;
         } else {
+            //HAPUS FOTO LAMA
+            Storage::delete($blog->picture1);
+
+            //Masukkan foto baru
             $picture1 = $request->file('imageUpdate1')->store('blog');
         }
 
         if (!$request->file('imageUpdate2')) {
             $picture2 = $blog->picture2;
         } else {
+            //HAPUS FOTO LAMA
+            Storage::delete($blog->picture2);
+
+            //Masukkan foto baru
             $picture2 = $request->file('imageUpdate2')->store('blog');
         }
 
         if (!$request->file('imageUpdate3')) {
             $picture3 = $blog->picture3;
         } else {
+            //HAPUS FOTO LAMA
+            Storage::delete($blog->picture3);
+
+            //Masukkan foto baru
             $picture3 = $request->file('imageUpdate3')->store('blog');
         }
 
@@ -230,10 +243,18 @@ class BlogController extends Controller
             'picture3' => $picture3,
         ];
 
+        $blog->update($data);
+
         //cari nama kategori sesuai id kategori yang di kirim
         $kategori = BlogCategory::findOrFail($request->input('categoryid'))->category;
 
-        $blog->update($data);
+        // dd($kategori);
+        if ($kategori == 'khusus-umum-165') {
+            $kategori = 'default';
+        } elseif ($kategori == 'khusus-1-165') {
+            return redirect()->route('blogger.eksekutif', $blog->slug)->with('success', 'Article Edit Successful');
+        }
+
         return redirect()->route('blogger', $kategori)->with('success', 'Article Edit Successful');
     }
 }

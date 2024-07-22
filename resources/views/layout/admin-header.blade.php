@@ -58,11 +58,17 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                             class="far fa-file-alt me-2"></i>Eksekutif</a>
                     <div class="dropdown-menu bg-transparent border-0">
-                        <a href="/admindh/tentang/struktur-eksekutif" class="dropdown-item">Struktur Eksekutif</a>
-                        <a href="/admindh/tentang/profil-pendiri-kh-lanre-said" class="dropdown-item">Profil Pendiri</a>
-                        <a href="/admindh/tentang/profil-pimpinan" class="dropdown-item">Profil Pimpinan</a>
-                        <a href="/admindh/tentang/profil-direktur-putra" class="dropdown-item">Profil Direktur Putra</a>
-                        <a href="/admindh/tentang/profil-direktur-putri" class="dropdown-item">Profil Direktur Putri</a>
+                        <a href="{{ route('blogger.eksekutif', 'struktur-eksekutif') }}" class="dropdown-item">Struktur
+                            Eksekutif</a>
+                        <a href="{{ route('blogger.eksekutif', 'profil-pendiri-kh-lanre-said') }}"
+                            class="dropdown-item">Profil Pendiri</a>
+                        <a href="{{ route('blogger.eksekutif', 'profil-pimpinan-ust-saad-said') }}"
+                            class="dropdown-item">Profil
+                            Pimpinan</a>
+                        <a href="{{ route('blogger.eksekutif', 'profil-direktur-putra') }}" class="dropdown-item">Profil
+                            Direktur Putra</a>
+                        <a href="{{ route('blogger.eksekutif', 'profil-direktur-putri') }}" class="dropdown-item">Profil
+                            Direktur Putri</a>
                     </div>
                 </div>
 

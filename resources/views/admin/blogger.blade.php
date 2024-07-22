@@ -125,6 +125,9 @@
         </div>
     </div>
 
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/super-build/ckeditor.js"></script>
+
     @if ($blogs->first()->kategori->category != 'khusus-umum-165')
         <div class="create-artikel-kmz">
             <!-- Modal add -->
@@ -290,8 +293,6 @@
             </div>
 
             <div class="ckeditor-script">
-                <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/super-build/ckeditor.js"></script>
-
                 <script>
                     // This sample still does not showcase all CKEditor&nbsp;5 features (!)
                     // Visit https://ckeditor.com/docs/ckeditor5/latest/features/index.html to browse all the features.
