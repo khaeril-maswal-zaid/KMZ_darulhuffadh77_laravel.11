@@ -14,7 +14,7 @@ Route::get('/pendidikan/{blog:slug}', [BlogController::class, 'show']); // senga
 
 Route::get('/hard-and-soft-skill/{blog:slug}', [BlogController::class, 'tentangKulikuler']);
 
-Route::get('/pengurus/{kulikuler}', [KulikulerPersonilController::class, 'index']);
+Route::get('/personil-hard-and-soft-skill/{kulikuler}', [KulikulerPersonilController::class, 'index'])->name('personil.hardsoftskill');
 
 Route::get('/aktivitas-santri-santriwati', [AktivitasSantriController::class, 'index']);
 
@@ -66,10 +66,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/admindh/tentang/{blog:slug}', [BlogController::class, 'tentangProfil'])->name('blogger.eksekutif');
 
-    Route::get('/admindh/hard-soft-skill', [KulikulerController::class, 'index']);
-    Route::get('/admindh/hard-soft-skill/{blog:slug}', [BlogController::class, 'forAdminKulikuler']);
-    Route::get('/admindh/pengurus/{kulikuler_personil:var}', [KulikulerPersonilController::class, 'create'])->name('kulikulerpersonil');
-    Route::post('/admindh/kulikuler-add/{tholabah:nisdh}', [KulikulerPersonilController::class, 'store'])->name('kulikuler.addpersonil');
+    Route::get('/admindh/hard-soft-skill', [KulikulerController::class, 'index'])->name('index.hardsoftskill');
+    Route::post('/admindh/program-add', [KulikulerController::class, 'store'])->name('hardsoftskill.store');
+    Route::delete('/admindh/program-delete/{kulikuler}', [KulikulerController::class, 'destroy'])->name('hardsoftskill.destroy');
+
+    Route::get('/admindh/hard-soft-skill/{blog:slug}', [BlogController::class, 'forAdminKulikuler'])->name('hardsoftskill.tentang');
+    Route::get('/admindh/personil-hard-and-soft-skill/{var}', [KulikulerPersonilController::class, 'create'])->name('hardsoftskill.personil');
+    Route::post('/admindh/add-personil-hard-and-soft-skill/{tholabah:nisdh}', [KulikulerPersonilController::class, 'store'])->name('hardsoftskill.personil.store');
+    Route::delete('/admindh/delete-personil-hard-and-soft-skill/{kulikuler_personil}', [KulikulerPersonilController::class, 'destroy'])->name('hardsoftskill.personil.destroy');
 
     Route::get('/admindh/aktivitas-santri', [AktivitasSantriController::class, 'create'])->name('aktivitassantri.admin');
     Route::post('/admindh/add-aktivitas-santri', [AktivitasSantriController::class, 'store'])->name('aktivitassantri.create');

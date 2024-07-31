@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Kulikuler extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'enum',
+        'name',
+        'full_name',
+        'description',
+    ];
 }

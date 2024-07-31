@@ -116,7 +116,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Table End -->
+                            <!-- Modal End -->
                         @endif
                     @endforeach
                 </tbody>

@@ -37,6 +37,11 @@
                                         <td>{{ $details->nama }}</td>
                                     </tr>
                                     <tr>
+                                        <td>NISDH</td>
+                                        <td>:</td>
+                                        <td>{{ $details->nisdh }}</td>
+                                    </tr>
+                                    <tr>
                                         <td>Jenis Kelamin</td>
                                         <td>:</td>
                                         <td>{{ $details->jenis_kelamin }}</td>

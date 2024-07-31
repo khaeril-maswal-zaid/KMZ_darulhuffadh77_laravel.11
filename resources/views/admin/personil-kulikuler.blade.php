@@ -24,7 +24,6 @@
                 <ul class="mb-0">
                     <li>Failed to Add Personile, An Error Occurred!</li>
                 </ul>
-
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
@@ -37,18 +36,71 @@
                         <th scope="col">Nama</th>
                         <th scope="col">Kelas</th>
                         <th scope="col">Devisi</th>
+                        <th class="text-center align-middle" scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($personilkulikulers as $index => $personilkulikuler)
                         <tr>
                             <th scope="row">{{ $personilkulikulers->firstItem() + $index }}</th>
-                            <td class="align-middle">{{ Str::limit($personilkulikuler->santri->nama, 26, '...') }}</td>
+                            <td class="align-middle">{{ Str::limit($personilkulikuler->santri->nama, 30, '...') }}</td>
                             <td class="align-middle">{{ $personilkulikuler->santri->kelas }}</td>
                             <td class="align-middle">
                                 {{ $personilkulikuler->devisi }}
                             </td>
+                            <td class="text-center align-middle">
+                                <div class="dropdown">
+                                    <button class="btn btn-success btn-sm dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Action
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a target="_blank" class="dropdown-item" target="blank"
+                                                href="{{ route('personil.hardsoftskill', $kulikuler->enum) }}">View</a>
+                                        </li>
+                                        <li><button type="button" class="dropdown-item" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal{{ $index }}"> Delete </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
                         </tr>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal{{ $index }}" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel{{ $index }}">
+                                            Delete Data?
+                                        </h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Are you sure you want to delete this data? This action cannot be
+                                            undone.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"
+                                            data-bs-dismiss="modal">Cencel</button>
+
+                                        <form
+                                            action="{{ route('hardsoftskill.personil.destroy', $personilkulikuler->id) }}"
+                                            method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <input autocomplete="off" type="hidden" name="kulikuler"
+                                                value="{{ $kulikuler->enum }}">
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal End -->
                     @endforeach
                 </tbody>
             </table>
@@ -63,9 +115,9 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
 
-                <form action="{{ route('kulikuler.addpersonil', '1234567890') }}" method="post" id="formadd">
+                <form action="{{ route('hardsoftskill.personil.store', '1234567890') }}" method="post" id="formadd">
                     @csrf
-                    <input type="hidden" name="kulikuler" value="{{ $kulikuler->enum }}">
+                    <input autocomplete="off" type="hidden" name="kulikuler" value="{{ $kulikuler->enum }}">
 
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Management {{ $kulikuler->name }}</h1>
@@ -74,8 +126,8 @@
                     </div>
                     <div class="modal-body bg-light">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" name="identifier" id="search"
-                                placeholder="Enter the NISDH or Name" value="{{ old('identifier') }}">
+                            <input autocomplete="off" type="text" class="form-control" name="identifier"
+                                id="search" placeholder="Enter the NISDH or Name" value="{{ old('identifier') }}">
                             <button class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
                         </div>
 
@@ -135,7 +187,7 @@
                         </div>
                     </div>
 
-                    <div class="modal-footer d-none">
+                    <div class="modal-footer d-none" id="modalFooter">
                         <button type="submit" class="btn btn-primary">Add Management</button>
                     </div>
                 </form>
@@ -169,7 +221,7 @@
                             let response = JSON.parse(xhr.responseText);
 
                             document.getElementById('imagePersonil').src = response.image;
-                            document.querySelector('.modal-footer').classList.remove('d-none');
+                            document.getElementById('modalFooter').classList.remove('d-none');
 
                             // Mengupdate nilai kolom-kolom tabel dengan data yang diterima
                             elementTarget[0].textContent = response.nisdh;
@@ -177,7 +229,8 @@
                             elementTarget[2].textContent = response.kelas;
                             elementTarget[3].textContent = response.alamat;
 
-                            document.getElementById('formadd').action = '/admindh/kulikuler-add/' +
+                            document.getElementById('formadd').action =
+                                '{{ route('hardsoftskill.personil.store', '') }}/' +
                                 response
                                 .nisdh;
                         } else {

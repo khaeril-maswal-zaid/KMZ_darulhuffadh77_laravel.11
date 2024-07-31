@@ -52,8 +52,6 @@
                 </div>
             </div>
 
-
-
             <!-- Testimonial Start -->
             <div class="container-fluid wow fadeInUp" data-wow-delay="0.1s">
                 <main class="container">
@@ -63,7 +61,7 @@
                                 <div class="testimonial-item bg-light my-4 wow fadeInUp" data-wow-delay="0.6s">
                                     <div class="d-flex align-items-center border-bottom pt-4 pb-4 px-4">
                                         <img class="img-fluid rounded"
-                                            src="{{ asset('assets/img/' . $personilkulikuler->santri->picture) }}"
+                                            src="{{ asset('storage/' . $personilkulikuler->santri->picture) }}"
                                             style="width: 60px; height: 60px" />
                                         <div class="ps-4">
                                             <h5 class="text-primary mb-1">

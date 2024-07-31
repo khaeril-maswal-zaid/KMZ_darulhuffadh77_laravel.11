@@ -8,7 +8,6 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\File;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 
 class TholabahController extends Controller
@@ -196,6 +195,8 @@ class TholabahController extends Controller
         if (Auth::user()->jenis_kelamin != $tholabah->jenis_kelamin) {
             return  view('errors.404');
         }
+
+        // dd($tholabah);
 
         $data = [
             'details' => $tholabah,

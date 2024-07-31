@@ -30,10 +30,10 @@ class KulikulerPersonilController extends Controller
         return view('kulikuler.pengurus', $data);
     }
 
-    public function create(KulikulerPersonil $personil, $nameKulikuler): View
+    public function create($nameKulikuler): View
     {
         //Ambil nama pengurus berdasarkan kulikuler
-        $personilKulikuler = $personil::whereHas('kulikuler', function (Builder $query) use ($nameKulikuler) {
+        $personilKulikuler = KulikulerPersonil::whereHas('kulikuler', function (Builder $query) use ($nameKulikuler) {
             $query->where('enum', $nameKulikuler);
         })->orderBy('id', 'desc')->paginate(10);
 
@@ -58,7 +58,7 @@ class KulikulerPersonilController extends Controller
 
         //Validasi ------------------------------
         $request->validate([
-            'kulikuler' => 'required|alpha',
+            'kulikuler' => 'required',
             'devisi' => 'required',
             'deskripsi' => 'required|max:100'
         ], [
@@ -79,6 +79,12 @@ class KulikulerPersonilController extends Controller
         ];
 
         KulikulerPersonil::create($data);
-        return redirect()->route('kulikulerpersonil', $kulikuler->enum)->with('success', 'Management Addition Successful');
+        return redirect()->route('hardsoftskill.personil', $kulikuler->enum)->with('success', 'Management Addition Successful');
+    }
+
+    public function destroy(KulikulerPersonil $kulikuler_personil, Request $request): RedirectResponse
+    {
+        $kulikuler_personil->delete();
+        return redirect()->route('hardsoftskill.personil', $request->input('kulikuler'))->with('success', 'Management Addition Successful');
     }
 }
