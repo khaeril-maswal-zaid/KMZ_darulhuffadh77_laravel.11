@@ -29,6 +29,7 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
+            'image' => 'user/kmz.jpg',
             'remember_token' => Str::random(10),
         ];
     }
@@ -41,6 +42,7 @@ class UserFactory extends Factory
             'email' => 'muhammadkhaerilzaid@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('maahadii165'),
+            'image' => 'user/kmz.jpg',
             'remember_token' => Str::random(10),
         ]);
     }

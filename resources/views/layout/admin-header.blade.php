@@ -12,10 +12,10 @@
     <!-- Sidebar Start -->
     <div class="sidebar pe-4 pb-3">
         <nav class="navbar bg-light navbar-light">
-            <a href="index.html" class="navbar-brand mx-4 mb-3">
-                <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
+            <a href="/admindh" class="navbar-brand mx-4 my-2">
+                <h3 class="text-primary h4">{{ config('app.name') }}</h3>
             </a>
-            <div class="d-flex align-items-center ms-4 mb-4">
+            {{-- <div class="d-flex align-items-center ms-4 mb-4">
                 <div class="position-relative">
                     <img class="rounded-circle" src="{{ asset('assets/admin/img/user.jpg') }}" alt=""
                         style="width: 40px; height: 40px;">
@@ -27,7 +27,7 @@
                     <h6 class="mb-0">Jhon Doe</h6>
                     <span>Admin</span>
                 </div>
-            </div>
+            </div> --}}
             <div class="navbar-nav w-100">
                 <a href="/admindh" class="nav-item nav-link active"><i
                         class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
@@ -35,8 +35,11 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                             class="fa fa-laptop me-2"></i>Master Data</a>
                     <div class="dropdown-menu bg-transparent border-0">
-                        <a href="/admindh/master-data/santri-baru" class="dropdown-item">SantriX Baru</a>
-                        <a href="/admindh/master-data/santri" class="dropdown-item">SantriX</a>
+                        <a href="/admindh/master-data/santri-baru"
+                            class="dropdown-item">{{ Auth::user()->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati' }}
+                            Baru</a>
+                        <a href="/admindh/master-data/santri"
+                            class="dropdown-item">{{ Auth::user()->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati' }}</a>
                         <a href="/admindh/master-data/pembina" class="dropdown-item">Pembina</a>
                         <a href="/admindh/master-data/pengabdian-luar" class="dropdown-item">Pengabdian Luar</a>
                         <a href="/admindh/master-data/alumni" class="dropdown-item">Alumni</a>
@@ -65,9 +68,11 @@
                         <a href="{{ route('blogger.eksekutif', 'profil-pimpinan-ust-saad-said') }}"
                             class="dropdown-item">Profil
                             Pimpinan</a>
-                        <a href="{{ route('blogger.eksekutif', 'profil-direktur-putra') }}" class="dropdown-item">Profil
+                        <a href="{{ route('blogger.eksekutif', 'profil-direktur-putra') }}"
+                            class="dropdown-item">Profil
                             Direktur Putra</a>
-                        <a href="{{ route('blogger.eksekutif', 'profil-direktur-putri') }}" class="dropdown-item">Profil
+                        <a href="{{ route('blogger.eksekutif', 'profil-direktur-putri') }}"
+                            class="dropdown-item">Profil
                             Direktur Putri</a>
                     </div>
                 </div>
@@ -168,14 +173,13 @@
                 </div>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                        <img class="rounded-circle me-lg-2" src="{{ asset('assets/admin/img/user.jpg') }}"
+                        <img class="rounded-circle me-lg-2" src="{{ asset('storage/' . Auth::user()->image) }}"
                             style="width: 40px; height: 40px;">
-                        <span class="d-none d-lg-inline-flex">John Doe</span>
+                        <span class="d-none d-lg-inline-flex">{{ Auth::user()->name }}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                        <a href="#" class="dropdown-item">My Profile</a>
-                        <a href="#" class="dropdown-item">Settings</a>
-                        <a href="#" class="dropdown-item">Log Out</a>
+                        <a href="/profile" class="dropdown-item">My Profile</a>
+                        <a href="/logout" class="dropdown-item">Log Out</a>
                     </div>
                 </div>
             </div>

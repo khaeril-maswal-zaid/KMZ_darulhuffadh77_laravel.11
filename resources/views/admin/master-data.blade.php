@@ -3,30 +3,33 @@
 @section('content')
     <!-- Table Start -->
     <div class="container-fluid pt-4 px-4">
-        <div class="bg-light rounded h-100 p-4">
+        <div class="d-flex bg-light justify-content-between flex-wrap flex-md-nowrap align-items-center px-3 pt-3 pb-2 mb-3">
             @switch($datamasters->first()->kategori)
                 @case('csb-165')
-                    <h1 class="mb-4 h5">Calon {{ $datamasters->first()->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati' }}
+                    <h1 class="h4">Calon {{ $datamasters->first()->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati' }}
                         Baru</h1>
                 @break
 
                 @case('Tholabun')
-                    <h1 class="mb-4 h5">{{ $datamasters->first()->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati' }}</h1>
+                    <h1 class="h4">{{ $datamasters->first()->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati' }}</h1>
                 @break
 
                 @case('Pembina')
-                    <h1 class="mb-4 h5">
+                    <h1 class="h4">
                         {{ $datamasters->first()->jenis_kelamin == 'Laki-laki' ? $datamasters->first()->kategori . ' Santri' : $datamasters->first()->kategori . ' Santriwati' }}
                     </h1>
                 @break
 
                 @case('Pengabdian luar')
-                    <h1 class="mb-4 h5">{{ $datamasters->first()->kategori }}</h1>
+                    <h1 class="h4">{{ $datamasters->first()->kategori }}</h1>
                 @break
 
                 @default
-                    <h1 class="mb-4 h5"> {{ $datamasters->first()->kategori }}</h1>
+                    <h1 class="h4"> {{ $datamasters->first()->kategori }}</h1>
             @endswitch
+        </div>
+
+        <div class="bg-light rounded h-100 p-4">
             <table class="table table-hover ">
                 <thead>
                     <tr>
