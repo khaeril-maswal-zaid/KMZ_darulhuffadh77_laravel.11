@@ -79,7 +79,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/admindh/add-aktivitas-santri', [AktivitasSantriController::class, 'store'])->name('aktivitassantri.create');
     Route::delete('/admindh/delete-aktivitas-santri/{aktivitas_santri}', [AktivitasSantriController::class, 'destroy'])->name('akttvitas.delete');
 
-    Route::get('/admindh/kontak', [KontakController::class, 'forAdmin']);
+    Route::get('/admindh/kontak', [KontakController::class, 'forAdmin'])->name('index.kontak');
+    Route::get('/admindh/edi-kontak/{kontak:slug}', [KontakController::class, 'edit'])->name('edit.kontak');
+    Route::put('/admindh/update-kontak/{kontak:slug}', [KontakController::class, 'update'])->name('update.kontak');
 });
 
 Route::middleware('auth')->group(function () {

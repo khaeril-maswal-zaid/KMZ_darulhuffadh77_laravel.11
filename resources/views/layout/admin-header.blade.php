@@ -47,10 +47,10 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                             class="far fa-file-alt me-2"></i>Blog</a>
                     <div class="dropdown-menu bg-transparent border-0">
-                        <a href="/admindh/blog/islamic" class="dropdown-item">Islamic</a>
-                        <a href="/admindh/blog/news-dh" class="dropdown-item">News DH</a>
-                        <a href="/admindh/blog/story-dh" class="dropdown-item">Story DH</a>
-                        <a href="/admindh/blog/default" class="dropdown-item">Default</a>
+                        <a href="{{ route('blogger', 'islamic') }}" class="dropdown-item">Islamic</a>
+                        <a href="{{ route('blogger', 'news-dh') }}" class="dropdown-item">News DH</a>
+                        <a href="{{ route('blogger', 'story-dh') }}" class="dropdown-item">Story DH</a>
+                        <a href="{{ route('blogger', 'default') }}" class="dropdown-item">Default</a>
                     </div>
                 </div>
 
@@ -72,10 +72,13 @@
                     </div>
                 </div>
 
-                <a href="/admindh/hard-soft-skill" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Hard & Soft
+                <a href="{{ route('index.hardsoftskill') }}" class="nav-item nav-link"><i
+                        class="fa fa-th me-2"></i>Hard & Soft
                     Skill</a>
-                <a href="/admindh/aktivitas-santri" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Aktivitas
-                    <a href="/admindh/kontak" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Kontak</a>
+                <a href="{{ route('aktivitassantri.admin') }}" class="nav-item nav-link"><i
+                        class="fa fa-th me-2"></i>Aktivitas
+                    <a href="{{ route('index.kontak') }}" class="nav-item nav-link"><i
+                            class="fa fa-th me-2"></i>Kontak</a>
 
             </div>
         </nav>
