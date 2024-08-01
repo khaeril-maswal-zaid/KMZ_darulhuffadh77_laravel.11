@@ -171,21 +171,13 @@ class TholabahController extends Controller
         return view('penerimaan.index', $data);
     }
 
-    public function masterData($masterdata): View
+    public function masterData($paramMasterdata): View
     {
         $jkAdmin = Auth::user()->jenis_kelamin;
 
-        switch ($masterdata) {
+        switch ($paramMasterdata) {
             case 'santri-baru':
-                $namePage = 'Master Data Santri Baru';
-                $tableHead  = ['Nama', 'Tempat Tanggal Lahir', 'Alamat', 'Tahun Tamat SD/SMP', 'Kategori'];
-                $tableBody  = ['id', 'kategori_santri_baru', 'nama', 'kategori', 'nisdh', 'tempat_lahir', 'tanggal_lahir', 'kabupaten', 'provinsi', 'tahun_tamat_sd', 'experiment'];
-
-                $masterdatas = Tholabah::select($tableBody)->where('jenis_kelamin', $jkAdmin)->where('kategori', 'csb-165')->orderBy('id', 'desc')->paginate(10);
-                break;
-
-            case 'santriwati-baru':
-                $namePage = 'Master Data Santriwati Baru';
+                $namePage = Auth::user()->jenis_kelamin == 'Laki-laki' ? 'Master Data Santri Baru' : 'Master Data Santriwati Baru';
                 $tableHead  = ['Nama', 'Tempat Tanggal Lahir', 'Alamat', 'Tahun Tamat SD/SMP', 'Kategori'];
                 $tableBody  = ['id', 'kategori_santri_baru', 'nama', 'kategori', 'nisdh', 'tempat_lahir', 'tanggal_lahir', 'kabupaten', 'provinsi', 'tahun_tamat_sd', 'experiment'];
 
@@ -193,16 +185,8 @@ class TholabahController extends Controller
                 break;
 
             case 'santri':
-                $namePage = 'Master Data Santri';
-                $tableHead  = ['Nama', 'Tempat Tanggal Lahir', 'Kelas', 'Kategori', 'Status Santri'];
-                $tableBody  = ['id', 'kategori_santri_baru', 'nama', 'kategori', 'nisdh', 'tempat_lahir', 'tanggal_lahir', 'kelas', 'experiment', 'active'];
-
-                $masterdatas = Tholabah::select($tableBody)->where('jenis_kelamin', $jkAdmin)->where('kategori', 'Tholabun')->orderBy('id', 'desc')->paginate(10);
-                break;
-
-            case 'santriwati':
-                $namePage = 'Master Data Santriwati Baru';
-                $tableHead  = ['Nama', 'Tempat Tanggal Lahir', 'Kelas', 'Kategori', 'Status Santriwati'];
+                $namePage = Auth::user()->jenis_kelamin == 'Laki-laki' ? 'Master Data Santri' : 'Master Data Santriwati';
+                $tableHead  = ['Nama', 'Tempat Tanggal Lahir', 'Kelas', 'Kategori', 'Status'];
                 $tableBody  = ['id', 'kategori_santri_baru', 'nama', 'kategori', 'nisdh', 'tempat_lahir', 'tanggal_lahir', 'kelas', 'experiment', 'active'];
 
                 $masterdatas = Tholabah::select($tableBody)->where('jenis_kelamin', $jkAdmin)->where('kategori', 'Tholabun')->orderBy('id', 'desc')->paginate(10);
@@ -238,13 +222,37 @@ class TholabahController extends Controller
             'namepages' => $namePage,
             'tableheads' => $tableHead,
             'tablebodys' => $tableBody,
+            'parammasterdata' => $paramMasterdata,
         ];
 
         return view('admin.master-data', $data);
     }
 
-    public function show(Tholabah $tholabah): View
+    public function show($paramMasterdata, Tholabah $tholabah): View
     {
+        switch ($paramMasterdata) {
+            case 'santri-baru':
+                $namePage = Auth::user()->jenis_kelamin == 'Laki-laki' ? 'Detail Santri Baru' : 'Detail Santriwati Baru';
+                break;
+
+            case 'santri':
+                $namePage = Auth::user()->jenis_kelamin == 'Laki-laki' ? 'Detail Santri' : 'Detail Santriwati';
+                break;
+
+            case 'pembina':
+                $namePage = 'Detail Pembina';
+                break;
+
+            case 'pengabdian-luar':
+                $namePage = 'Detail Pengabdian Luar';
+                break;
+
+            case 'alumni':
+                $namePage = 'Detail Alumni';
+                break;
+        }
+
+
         //Jika yang login tidak sesuai jk admin dan jk tholabah
         if (Auth::user()->jenis_kelamin != $tholabah->jenis_kelamin) {
             return  view('errors.404');
@@ -254,6 +262,8 @@ class TholabahController extends Controller
 
         $data = [
             'details' => $tholabah,
+            'parammasterdata' => $paramMasterdata,
+            'namepage' => $namePage,
         ];
 
         return view('admin.master-data-detail', $data);
@@ -272,6 +282,21 @@ class TholabahController extends Controller
 
         $tholabah->update(['kategori_santri_baru' => $request->input('kategorisantribaru')]);
         return redirect()->route('masterdata.index', 'santri-baru')->with('success', true);
+    }
+
+    public function activateTholabah(Request $request, Tholabah $tholabah): RedirectResponse
+    {
+        $request->validate(
+            [
+                'statussantri' => 'required',
+            ],
+            [
+                'statussantri' => 'Proses gagal !' //Belum digunakan
+            ]
+        );
+
+        $tholabah->update(['active' => $request->input('statussantri')]);
+        return redirect()->route('masterdata.index', 'santri')->with('success', true);
     }
 
     public function destroy(Tholabah $tholabah)

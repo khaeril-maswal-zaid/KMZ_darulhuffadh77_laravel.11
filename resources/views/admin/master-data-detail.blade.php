@@ -5,11 +5,11 @@
         <div class="container-fluid px-0 rounded">
             <div
                 class="d-flex bg-light justify-content-between flex-wrap flex-md-nowrap align-items-center px-3 pt-3 pb-2 mb-3">
-                <h1 class="h4 id-table">Detail </h1>
+                <h1 class="h4 id-table">{{ $namepage }}</h1>
 
                 <!-- Button trigger modal -->
-                <a href="{{ route('masterdata.santribaru') }}" class="btn btn-sm btn-primary">
-                    Kembali BELUMX
+                <a href="{{ route('masterdata.index', $parammasterdata) }}" class="btn btn-sm btn-primary">
+                    Kembali
                 </a>
             </div>
 
@@ -99,7 +99,7 @@
                                     <tr>
                                         <td>NISN</td>
                                         <td>:</td>
-                                        <td>{{ $details->asal_sekolah }}</td>
+                                        <td>{{ $details->nisn }}</td>
                                     </tr>
                                     <tr>
                                         <td>Tahun tamat SD</td>

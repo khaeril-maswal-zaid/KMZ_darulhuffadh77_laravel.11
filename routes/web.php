@@ -48,11 +48,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/admindh', [AdminController::class, 'index']);
 
     Route::get('/admindh/master-data/{var}', [TholabahController::class, 'masterData'])->name('masterdata.index');
+    Route::get('/admindh/master-data/{var}/{tholabah:nisdh}', [TholabahController::class, 'show'])->name('masterdata.detail');
 
-    Route::get('/admindh/master-data/{tholabah:nisdh}', [TholabahController::class, 'show'])->name('masterdata.detail');
-
-    Route::put('/admindh/master-data/{tholabah}', [TholabahController::class, 'terimaSantriBaru'])->name('santribaru.terima');
-    Route::delete('/admindh/master-data/{tholabah}', [TholabahController::class, 'destroy'])->name('santribaru.delete');
+    Route::put('/admindh/master-data-terima-scb/{tholabah}', [TholabahController::class, 'terimaSantriBaru'])->name('santribaru.terima');
+    Route::delete('/admindh/master-data-delete-scb/{tholabah}', [TholabahController::class, 'destroy'])->name('santribaru.delete');
+    Route::put('/admindh/master-data-actived-tholabah/{tholabah}', [TholabahController::class, 'activateTholabah'])->name('tholabah.actived');
 
 
     Route::get('/admindh/blog/{var}', [BlogController::class, 'create'])->name('blogger');

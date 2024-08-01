@@ -54,7 +54,8 @@
                                             <ul class="dropdown-menu">
                                                 <li>
                                                     <a class="dropdown-item"
-                                                        href="{{ route('masterdata.detail', $datamaster->nisdh) }}">View</a>
+                                                        href="{{ route('masterdata.detail', [$parammasterdata, $datamaster->nisdh]) }}">View</a>
+
                                                 </li>
                                                 <li>
                                                     <form action="{{ route('santribaru.terima', $datamaster->id) }}"
@@ -127,7 +128,7 @@
                                     </td>
 
                                     <td class="align-middle">
-                                        {{ $datamaster->active ? 'Active' : 'Non Active' }}
+                                        {!! $datamaster->active ? 'Active' : '<span class="bg-danger text-white rounded px-2">Non Active</span>' !!}
                                     </td>
 
                                     <td>
@@ -140,8 +141,17 @@
                                             <ul class="dropdown-menu">
                                                 <li>
                                                     <a class="dropdown-item"
-                                                        href="{{ route('masterdata.detail', $datamaster->nisdh) }}">View</a>
+                                                        href="{{ route('masterdata.detail', [$parammasterdata, $datamaster->nisdh]) }}">View</a>
                                                 </li>
+
+                                                <form action="{{ route('tholabah.actived', $datamaster->id) }}" method="post">
+                                                    @csrf
+                                                    @method('put')
+                                                    <input type="hidden" name="statussantri"
+                                                        value="{{ $datamaster->active ? 0 : 1 }}">
+                                                    <button class="dropdown-item"
+                                                        type="submit">{{ $datamaster->active ? 'Deactivate' : 'Activate' }}</button>
+                                                </form>
                                             </ul>
                                         </div>
                                     </td>
@@ -181,7 +191,8 @@
                                             <ul class="dropdown-menu">
                                                 <li>
                                                     <a class="dropdown-item"
-                                                        href="{{ route('masterdata.detail', $datamaster->nisdh) }}">View</a>
+                                                        href="{{ route('masterdata.detail', [$parammasterdata, $datamaster->nisdh]) }}">View</a>
+
                                                 </li>
                                             </ul>
                                         </div>
@@ -222,7 +233,8 @@
                                             <ul class="dropdown-menu">
                                                 <li>
                                                     <a class="dropdown-item"
-                                                        href="{{ route('masterdata.detail', $datamaster->nisdh) }}">View</a>
+                                                        href="{{ route('masterdata.detail', [$parammasterdata, $datamaster->nisdh]) }}">View</a>
+
                                                 </li>
                                             </ul>
                                         </div>
@@ -263,7 +275,8 @@
                                             <ul class="dropdown-menu">
                                                 <li>
                                                     <a class="dropdown-item"
-                                                        href="{{ route('masterdata.detail', $datamaster->nisdh) }}">View</a>
+                                                        href="{{ route('masterdata.detail', [$parammasterdata, $datamaster->nisdh]) }}">View</a>
+
                                                 </li>
                                             </ul>
                                         </div>
