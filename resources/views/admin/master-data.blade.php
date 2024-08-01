@@ -4,29 +4,7 @@
     <!-- Table Start -->
     <div class="container-fluid pt-4 px-4">
         <div class="d-flex bg-light justify-content-between flex-wrap flex-md-nowrap align-items-center px-3 pt-3 pb-2 mb-3">
-            @switch($datamasters->first()->kategori)
-                @case('csb-165')
-                    <h1 class="h4">Calon {{ $datamasters->first()->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati' }}
-                        Baru</h1>
-                @break
-
-                @case('Tholabun')
-                    <h1 class="h4">{{ $datamasters->first()->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati' }}</h1>
-                @break
-
-                @case('Pembina')
-                    <h1 class="h4">
-                        {{ $datamasters->first()->jenis_kelamin == 'Laki-laki' ? $datamasters->first()->kategori . ' Santri' : $datamasters->first()->kategori . ' Santriwati' }}
-                    </h1>
-                @break
-
-                @case('Pengabdian luar')
-                    <h1 class="h4">{{ $datamasters->first()->kategori }}</h1>
-                @break
-
-                @default
-                    <h1 class="h4"> {{ $datamasters->first()->kategori }}</h1>
-            @endswitch
+            <h1 class="h4">{{ $namepages }}</h1>
         </div>
 
         <div class="bg-light rounded h-100 p-4">
@@ -34,41 +12,50 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Tempat Tanggal Lahir</th>
-                        <th scope="col">Alamat</th>
-                        <th scope="col">Tahun Tamat SD/SMP</th>
-                        <th scope="col">Kategori</th>
+                        @foreach ($tableheads as $tablehead)
+                            <th scope="col">{{ $tablehead }}</th>
+                        @endforeach
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($datamasters as $index => $datamaster)
-                        <tr>
-                            <th scope="row">{{ $datamasters->firstItem() + $index }}</th>
-                            <td class="align-middle" nowrap>{{ Str::limit($datamaster->nama, 25, '...') }}</td>
-                            <td class="align-middle">{{ $datamaster->tempat_lahir . ', ' . $datamaster->tanggal_lahir }}
-                            </td>
-                            <td class="align-middle">
-                                {{ $datamaster->kabupaten . ', ' . Str::limit($datamaster->provinsi, 12, '...') }}
-                            </td>
-                            <td class="align-middle text-center">{{ $datamaster->tahun_tamat_sd }}</td>
-                            <td class="align-middle">{{ $datamaster->experiment ? 'Experiment' : 'Umum' }}</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button
-                                        class="btn {{ $datamaster->kategori_santri_baru != 'Done' ? ($datamaster->kategori_santri_baru == 'Verified' ? 'btn-success' : 'btn-secondary') : 'btn-primary' }} btn-sm dropdown-toggle"
-                                        type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Action
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item"
-                                                href="{{ route('masterdata.detail', $datamaster->nisdh) }}">View</a>
-                                        </li>
+                        @switch($datamasters->first()->kategori)
+                            @case('csb-165')
+                                <tr>
+                                    <th scope="row">{{ $datamasters->firstItem() + $index }}</th>
+                                    <td class="align-middle" nowrap>
+                                        {{ Str::limit($datamaster->nama, 25, '...') }}
+                                    </td>
 
-                                        @switch($datamasters->first()->kategori)
-                                            @case('csb-165')
+                                    <td class="align-middle">
+                                        {{ $datamaster->tempat_lahir . ', ' . $datamaster->tanggal_lahir }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->kabupaten . ', ' . Str::limit($datamaster->provinsi, 12, '...') }}
+                                    </td>
+
+                                    <td class="align-middle text-center">
+                                        {{ $datamaster->tahun_tamat_sd }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->experiment ? 'Experiment' : 'Umum' }}
+                                    </td>
+
+                                    <td>
+                                        <div class="dropdown">
+                                            <button
+                                                class="btn {{ $datamaster->kategori_santri_baru != 'Done' ? ($datamaster->kategori_santri_baru == 'Verified' ? 'btn-success' : 'btn-secondary') : 'btn-primary' }} btn-sm dropdown-toggle"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Action
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('masterdata.detail', $datamaster->nisdh) }}">View</a>
+                                                </li>
                                                 <li>
                                                     <form action="{{ route('santribaru.terima', $datamaster->id) }}"
                                                         method="post">
@@ -79,30 +66,16 @@
                                                         <button class="dropdown-item"
                                                             type="submit">{{ $datamaster->kategori_santri_baru == 'Verified' ? 'Unverified' : 'Verified' }}</button>
                                                     </form>
+
+                                                    <button type="button" class="dropdown-item" data-bs-toggle="modal"
+                                                        data-bs-target="#exampleModal{{ $index }}"> Delete </button>
                                                 </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
 
-                                                <li><button type="button" class="dropdown-item" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal{{ $index }}"> Delete </button></li>
-                                            @break
-
-                                            @case('Tholabun')
-                                                <li><a class="dropdown-item" href="#">BELUM X</a></li>
-                                            @break
-
-                                            @case('Pembina')
-                                                <li><a class="dropdown-item" href="#">BELUM X</a></li>
-                                            @break
-
-                                            @case('Pengabdian luar')
-                                                <li><a class="dropdown-item" href="#">BELUM X</a></li>
-                                            @break
-
-                                            @default
-                                                <li><a class="dropdown-item" href="#">BELUM X</a></li>
-                                        @endswitch
-                                    </ul>
-                                </div>
-                                <!-- Modal -->
+                                <!-- Modal Hapus -->
                                 <div class="modal fade" id="exampleModal{{ $index }}" tabindex="-1"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
@@ -122,8 +95,7 @@
                                                 <button type="button" class="btn btn-primary"
                                                     data-bs-dismiss="modal">Cencel</button>
 
-                                                <form action="{{ route('santribaru.delete', $datamaster->id) }}"
-                                                    method="post">
+                                                <form action="{{ route('santribaru.delete', $datamaster->id) }}" method="post">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="btn btn-danger">Delete</button>
@@ -133,8 +105,172 @@
                                     </div>
                                 </div>
                                 <!-- Table End -->
-                            </td>
-                        </tr>
+                            @break
+
+                            @case('Tholabun')
+                                <tr>
+                                    <th scope="row">{{ $datamasters->firstItem() + $index }}</th>
+                                    <td class="align-middle" nowrap>
+                                        {{ Str::limit($datamaster->nama, 25, '...') }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->tempat_lahir . ', ' . $datamaster->tanggal_lahir }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->kelas }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->experiment ? 'Experiment' : 'Umum' }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->active ? 'Active' : 'Non Active' }}
+                                    </td>
+
+                                    <td>
+                                        <div class="dropdown">
+                                            <button
+                                                class="btn {{ $datamaster->kategori_santri_baru != 'Done' ? ($datamaster->kategori_santri_baru == 'Verified' ? 'btn-success' : 'btn-secondary') : 'btn-primary' }} btn-sm dropdown-toggle"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Action
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('masterdata.detail', $datamaster->nisdh) }}">View</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @break
+
+                            @case('Pembina')
+                                <tr>
+                                    <th scope="row">{{ $datamasters->firstItem() + $index }}</th>
+                                    <td class="align-middle" nowrap>
+                                        {{ Str::limit($datamaster->nama, 25, '...') }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->kabupaten . ', ' . Str::limit($datamaster->provinsi, 12, '...') }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->depertement }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->marhalah }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->tahun_alumni }}
+                                    </td>
+
+                                    <td>
+                                        <div class="dropdown">
+                                            <button
+                                                class="btn {{ $datamaster->kategori_santri_baru != 'Done' ? ($datamaster->kategori_santri_baru == 'Verified' ? 'btn-success' : 'btn-secondary') : 'btn-primary' }} btn-sm dropdown-toggle"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Action
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('masterdata.detail', $datamaster->nisdh) }}">View</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @break
+
+                            @case('Pengabdian luar')
+                                <tr>
+                                    <th scope="row">{{ $datamasters->firstItem() + $index }}</th>
+                                    <td class="align-middle" nowrap>
+                                        {{ Str::limit($datamaster->nama, 25, '...') }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->kabupaten . ', ' . Str::limit($datamaster->provinsi, 12, '...') }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->kontak }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->marhalah }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->tahun_alumni }}
+                                    </td>
+
+                                    <td>
+                                        <div class="dropdown">
+                                            <button
+                                                class="btn {{ $datamaster->kategori_santri_baru != 'Done' ? ($datamaster->kategori_santri_baru == 'Verified' ? 'btn-success' : 'btn-secondary') : 'btn-primary' }} btn-sm dropdown-toggle"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Action
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('masterdata.detail', $datamaster->nisdh) }}">View</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @break
+
+                            @case('Alumni')
+                                <tr>
+                                    <th scope="row">{{ $datamasters->firstItem() + $index }}</th>
+                                    <td class="align-middle" nowrap>
+                                        {{ Str::limit($datamaster->nama, 25, '...') }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->kabupaten . ', ' . Str::limit($datamaster->provinsi, 12, '...') }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->kontak }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->marhalah }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        {{ $datamaster->tahun_alumni }}
+                                    </td>
+
+                                    <td>
+                                        <div class="dropdown">
+                                            <button
+                                                class="btn {{ $datamaster->kategori_santri_baru != 'Done' ? ($datamaster->kategori_santri_baru == 'Verified' ? 'btn-success' : 'btn-secondary') : 'btn-primary' }} btn-sm dropdown-toggle"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Action
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('masterdata.detail', $datamaster->nisdh) }}">View</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @break
+                        @endswitch
                     @endforeach
                 </tbody>
             </table>

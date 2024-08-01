@@ -53,7 +53,7 @@ class TholabahFactory extends Factory
 
             'kontak' => fake()->phoneNumber(),
             'marhalah' => 'Tholabun', //ini
-            'tahun_alumni' => fake()->year(),
+            'tahun_alumni' => 'Tholabun', //ini
 
             'picture' => 'tholabahs/' . fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
         ];
@@ -98,7 +98,7 @@ class TholabahFactory extends Factory
 
             'kontak' => fake()->phoneNumber(),
             'marhalah' => 'csb-165', //ini
-            'tahun_alumni' => fake()->year(),
+            'tahun_alumni' => 'csb-165', //ini
 
             'picture' => 'tholabahs/' . fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
         ]);
