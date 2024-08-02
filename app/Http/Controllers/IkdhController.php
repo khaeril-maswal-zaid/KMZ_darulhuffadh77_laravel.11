@@ -12,9 +12,7 @@ class IkdhController extends Controller
     {
         $data = [
             'title' => 'Ikatan Keluarga Darul Huffadh',
-
             'kontaks' => Kontak::all(),
-
             'ikdhs' => Ikdh::all()
         ];
 

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -48,4 +49,9 @@ class Tholabah extends Model
 
         'picture',
     ];
+
+    public function scopeNisdhName(Builder $query): void
+    {
+        $query->where('nisdh', 'like', '%' . request('search') . '%')->orWhere('nama', 'like', '%' . request('search') . '%');
+    }
 }

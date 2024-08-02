@@ -80,14 +80,15 @@ class BlogController extends Controller
 
         $blogs = $blog::whereHas('kategori', function (Builder $query) use ($kategori) {
             $query->where('category', $kategori);
-        })->orderBy('id', 'desc')->paginate(10);
+        })->title()->latest()->paginate(10);
 
         if (!$blogs->total()) {
             return view('errors.404-admin');
         }
 
         $data = [
-            'blogs' => $blogs
+            'searcher' => 'title article',
+            'blogs' => $blogs,
         ];
 
         return view('admin.blogger', $data);

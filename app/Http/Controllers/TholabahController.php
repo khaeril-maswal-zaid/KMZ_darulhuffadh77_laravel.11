@@ -111,7 +111,7 @@ class TholabahController extends Controller
         );
 
         //Ambil index pendaftar unutk NISDH berdasarkan JK
-        $lastNisdh = Tholabah::select('nisdh')->where('jenis_kelamin', $request->input('jeniskelamin'))->orderBy('id', 'desc')->first();
+        $lastNisdh = Tholabah::select('nisdh')->where('jenis_kelamin', $request->input('jeniskelamin'))->latest()->first();
         $lastIndex = $lastNisdh ? substr($lastNisdh->nisdh, -3) : '000';
         $newIndex = str_pad((int)$lastIndex + 1, 3, '0', STR_PAD_LEFT);
 
@@ -177,47 +177,48 @@ class TholabahController extends Controller
 
         switch ($paramMasterdata) {
             case 'santri-baru':
-                $namePage = Auth::user()->jenis_kelamin == 'Laki-laki' ? 'Master Data Santri Baru' : 'Master Data Santriwati Baru';
+                $namePage = Auth::user()->jenis_kelamin == 'Laki-laki' ? 'Santri Baru' : 'Santriwati Baru';
                 $tableHead  = ['Nama', 'Tempat Tanggal Lahir', 'Alamat', 'Tahun Tamat SD/SMP', 'Kategori'];
                 $tableBody  = ['id', 'kategori_santri_baru', 'nama', 'kategori', 'nisdh', 'tempat_lahir', 'tanggal_lahir', 'kabupaten', 'provinsi', 'tahun_tamat_sd', 'experiment'];
 
-                $masterdatas = Tholabah::select($tableBody)->where('jenis_kelamin', $jkAdmin)->where('kategori', 'csb-165')->orderBy('id', 'desc')->paginate(10);
+                $masterdatas = Tholabah::select($tableBody)->where('jenis_kelamin', $jkAdmin)->where('kategori', 'csb-165')->nisdhName()->latest()->paginate(10);
                 break;
 
             case 'santri':
-                $namePage = Auth::user()->jenis_kelamin == 'Laki-laki' ? 'Master Data Santri' : 'Master Data Santriwati';
+                $namePage = Auth::user()->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati';
                 $tableHead  = ['Nama', 'Tempat Tanggal Lahir', 'Kelas', 'Kategori', 'Status'];
                 $tableBody  = ['id', 'kategori_santri_baru', 'nama', 'kategori', 'nisdh', 'tempat_lahir', 'tanggal_lahir', 'kelas', 'experiment', 'active'];
 
-                $masterdatas = Tholabah::select($tableBody)->where('jenis_kelamin', $jkAdmin)->where('kategori', 'Tholabun')->orderBy('id', 'desc')->paginate(10);
+                $masterdatas = Tholabah::select($tableBody)->where('jenis_kelamin', $jkAdmin)->where('kategori', 'Tholabun')->nisdhName()->latest()->paginate(10);
                 break;
 
             case 'pembina':
-                $namePage = 'Master Data Pembina';
+                $namePage = 'Pembina';
                 $tableHead  = ['Nama', 'Alamat', 'Depertement', 'Marhalah', 'Tahun Alumni'];
                 $tableBody  = ['id', 'kategori_santri_baru', 'nama', 'kategori', 'nisdh', 'kabupaten', 'provinsi',  'depertement', 'marhalah', 'tahun_alumni'];
 
-                $masterdatas = Tholabah::select($tableBody)->where('jenis_kelamin', $jkAdmin)->where('kategori', 'Pembina')->orderBy('id', 'desc')->paginate(10);
+                $masterdatas = Tholabah::select($tableBody)->where('jenis_kelamin', $jkAdmin)->where('kategori', 'Pembina')->nisdhName()->latest()->paginate(10);
                 break;
 
             case 'pengabdian-luar':
-                $namePage = 'Master Data Pengabdian Luar';
+                $namePage = 'Pengabdian Luar';
                 $tableHead  = ['Nama', 'Alamat', 'Kontak', 'Marhalah', 'Tahun Alumni'];
                 $tableBody  =  ['id', 'kategori_santri_baru', 'nama', 'kategori', 'nisdh', 'kabupaten', 'provinsi',  'kontak', 'marhalah', 'tahun_alumni'];
 
-                $masterdatas = Tholabah::select($tableBody)->where('jenis_kelamin', $jkAdmin)->where('kategori', 'Pengabdian luar')->orderBy('id', 'desc')->paginate(10);
+                $masterdatas = Tholabah::select($tableBody)->where('jenis_kelamin', $jkAdmin)->where('kategori', 'Pengabdian luar')->nisdhName()->latest()->paginate(10);
                 break;
 
             case 'alumni':
-                $namePage = 'Master Data Alumni';
+                $namePage = 'Alumni';
                 $tableHead  = ['Nama', 'Alamat', 'Kontak', 'Marhalah', 'Tahun Alumni'];
                 $tableBody  =  ['id', 'kategori_santri_baru', 'nama', 'kategori', 'nisdh', 'kabupaten', 'provinsi',  'kontak', 'marhalah', 'tahun_alumni'];
 
-                $masterdatas = Tholabah::select($tableBody)->where('jenis_kelamin', $jkAdmin)->where('kategori', 'Alumni')->orderBy('id', 'desc')->paginate(10);
+                $masterdatas = Tholabah::select($tableBody)->where('jenis_kelamin', $jkAdmin)->where('kategori', 'Alumni')->nisdhName()->latest()->paginate(10);
                 break;
         }
 
         $data = [
+            'searcher' => 'NISDH/Name ' . $namePage,
             'datamasters' => $masterdatas,
             'namepages' => $namePage,
             'tableheads' => $tableHead,

@@ -19,7 +19,7 @@ class KulikulerPersonilController extends Controller
     {
         $personilKulikuler = $personil::whereHas('kulikuler', function (Builder $query) use ($nameKulikuler) {
             $query->where('enum', $nameKulikuler);
-        })->orderBy('id', 'desc')->get();
+        })->latest()->get();
 
         $data = [
             'title' => $personilKulikuler[0]->kulikuler->name,
@@ -35,7 +35,7 @@ class KulikulerPersonilController extends Controller
         //Ambil nama pengurus berdasarkan kulikuler
         $personilKulikuler = KulikulerPersonil::whereHas('kulikuler', function (Builder $query) use ($nameKulikuler) {
             $query->where('enum', $nameKulikuler);
-        })->orderBy('id', 'desc')->paginate(10);
+        })->latest()->paginate(10);
 
         //Ambil kulikuler
         $kulikuler = Kulikuler::where('enum', $nameKulikuler)->first();

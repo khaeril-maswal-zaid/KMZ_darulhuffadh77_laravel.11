@@ -13,6 +13,8 @@ class Ikdh extends Model
 {
     use HasFactory;
 
+    protected $with = ['ketua'];
+
     function ketua(): BelongsTo
     {
         return $this->belongsTo(Tholabah::class, 'tholabah_id', 'id');

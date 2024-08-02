@@ -46,10 +46,9 @@
                             <div class="card-header text-dark">
                                 IKDH {{ $ikdh->cabang }}
                             </div>
-                            <img src="{{ asset('assets/img/' . $ikdh->ketua->picture) }}" class="card-img-top"
-                                alt="...">
+                            <img src="{{ asset('storage/' . $ikdh->ketua->picture) }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h6 class="card-title text-dark">Ketua: {{ Str::limit($ikdh->ketua->nama, 20, '...') }}</h6>
+                                <h6 class="card-title text-dark">Ketua: {{ Str::limit($ikdh->ketua->nama, 18, '...') }}</h6>
                                 <p class="card-text text-dark">Kontak: {{ $ikdh->ketua->kontak }}</p>
                                 <p class="card-text text-dark">Alamat:
                                     {{ Str::limit($ikdh->ketua->kabupaten . ', ' . $ikdh->ketua->provinsi, 17, '...') }}

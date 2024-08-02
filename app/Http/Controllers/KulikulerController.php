@@ -54,6 +54,9 @@ class KulikulerController extends Controller
 
     public function destroy(Kulikuler $kulikuler)
     {
+        //Hapus juga aktikelnya
+        //...........................
+
         $kulikuler->delete();
         return redirect()->route('index.hardsoftskill')->with('success', 'Data has been successfully deleted');
     }

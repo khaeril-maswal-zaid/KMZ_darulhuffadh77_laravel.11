@@ -4,7 +4,7 @@
     <!-- Table Start -->
     <div class="container-fluid pt-4 px-4">
         <div class="d-flex bg-light justify-content-between flex-wrap flex-md-nowrap align-items-center px-3 pt-3 pb-2 mb-3">
-            <h1 class="h4">{{ $namepages }}</h1>
+            <h1 class="h4">Master Data {{ $namepages }}</h1>
         </div>
 
         <div class="bg-light rounded h-100 p-4">
