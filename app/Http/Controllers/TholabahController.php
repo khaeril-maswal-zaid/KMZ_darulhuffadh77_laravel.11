@@ -282,7 +282,7 @@ class TholabahController extends Controller
         );
 
         $tholabah->update(['kategori_santri_baru' => $request->input('kategorisantribaru')]);
-        return redirect()->route('masterdata.index', 'santri-baru')->with('success', true);
+        return redirect()->route('masterdata.index', 'santri-baru')->with('success', 'Registration status has been successfully verified.');
     }
 
     public function activateTholabah(Request $request, Tholabah $tholabah): RedirectResponse
@@ -297,12 +297,38 @@ class TholabahController extends Controller
         );
 
         $tholabah->update(['active' => $request->input('statussantri')]);
-        return redirect()->route('masterdata.index', 'santri')->with('success', true);
+        return redirect()->route('masterdata.index', 'santri')->with('success', 'Status has been successfully changed.');
+    }
+
+    public function abdianinTholabah(Request $request, Tholabah $tholabah): RedirectResponse
+    {
+        $request->validate(
+            [
+                'depertement' => 'required',
+            ],
+            [
+                'depertement' => 'Proses gagal !' //Belum digunakan
+            ]
+        );
+
+        $tholabah->update(['depertement' => $request->input('depertement'), 'kategori' => 'Pembina']);
+        return redirect()->route('masterdata.index', 'pengabdian-luar')->with('success', 'Service status has been successfully changed.');
+    }
+
+    public function abdianTholabah(Tholabah $tholabah): RedirectResponse
+    {
+        $data = [
+            'kategori' => 'Pengabdian luar',
+            'depertement' => 'Pengabdian luar'
+        ];
+
+        $tholabah->update($data);
+        return redirect()->route('masterdata.index', 'pembina')->with('success', 'Service status has been successfully changed.');
     }
 
     public function destroy(Tholabah $tholabah)
     {
         $tholabah->delete();
-        return redirect()->route('masterdata.santribaru')->with('success', true);
+        return redirect()->route('masterdata.index', 'santri-baru')->with('success', 'Data has been successfully deleted. This data cannot be restored.');
     }
 }

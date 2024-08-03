@@ -69,9 +69,10 @@
                         class="fa fa-th me-2"></i>Hard & Soft
                     Skill</a>
                 <a href="{{ route('aktivitassantri.admin') }}" class="nav-item nav-link"><i
-                        class="fa fa-th me-2"></i>Aktivitas
-                    <a href="{{ route('index.kontak') }}" class="nav-item nav-link"><i
-                            class="fa fa-th me-2"></i>Kontak</a>
+                        class="fa fa-th me-2"></i>Aktivitas</a>
+                <a href="{{ route('index.kontak') }}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Kontak</a>
+                <a href="{{ route('ikdh.masterdata') }}" class="nav-item nav-link"><i
+                        class="fa fa-th me-2"></i>IKDH</a>
 
             </div>
         </nav>

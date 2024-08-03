@@ -7,6 +7,26 @@
             <h1 class="h4">Master Data {{ $namepages }}</h1>
         </div>
 
+        @session('success')
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endsession
+
+        @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <ul class="mb-0">
+                    <li>Failed to Post Article, An Error Occurred!</li>
+                    @foreach ($errors->get('categoryid') as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         <div class="bg-light rounded h-100 p-4">
             <table class="table table-hover ">
                 <thead>
@@ -68,6 +88,8 @@
                                                             type="submit">{{ $datamaster->kategori_santri_baru == 'Verified' ? 'Unverified' : 'Verified' }}</button>
                                                     </form>
 
+                                                </li>
+                                                <li>
                                                     <button type="button" class="dropdown-item" data-bs-toggle="modal"
                                                         data-bs-target="#exampleModal{{ $index }}"> Delete </button>
                                                 </li>
@@ -143,15 +165,16 @@
                                                     <a class="dropdown-item"
                                                         href="{{ route('masterdata.detail', [$parammasterdata, $datamaster->nisdh]) }}">View</a>
                                                 </li>
-
-                                                <form action="{{ route('tholabah.actived', $datamaster->id) }}" method="post">
-                                                    @csrf
-                                                    @method('put')
-                                                    <input type="hidden" name="statussantri"
-                                                        value="{{ $datamaster->active ? 0 : 1 }}">
-                                                    <button class="dropdown-item"
-                                                        type="submit">{{ $datamaster->active ? 'Deactivate' : 'Activate' }}</button>
-                                                </form>
+                                                <li>
+                                                    <form action="{{ route('tholabah.actived', $datamaster->id) }}" method="post">
+                                                        @csrf
+                                                        @method('put')
+                                                        <input type="hidden" name="statussantri"
+                                                            value="{{ $datamaster->active ? 0 : 1 }}">
+                                                        <button class="dropdown-item"
+                                                            type="submit">{{ $datamaster->active ? 'Deactivate' : 'Activate' }}</button>
+                                                    </form>
+                                                </li>
                                             </ul>
                                         </div>
                                     </td>
@@ -194,6 +217,15 @@
                                                         href="{{ route('masterdata.detail', [$parammasterdata, $datamaster->nisdh]) }}">View</a>
 
                                                 </li>
+
+                                                <li>
+                                                    <form action="{{ route('tholabah.abdian', $datamaster->id) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        @method('put')
+                                                        <button class="dropdown-item" type="submit">Assign Outside</button>
+                                                    </form>
+                                                </li>
                                             </ul>
                                         </div>
                                     </td>
@@ -234,12 +266,54 @@
                                                 <li>
                                                     <a class="dropdown-item"
                                                         href="{{ route('masterdata.detail', [$parammasterdata, $datamaster->nisdh]) }}">View</a>
-
+                                                </li>
+                                                <li>
+                                                    <button type="button" class="dropdown-item" data-bs-toggle="modal"
+                                                        data-bs-target="#exampleModalx{{ $index }}">Assign Inside</button>
                                                 </li>
                                             </ul>
                                         </div>
                                     </td>
                                 </tr>
+
+                                <!-- Modal Abdian Masuk -->
+                                <div class="modal fade" id="exampleModalx{{ $index }}" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <form action="{{ route('tholabah.abdianin', $datamaster->id) }}" method="post">
+                                                @csrf
+                                                @method('put')
+
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel{{ $index }}">
+                                                        Input Depertement
+                                                    </h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="form-floating mb-2">
+                                                        <input name="depertement" type="text"
+                                                            class="form-control @error('depertement') is-invalid @enderror"
+                                                            id="penuliscustom" placeholder="Oleh lainnya"
+                                                            value="{{ old('depertement') }}">
+                                                        <label for="penuliscustom">Depertement</label>
+                                                        @error('depertement')
+                                                            <div class="invalid-feedback">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-success">Assign Inside</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal End -->
                             @break
 
                             @case('Alumni')

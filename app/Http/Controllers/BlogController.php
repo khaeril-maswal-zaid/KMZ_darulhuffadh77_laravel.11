@@ -162,7 +162,7 @@ class BlogController extends Controller
     public function destroy(Request $request, Blog $blog): RedirectResponse
     {
         $blog->delete();
-        return redirect()->route('blogger', $request->input('kategori'))->with('success', 'Data telah berhasil dihapus. Data ini tidak dapat dikembalikan.');
+        return redirect()->route('blogger', $request->input('kategori'))->with('success', 'Data has been successfully deleted. This data cannot be restored.');
     }
 
     public function update(Request $request, Blog $blog): RedirectResponse

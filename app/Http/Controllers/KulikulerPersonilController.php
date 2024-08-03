@@ -85,6 +85,6 @@ class KulikulerPersonilController extends Controller
     public function destroy(KulikulerPersonil $kulikuler_personil, Request $request): RedirectResponse
     {
         $kulikuler_personil->delete();
-        return redirect()->route('hardsoftskill.personil', $request->input('kulikuler'))->with('success', 'Management Addition Successful');
+        return redirect()->route('hardsoftskill.personil', $request->input('kulikuler'))->with('success', 'Data has been successfully deleted. This data cannot be restored.');
     }
 }

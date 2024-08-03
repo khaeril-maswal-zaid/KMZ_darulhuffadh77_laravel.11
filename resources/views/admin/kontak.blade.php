@@ -5,10 +5,6 @@
         <div class="bg-light px-4 rounded">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
                 <h1 class="h5">Kontak Pontren {{ config('app.name') }}</h1>
-
-                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    Add new
-                </button>
             </div>
         </div>
 

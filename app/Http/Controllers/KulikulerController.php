@@ -58,6 +58,6 @@ class KulikulerController extends Controller
         //...........................
 
         $kulikuler->delete();
-        return redirect()->route('index.hardsoftskill')->with('success', 'Data has been successfully deleted');
+        return redirect()->route('index.hardsoftskill')->with('success', 'Data has been successfully deleted. This data cannot be restored.');
     }
 }

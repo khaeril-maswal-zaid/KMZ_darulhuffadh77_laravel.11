@@ -27,7 +27,7 @@ Route::get('/santri', [TholabahController::class, 'index'])->defaults('tingkatan
 Route::get('/santriwati', [TholabahController::class, 'index'])->defaults('tingkatan', 'Tholabun')->defaults('jk', 'Perempuan');
 Route::get('/alumni', [TholabahController::class, 'index'])->defaults('tingkatan', 'Alumni');
 
-Route::get('/ikatan-keluarga-darul-huffadh', [IkdhController::class, 'index']);
+Route::get('/ikatan-keluarga-darul-huffadh', [IkdhController::class, 'index'])->name('ikdh.index');
 
 Route::get('/galery', [GaleryController::class, 'index']);
 
@@ -53,6 +53,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('/admindh/master-data-terima-scb/{tholabah}', [TholabahController::class, 'terimaSantriBaru'])->name('santribaru.terima');
     Route::delete('/admindh/master-data-delete-scb/{tholabah}', [TholabahController::class, 'destroy'])->name('santribaru.delete');
     Route::put('/admindh/master-data-actived-tholabah/{tholabah}', [TholabahController::class, 'activateTholabah'])->name('tholabah.actived');
+    Route::put('/admindh/master-data-abdian-tholabah/{tholabah}', [TholabahController::class, 'abdianTholabah'])->name('tholabah.abdian');
+    Route::put('/admindh/master-data-abdianin-tholabah/{tholabah}', [TholabahController::class, 'abdianinTholabah'])->name('tholabah.abdianin');
 
 
     Route::get('/admindh/blog/{var}', [BlogController::class, 'create'])->name('blogger');
@@ -78,6 +80,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/admindh/kontak', [KontakController::class, 'forAdmin'])->name('index.kontak');
     Route::get('/admindh/edi-kontak/{kontak:slug}', [KontakController::class, 'edit'])->name('edit.kontak');
     Route::put('/admindh/update-kontak/{kontak:slug}', [KontakController::class, 'update'])->name('update.kontak');
+
+    Route::get('/admindh/ikatan-keluarga-darul-huffadh', [IkdhController::class, 'masterData'])->name('ikdh.masterdata');
+    Route::delete('admindh/ikatan-keluarga-darul-huffadh-delete{ikdh}', [IkdhController::class, 'destroy'])->name('ikdh.destroy');
 });
 
 Route::middleware('auth')->group(function () {

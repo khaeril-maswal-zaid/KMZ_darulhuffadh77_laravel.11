@@ -106,7 +106,7 @@
                         <a href="/santri" class="dropdown-item">Santri</a>
                         <a href="/santriwati" class="dropdown-item">Santriwati</a>
                         <a href="/alumni" class="dropdown-item">Alumni</a>
-                        <a href="/ikatan-keluarga-darul-huffadh" class="dropdown-item">IKDH</a>
+                        <a href="/{{route('ikdh.index')}}" class="dropdown-item">IKDH</a>
                     </div>
                 </div>
 

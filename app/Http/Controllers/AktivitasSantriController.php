@@ -113,6 +113,6 @@ class AktivitasSantriController extends Controller
     public function destroy(AktivitasSantri $aktivitas_santri)
     {
         $aktivitas_santri->delete();
-        return redirect()->route('aktivitassantri.admin')->with('success', 'Data has been successfully deleted');
+        return redirect()->route('aktivitassantri.admin')->with('success', 'Data has been successfully deleted. This data cannot be restored.');
     }
 }
