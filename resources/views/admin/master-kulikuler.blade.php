@@ -19,6 +19,13 @@
             </div>
         @endsession
 
+        @session('warning')
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{ session('warning') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endsession
+
         @if ($errors->any())
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <ul class="mb-0">
@@ -121,7 +128,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-floating mb-2">
-                            <input name="nameprogram" type="text"
+                            <input autocomplete="off" name="nameprogram" type="text"
                                 class="form-control @error('nameprogram') is-invalid @enderror" id="nameprogram"
                                 placeholder="Nama Program" value="{{ old('nameprogram') }}">
                             <label for="nameprogram">Name of Program</label>
@@ -133,7 +140,7 @@
                         </div>
 
                         <div class="form-floating mb-2">
-                            <input name="fullname" type="text"
+                            <input autocomplete="off" name="fullname" type="text"
                                 class="form-control @error('fullname') is-invalid @enderror" id="fullname"
                                 placeholder="Nama Program" value="{{ old('fullname') }}">
                             <label for="fullname">Fullname of Program</label>

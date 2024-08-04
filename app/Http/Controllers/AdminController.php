@@ -13,4 +13,11 @@ class AdminController extends Controller
 
         return view('admin.index', $data);
     }
+
+    public function eror404(): View
+    {
+        $data = [];
+
+        return view('errors.404-admin', $data);
+    }
 }

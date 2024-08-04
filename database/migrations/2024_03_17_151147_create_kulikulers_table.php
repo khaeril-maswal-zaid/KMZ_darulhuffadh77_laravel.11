@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('description', 110);
             $table->timestamps();
 
-            $table->foreign('kulikuler_id')->references('id')->on('kulikulers');
+            $table->foreign('kulikuler_id')->references('id')->on('kulikulers')->onDelete('cascade');
             $table->foreign('santri_id')->references('id')->on('tholabahs');
         });
     }

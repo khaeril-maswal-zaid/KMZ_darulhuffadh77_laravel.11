@@ -4,9 +4,9 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light px-4 rounded">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                <h1 class="h5">MANAGEMENT {{ $kulikuler->name }}</h1>
+                <h1 class="h5">MANAGER {{ $kulikuler->name }}</h1>
 
-                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     Add new
                 </button>
             </div>
@@ -15,6 +15,13 @@
         @session('success')
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endsession
+
+        @session('warning')
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{ session('warning') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endsession
@@ -50,7 +57,7 @@
                             </td>
                             <td class="text-center align-middle">
                                 <div class="dropdown">
-                                    <button class="btn btn-success btn-sm dropdown-toggle" type="button"
+                                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         Action
                                     </button>
@@ -120,7 +127,7 @@
                     <input autocomplete="off" type="hidden" name="kulikuler" value="{{ $kulikuler->enum }}">
 
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Management {{ $kulikuler->name }}</h1>
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Manager {{ $kulikuler->name }}</h1>
                         <button type="button" autocomplete="off" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
@@ -188,7 +195,7 @@
                     </div>
 
                     <div class="modal-footer d-none" id="modalFooter">
-                        <button type="submit" class="btn btn-primary">Add Management</button>
+                        <button type="submit" class="btn btn-primary">Add Manager</button>
                     </div>
                 </form>
             </div>
@@ -210,10 +217,11 @@
                 elementTarget[3].innerHTML =
                     '<div class="spinner-grow spinner-grow-sm" role="status"><span class="visually-hidden">Loading...</span></div>';
 
-                const nisdh = document.getElementById('search').value;
+                const identifier = document.getElementById('search').value;
                 const xhr = new XMLHttpRequest();
 
-                xhr.open('GET', '/api/personil-kulikuler/' + nisdh + '/{{ Auth::user()->jenis_kelamin }}',
+                xhr.open('GET', '{{ route('api.tholabah', ['', '']) }}' + '/' + identifier +
+                    '/{{ Auth::user()->jenis_kelamin }}',
                     true);
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -227,7 +235,8 @@
                             elementTarget[0].textContent = response.nisdh;
                             elementTarget[1].textContent = response.nama;
                             elementTarget[2].textContent = response.kelas;
-                            elementTarget[3].textContent = response.alamat;
+                            elementTarget[3].textContent = response.kabupaten + ', ' + response
+                                .provinsi;
 
                             document.getElementById('formadd').action =
                                 '{{ route('hardsoftskill.personil.store', '') }}/' +

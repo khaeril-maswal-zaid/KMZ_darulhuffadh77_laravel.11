@@ -13,6 +13,11 @@ class Ikdh extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'cabang',
+        'tholabah_id'
+    ];
+
     protected $with = ['ketua'];
 
     function ketua(): BelongsTo

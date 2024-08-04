@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="container-fluid pt-4 px-4">
-        <form action="{{ route('update.kontak', $kontak->slug) }}" method="post">
+        <form action="{{ route('kontak.update', $kontak->slug) }}" method="post">
             <div class="bg-light px-4 rounded">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
                     <h1 class="h5">Edit Kontak Pontren {{ config('app.name') }}</h1>
 
-                    <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-sm btn-success">Submit</button>
                 </div>
             </div>
 

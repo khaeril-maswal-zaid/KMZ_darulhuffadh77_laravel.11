@@ -161,8 +161,14 @@ class BlogController extends Controller
 
     public function destroy(Request $request, Blog $blog): RedirectResponse
     {
+        //HAPUS FOTO LAMA
+        Storage::delete($blog->picture1);
+        Storage::delete($blog->picture2);
+        Storage::delete($blog->picture3);
+
         $blog->delete();
-        return redirect()->route('blogger', $request->input('kategori'))->with('success', 'Data has been successfully deleted. This data cannot be restored.');
+
+        return redirect()->route('blogger', $request->input('kategori'))->with('warning', 'Data has been successfully deleted. This data cannot be restored.');
     }
 
     public function update(Request $request, Blog $blog): RedirectResponse
@@ -231,17 +237,9 @@ class BlogController extends Controller
             $picture3 = $request->file('imageUpdate3')->store('blog');
         }
 
-        //kalau khusus 1 (Eksektif) slug nya gabung judul dengan desk
-        if ($request->input('categoryid') == 'khusus-1-165') {
-            $slug = Str::of($request->input('judulUpdate') . $request->input('deskripsiUpdate'))->slug('-');
-        } else {
-            $slug = Str::of($request->input('judulUpdate'))->slug('-');
-        }
-
         $data = [
             'user_id' => $request->user()->id,
             'oleh' => $request->input('olehlainnyaUpdate'),
-            'slug' => $slug,
             'title' => $request->input('judulUpdate'),
             'excerpt' => $request->input('deskripsiUpdate'),
             'body1' => $request->input('bodyartikelUpdate1'),
@@ -259,7 +257,7 @@ class BlogController extends Controller
         if ($kategori == 'khusus-umum-165') {
             $kategori = 'default';
         } elseif ($kategori == 'khusus-1-165') {
-            return redirect()->route('blogger.eksekutif', $blog->slug)->with('success', 'Article Edit Successful');
+            return redirect()->route('eksekutif.blog', $blog->slug)->with('success', 'Article Edit Successful');
         } elseif ($kategori == 'khusus-2-165') {
             return redirect()->route('index.hardsoftskill')->with('success', 'Article Edit Successful');
         }

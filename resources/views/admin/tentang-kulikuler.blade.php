@@ -8,7 +8,7 @@
                 <h1 class="h4 id-table">Programs Hard & Soft Skill Students </h1>
 
                 <!-- Button trigger modal -->
-                <a href="{{ route('index.hardsoftskill') }}" class="btn btn-sm btn-primary">
+                <a href="{{ route('hardsoftskill.index') }}" class="btn btn-sm btn-primary">
                     Kembali
                 </a>
             </div>
@@ -48,7 +48,7 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="form-floating mb-2">
-                            <input name="judulUpdate" type="text"
+                            <input autocomplete="off" name="judulUpdate" type="text"
                                 class="form-control @error('judulUpdate') is-invalid @enderror" id="judulberitaUpdate"
                                 placeholder="Judul Berita" value="{{ old('judulUpdate') ?? $blog->title }}">
                             <label for="judulberitaUpdate">Program Name</label>
@@ -60,7 +60,7 @@
                         </div>
 
                         <div class="form-floating mb-2">
-                            <input name="deskripsiUpdate" type="text"
+                            <input autocomplete="off" name="deskripsiUpdate" type="text"
                                 class="form-control @error('deskripsiUpdate') is-invalid @enderror"
                                 id="floatingTextareaUpdate" placeholder="Judul Berita"
                                 value="{{ old('deskripsiUpdate') ?? $blog->excerpt }}">

@@ -8,6 +8,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class KulikulerController extends Controller
 {
@@ -54,10 +55,16 @@ class KulikulerController extends Controller
 
     public function destroy(Kulikuler $kulikuler)
     {
-        //Hapus juga aktikelnya
-        //...........................
+        $blog = Blog::where('slug', $kulikuler->enum)->firstOrFail();
+
+        //HAPUS FOTO LAMA
+        Storage::delete($blog->picture1);
+        Storage::delete($blog->picture2);
+        Storage::delete($blog->picture3);
+
+        $blog->delete();
 
         $kulikuler->delete();
-        return redirect()->route('index.hardsoftskill')->with('success', 'Data has been successfully deleted. This data cannot be restored.');
+        return redirect()->route('index.hardsoftskill')->with('warning', 'Data has been successfully deleted. This data cannot be restored.');
     }
 }

@@ -47,7 +47,7 @@
                         <div class="bg-light p-3" style="min-height: 100%">
 
                             <div class="form-floating mb-2">
-                                <input name="judulUpdate" type="text"
+                                <input autocomplete="off" name="judulUpdate" type="text"
                                     class="form-control @error('judulUpdate') is-invalid @enderror" id="judulUpdateberita"
                                     placeholder="Judul Berita"
                                     value="{{ old('judulUpdate') ? old('judulUpdate') : $blog->title }}">
@@ -60,7 +60,7 @@
                             </div>
 
                             <div class="form-floating mb-2">
-                                <input name="deskripsiUpdate" type="text"
+                                <input autocomplete="off" name="deskripsiUpdate" type="text"
                                     class="form-control @error('deskripsiUpdate') is-invalid @enderror" id="deskripsiUpdate"
                                     placeholder="Judul Berita"
                                     value="{{ old('deskripsiUpdate') ? old('deskripsiUpdate') : $blog->excerpt }}">
@@ -101,7 +101,7 @@
                             <img class="img-fluid h-100 w-100 rounded wow zoomIn img-preview1 mb-2" data-wow-delay="0.9s"
                                 src=" {{ asset('storage/' . $blog->picture1) }} " style="object-fit: cover;">
                             <div class="d-grid">
-                                <button class="btn btn-primary" type="submit">Kirim</button>
+                                <button class="btn btn-success" type="submit">Kirim</button>
                             </div>
                         </div>
                     </div>

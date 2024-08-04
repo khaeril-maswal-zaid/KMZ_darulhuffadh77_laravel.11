@@ -12,31 +12,35 @@
     <!-- Sidebar Start -->
     <div class="sidebar pe-4 pb-3">
         <nav class="navbar bg-light navbar-light">
-            <a href="/admindh" class="navbar-brand mx-4 my-2">
+            <a href="{{ route('admin.index') }}" class="navbar-brand mx-4 my-2">
                 <h3 class="text-primary h4">{{ config('app.name') }}</h3>
             </a>
 
             <div class="navbar-nav w-100">
-                <a href="/admindh" class="nav-item nav-link active"><i
+                <a href="{{ route('admin.index') }}"
+                    class="nav-item nav-link  {{ request()->routeIs('admin.index') ? 'active' : '' }}"><i
                         class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                            class="fa fa-laptop me-2"></i>Master Data</a>
+                    <a href="#"
+                        class="nav-link dropdown-toggle {{ request()->routeIs('masterdata.*') ? 'active' : '' }}"
+                        data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Master Data</a>
                     <div class="dropdown-menu bg-transparent border-0">
-                        <a href="/admindh/master-data/santri-baru"
+                        <a href="{{ route('masterdata.index', 'santri-baru') }}"
                             class="dropdown-item">{{ Auth::user()->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati' }}
                             Baru</a>
-                        <a href="/admindh/master-data/santri"
+                        <a href="{{ route('masterdata.index', 'santri') }}"
                             class="dropdown-item">{{ Auth::user()->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati' }}</a>
-                        <a href="/admindh/master-data/pembina" class="dropdown-item">Pembina</a>
-                        <a href="/admindh/master-data/pengabdian-luar" class="dropdown-item">Pengabdian Luar</a>
-                        <a href="/admindh/master-data/alumni" class="dropdown-item">Alumni</a>
+                        <a href="{{ route('masterdata.index', 'pembina') }}" class="dropdown-item">Pembina</a>
+                        <a href="{{ route('masterdata.index', 'pengabdian-luar') }}" class="dropdown-item">Pengabdian
+                            Luar</a>
+                        <a href="{{ route('masterdata.index', 'alumni') }}" class="dropdown-item">Alumni</a>
                     </div>
                 </div>
 
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                            class="far fa-file-alt me-2"></i>Blog</a>
+                    <a href="#"
+                        class="nav-link dropdown-toggle {{ request()->routeIs('blogger') ? 'active' : '' }}"
+                        data-bs-toggle="dropdown"><i class="fa-solid fa-blog me-2"></i>Blog</a>
                     <div class="dropdown-menu bg-transparent border-0">
                         <a href="{{ route('blogger', 'islamic') }}" class="dropdown-item">Islamic</a>
                         <a href="{{ route('blogger', 'news-dh') }}" class="dropdown-item">News DH</a>
@@ -46,33 +50,39 @@
                 </div>
 
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                            class="far fa-file-alt me-2"></i>Eksekutif</a>
+                    <a href="#"
+                        class="nav-link dropdown-toggle {{ request()->routeIs('eksekutif.*') ? 'active' : '' }}"
+                        data-bs-toggle="dropdown"><i class="fa-solid fa-users-gear me-2"></i>Eksekutif</a>
                     <div class="dropdown-menu bg-transparent border-0">
-                        <a href="{{ route('blogger.eksekutif', 'struktur-eksekutif') }}" class="dropdown-item">Struktur
+                        <a href="{{ route('eksekutif.blog', 'struktur-eksekutif') }}" class="dropdown-item">Struktur
                             Eksekutif</a>
-                        <a href="{{ route('blogger.eksekutif', 'profil-pendiri-kh-lanre-said') }}"
+                        <a href="{{ route('eksekutif.blog', 'profil-pendiri-kh-lanre-said') }}"
                             class="dropdown-item">Profil Pendiri</a>
-                        <a href="{{ route('blogger.eksekutif', 'profil-pimpinan-ust-saad-said') }}"
+                        <a href="{{ route('eksekutif.blog', 'profil-pimpinan-ust-saad-said') }}"
                             class="dropdown-item">Profil
                             Pimpinan</a>
-                        <a href="{{ route('blogger.eksekutif', 'profil-direktur-putra') }}"
-                            class="dropdown-item">Profil
+                        <a href="{{ route('eksekutif.blog', 'profil-direktur-putra') }}" class="dropdown-item">Profil
                             Direktur Putra</a>
-                        <a href="{{ route('blogger.eksekutif', 'profil-direktur-putri') }}"
-                            class="dropdown-item">Profil
+                        <a href="{{ route('eksekutif.blog', 'profil-direktur-putri') }}" class="dropdown-item">Profil
                             Direktur Putri</a>
                     </div>
                 </div>
 
-                <a href="{{ route('index.hardsoftskill') }}" class="nav-item nav-link"><i
-                        class="fa fa-th me-2"></i>Hard & Soft
-                    Skill</a>
-                <a href="{{ route('aktivitassantri.admin') }}" class="nav-item nav-link"><i
-                        class="fa fa-th me-2"></i>Aktivitas</a>
-                <a href="{{ route('index.kontak') }}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Kontak</a>
-                <a href="{{ route('ikdh.masterdata') }}" class="nav-item nav-link"><i
-                        class="fa fa-th me-2"></i>IKDH</a>
+                <a href="{{ route('hardsoftskill.index') }}"
+                    class="nav-item nav-link {{ request()->routeIs('hardsoftskill.*') ? 'active' : '' }}"><i
+                        class="fa-solid fa-hands-asl-interpreting me-2"></i>Hard & Soft Skill</a>
+
+                <a href="{{ route('aktivitassantri.admin') }}"
+                    class="nav-item nav-link {{ request()->routeIs('aktivitassantri.*') ? 'active' : '' }}"><i
+                        class="fa-regular fa-calendar-days me-2"></i>Aktivitas</a>
+
+                <a href="{{ route('ikdh.masterdata') }}"
+                    class="nav-item nav-link  {{ request()->routeIs('ikdh.*') ? 'active' : '' }}"><i
+                        class="fa-solid fa-network-wired me-2"></i>IKDH</a>
+
+                <a href="{{ route('kontak.index') }}"
+                    class="nav-item nav-link {{ request()->routeIs('kontak.*') ? 'active' : '' }}"><i
+                        class="fa-regular fa-address-book me-2"></i>Kontak</a>
 
             </div>
         </nav>

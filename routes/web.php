@@ -45,7 +45,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     //ADMIN---------------------------------------
-    Route::get('/admindh', [AdminController::class, 'index']);
+    Route::get('/admindh', [AdminController::class, 'index'])->name('admin.index');
 
     Route::get('/admindh/master-data/{var}', [TholabahController::class, 'masterData'])->name('masterdata.index');
     Route::get('/admindh/master-data/{var}/{tholabah:nisdh}', [TholabahController::class, 'show'])->name('masterdata.detail');
@@ -62,9 +62,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('/admindh/blog/{blog:slug}', [BlogController::class, 'update'])->name('blogger.update');
     Route::delete('/admindh/blog/{blog}', [BlogController::class, 'destroy'])->name('blogger.delete');
 
-    Route::get('/admindh/tentang/{blog:slug}', [BlogController::class, 'tentangProfil'])->name('blogger.eksekutif');
+    Route::get('/admindh/tentang/{blog:slug}', [BlogController::class, 'tentangProfil'])->name('eksekutif.blog');
 
-    Route::get('/admindh/hard-soft-skill', [KulikulerController::class, 'index'])->name('index.hardsoftskill');
+    Route::get('/admindh/hard-soft-skill', [KulikulerController::class, 'index'])->name('hardsoftskill.index');
     Route::post('/admindh/program-add', [KulikulerController::class, 'store'])->name('hardsoftskill.store');
     Route::delete('/admindh/program-delete/{kulikuler}', [KulikulerController::class, 'destroy'])->name('hardsoftskill.destroy');
 
@@ -77,12 +77,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/admindh/add-aktivitas-santri', [AktivitasSantriController::class, 'store'])->name('aktivitassantri.create');
     Route::delete('/admindh/delete-aktivitas-santri/{aktivitas_santri}', [AktivitasSantriController::class, 'destroy'])->name('akttvitas.delete');
 
-    Route::get('/admindh/kontak', [KontakController::class, 'forAdmin'])->name('index.kontak');
-    Route::get('/admindh/edi-kontak/{kontak:slug}', [KontakController::class, 'edit'])->name('edit.kontak');
-    Route::put('/admindh/update-kontak/{kontak:slug}', [KontakController::class, 'update'])->name('update.kontak');
+    Route::get('/admindh/kontak', [KontakController::class, 'forAdmin'])->name('kontak.index');
+    Route::get('/admindh/kontak/{kontak:slug}', [KontakController::class, 'edit'])->name('kontak.edit');
+    Route::put('/admindh/update-kontak/{kontak:slug}', [KontakController::class, 'update'])->name('kontak.update');
 
     Route::get('/admindh/ikatan-keluarga-darul-huffadh', [IkdhController::class, 'masterData'])->name('ikdh.masterdata');
-    Route::delete('admindh/ikatan-keluarga-darul-huffadh-delete{ikdh}', [IkdhController::class, 'destroy'])->name('ikdh.destroy');
+    Route::delete('/admindh/ikatan-keluarga-darul-huffadh-delete/{ikdh}', [IkdhController::class, 'destroy'])->name('ikdh.destroy');
+    Route::post('/admindh/ikatan-keluarga-darul-huffadh-store/{tholabah:nisdh}', [IkdhController::class, 'store'])->name('ikdh.store');
+
+    Route::get('/admindh/errro/404', [AdminController::class, 'eror404'])->name('error.404');
 });
 
 Route::middleware('auth')->group(function () {

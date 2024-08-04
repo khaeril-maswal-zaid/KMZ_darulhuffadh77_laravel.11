@@ -21,8 +21,12 @@ class KulikulerPersonilController extends Controller
             $query->where('enum', $nameKulikuler);
         })->latest()->get();
 
+
+        //kalau tidak ada ke 404
+        abort_unless($personilKulikuler->isNotEmpty(), 404);
+
         $data = [
-            'title' => $personilKulikuler[0]->kulikuler->name,
+            'title' => $personilKulikuler->first()->kulikuler->name,
             'kontaks' => Kontak::all(),
             'personilkulikulers' => $personilKulikuler
         ];
@@ -51,9 +55,11 @@ class KulikulerPersonilController extends Controller
 
     public function store(Tholabah $tholabah, Request $request): RedirectResponse
     {
+        //Alasan pke Tholabah $tholabah karena untuk cek keamanan jkAdmin dan memastikan id is_real
+
         //Jika yang login tidak sesuai jk admin dan jk tholabah
         if (Auth::user()->jenis_kelamin != $tholabah->jenis_kelamin) {
-            return  view('errors.404');
+            return redirect()->route('error.404')->with('waring', 'Jangan Melampaui Batas');
         }
 
         //Validasi ------------------------------
@@ -79,12 +85,12 @@ class KulikulerPersonilController extends Controller
         ];
 
         KulikulerPersonil::create($data);
-        return redirect()->route('hardsoftskill.personil', $kulikuler->enum)->with('success', 'Management Addition Successful');
+        return redirect()->route('hardsoftskill.personil', $kulikuler->enum)->with('success', 'Manager Addition Successful');
     }
 
     public function destroy(KulikulerPersonil $kulikuler_personil, Request $request): RedirectResponse
     {
         $kulikuler_personil->delete();
-        return redirect()->route('hardsoftskill.personil', $request->input('kulikuler'))->with('success', 'Data has been successfully deleted. This data cannot be restored.');
+        return redirect()->route('hardsoftskill.personil', $request->input('kulikuler'))->with('warning', 'Data has been successfully deleted. This data cannot be restored.');
     }
 }

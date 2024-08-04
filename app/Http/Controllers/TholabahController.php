@@ -329,6 +329,6 @@ class TholabahController extends Controller
     public function destroy(Tholabah $tholabah)
     {
         $tholabah->delete();
-        return redirect()->route('masterdata.index', 'santri-baru')->with('success', 'Data has been successfully deleted. This data cannot be restored.');
+        return redirect()->route('masterdata.index', 'santri-baru')->with('warning', 'Data has been successfully deleted. This data cannot be restored.');
     }
 }

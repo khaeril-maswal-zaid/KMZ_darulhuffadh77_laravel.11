@@ -50,7 +50,7 @@
                                 </a>
                             </td>
                             <td>
-                                <a href="{{ route('edit.kontak', $kontak->slug) }}"
+                                <a href="{{ route('kontak.edit', $kontak->slug) }}"
                                     class="btn btn-success btn-sm">Update</a>
                             </td>
                         </tr>

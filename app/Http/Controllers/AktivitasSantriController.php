@@ -8,6 +8,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\File;
+use Illuminate\Support\Facades\Storage;
 
 class AktivitasSantriController extends Controller
 {
@@ -112,7 +113,11 @@ class AktivitasSantriController extends Controller
      */
     public function destroy(AktivitasSantri $aktivitas_santri)
     {
+        //HAPUS FOTO LAMA
+        Storage::delete($aktivitas_santri->picture);
+
         $aktivitas_santri->delete();
-        return redirect()->route('aktivitassantri.admin')->with('success', 'Data has been successfully deleted. This data cannot be restored.');
+
+        return redirect()->route('aktivitassantri.admin')->with('warning', 'Data has been successfully deleted. This data cannot be restored.');
     }
 }
