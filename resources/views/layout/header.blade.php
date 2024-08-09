@@ -12,7 +12,7 @@
         <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
             <div class="d-inline-flex align-items-center" style="height: 45px;">
                 <small class="me-3 text-light"><i
-                        class="fa fa-map-marker-alt me-2"></i>{{ $kontaks[0]->medsos . ', ' . $kontaks[0]->akun }}</small>
+                        class="fa fa-map-marker-alt me-2"></i>{{ $kontaks->first()->medsos . ', ' . $kontaks->first()->akun }}</small>
                 <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>{{ $kontaks[4]->akun }}</small>
                 <small class="text-light"><i class="fa fa-envelope-open me-2"></i>{{ $kontaks[1]->akun }}</small>
             </div>
