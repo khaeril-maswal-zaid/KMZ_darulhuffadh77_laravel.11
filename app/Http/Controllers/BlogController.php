@@ -23,6 +23,10 @@ class BlogController extends Controller
 
     public function show(Blog $blog): View
     {
+        // dd(Blog::select('slug')->where('category_id', '4')->orWhere('category_id', '5')->get());
+        //Belum selesai,
+        //Mau buat supaya artikel khusus 4,5 (6 tidak) itu tidak bisa lewat show karena artikel istimewA
+
         $data = [
             'title' => $blog->title,
             'kontaks' => Kontak::all(),

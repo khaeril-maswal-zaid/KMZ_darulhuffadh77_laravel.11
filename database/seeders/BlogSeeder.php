@@ -145,7 +145,7 @@ class BlogSeeder extends Seeder
                 'picture1' => 'blog/direktur-putri.jpg',
                 'picture2' => 'blog/blog-2.jpg',
                 'picture3' => 'blog/blog-3.jpg',
-                'album' => 1,
+                'album' => 0,
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
