@@ -53,11 +53,15 @@
                                 data-bs-toggle="dropdown">Eksekutif</a>
                             <div class="dropdownKmz-menu ropdown-menu m-0 bg-primary rounded-1 start-100 top-0">
                                 {{-- <a href="{{route('profil.show', 'struktur-eksekutif')}}" class="dropdown-item">Struktur Eksekutif</a> --}}
-                                <a href="{{route('profil.show', 'profil-pendiri-kh-lanre-said')}}" class="dropdown-item">Profil Pendiri</a>
-                                <a href="{{route('profil.show', 'profil-pimpinan-ust-saad-said')}}" class="dropdown-item">Profil
+                                <a href="{{ route('profil.show', 'profil-pendiri-kh-lanre-said') }}"
+                                    class="dropdown-item">Profil Pendiri</a>
+                                <a href="{{ route('profil.show', 'profil-pimpinan-ust-saad-said') }}"
+                                    class="dropdown-item">Profil
                                     Pimpinan</a>
-                                <a href="{{route('profil.show', 'profil-direktur-putra')}}" class="dropdown-item">Profil Direktur Putra</a>
-                                <a href="{{route('profil.show', 'profil-direktur-putri')}}" class="dropdown-item">Profil Direktur Putri</a>
+                                <a href="{{ route('profil.show', 'profil-direktur-putra') }}"
+                                    class="dropdown-item">Profil Direktur Putra</a>
+                                <a href="{{ route('profil.show', 'profil-direktur-putri') }}"
+                                    class="dropdown-item">Profil Direktur Putri</a>
                             </div>
                         </div>
 
@@ -106,7 +110,7 @@
                         <a href="/santri" class="dropdown-item">Santri</a>
                         <a href="/santriwati" class="dropdown-item">Santriwati</a>
                         <a href="/alumni" class="dropdown-item">Alumni</a>
-                        <a href="/{{route('ikdh.index')}}" class="dropdown-item">IKDH</a>
+                        <a href="{{ route('ikdh.index') }}" class="dropdown-item">IKDH</a>
                     </div>
                 </div>
 
