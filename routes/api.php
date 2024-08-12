@@ -10,7 +10,6 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-Route::get('/personil-kulikuler/{identifier}/{jkAdmin}', [getTholabahsController::class, 'getPersonilKulikuler']);
-Route::get('/tholabah/{identifier}/{jkAdmin}', [getTholabahsController::class, 'getTholabah'])->name('api.tholabah');
+Route::get('/tholabah/{identifier}/{jkAdmin}', [getTholabahsController::class, 'getNameNisdh'])->name('api.tholabah');
 
 Route::get('/blog/{blog:slug}', [getBlogController::class, 'show']);

@@ -12,14 +12,13 @@ use Illuminate\Support\Facades\Auth;
 
 class TholabahController extends Controller
 {
-    public function index(Tholabah $tholabah, String $tingkatan, String $jk = 'all'): View
+    public function index(String $tingkatan, String $jk = 'all'): View
     {
-        // dd($tingkatan, $jk);
 
-        $getTholabah = $tholabah::where('kategori_santri_baru', 'Done')->where('jenis_kelamin', $jk)->where('kategori', $tingkatan)->paginate(24);
+        $getTholabah = Tholabah::where('jenis_kelamin', $jk)->where('kategori', $tingkatan)->nisdhName()->filter()->latest()->paginate(24);
 
         if ($jk == 'all') {
-            $getTholabah = $tholabah::where('kategori_santri_baru', 'Done')->where('kategori', $tingkatan)->paginate(24);
+            $getTholabah = Tholabah::where('kategori', $tingkatan)->nisdhName()->filter()->latest()->paginate(24);
         }
 
         $data = [

@@ -39,49 +39,65 @@
                 <h5 class="fw-bold text-primary text-uppercase">Direktori Santri</h5>
                 <h1 class="mb-0">Pondok Pesantren {{ config('app.name') }}</h1>
             </div>
-            <div class="row mb-lg-4 mb-3">
+
+            <div class="row  mb-lg-4 mb-3">
+                <div class="col-md-6 border-end border-3 border-primary">
+                    <form style="display: flex; align-items: center; gap: 10px;">
+                        <div class="form-floating" style="flex-grow: 1;">
+                            <input name="search" type="text" class="form-control" id="searchname"
+                                placeholder="Cari Nama" autocomplete="off" value="{{ request('search') }}">
+                            <label for="searchname"><i class="fa-solid fa-magnifying-glass me-2"></i>Cari Nama</label>
+                        </div>
+                        <button type="submit" class="btn btn-success">Search</button>
+                    </form>
+                </div>
+
                 <div class="col-md-6">
-                    <div class="form-floating">
-                        <input name="searchname" type="text" class="form-control" id="searchname"
-                            placeholder="Cari Nama">
-                        <label for="nik">Cari Nama</label>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="form-floating">
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                            @for ($i = date('Y'); $i >= 1975; $i--)
-                                <option>{{ $i }}</option>
-                            @endfor
-                        </select>
-                        <label for="floatingSelect">Angkatan</label>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="form-floating">
-                        <select class="form-select" id="alamat">
-                            <option value="all">Semua</option>
-                            <option value="Bulukumba">Bulukumba</option>
-                            <option value="Sinjai">Sinjai</option>
-                            <option value="2">Makassar</option>
-                            <option value="3">NTT</option>
-                        </select>
-                        <label for="alamat">Alamat</label>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="form-floating">
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                            <option selected value="40">40</option>
-                            <option value="60">60</option>
-                            <option value="80">80</option>
-                            <option value="100">100</option>
-                            <option value="al">Semua</option>
-                        </select>
-                        <label for="floatingSelect">Show</label>
-                    </div>
+                    <form action="">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-floating">
+                                    <select class="form-select" id="angkatan" name="angkatan">
+                                        @for ($i = date('Y'); $i >= 1975; $i--)
+                                            <option>{{ $i }}</option>
+                                        @endfor
+                                    </select>
+                                    <label for="angkatan">Angkatan</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-floating">
+                                    <select class="form-select" id="alamat"name="alamat">
+                                        <option value="all">Semua</option>
+                                        <option value="Bulukumba">Bulukumba</option>
+                                        <option value="Sinjai">Sinjai</option>
+                                        <option value="2">Makassar</option>
+                                        <option value="3">NTT</option>
+                                    </select>
+                                    <label for="alamat">Alamat</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4" style="display: flex; align-items: center; gap: 10px;">
+                                <div class="form-floating" style="flex-grow: 1;">
+                                    <select class="form-select" id="show" name="show" style="width: 100%;"
+                                        name="show">
+                                        <option selected value="40">40</option>
+                                        <option value="24">24</option>
+                                        <option value="48">48</option>
+                                        <option value="96">96</option>
+                                        <option value="all">Semua</option>
+                                    </select>
+                                    <label for="show">Show</label>
+                                </div>
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fa-solid fa-filter me-2"></i>Filter</button>
+                            </div>
+
+                        </div>
+                    </form>
                 </div>
             </div>
+
             <div class="row g-5 mb-3">
                 @foreach ($tholabahs as $tholabah)
                     <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
@@ -147,5 +163,6 @@
             {{ $tholabahs->onEachSide(0)->links() }}
         </div>
     </section>
+
     <!-- Team End -->
 @endsection('content')

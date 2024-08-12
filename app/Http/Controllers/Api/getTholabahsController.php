@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class getTholabahsController extends Controller
 {
-    function getTholabah($identifier, $jkAdmin)
+    function getNameNisdh($identifier, $jkAdmin)
     {
         $tholabah = Tholabah::where('nama', 'LIKE', '%' . $identifier . '%')->orWhere('nisdh', 'LIKE', '%' . $identifier . '%')->firstOrFail();
 

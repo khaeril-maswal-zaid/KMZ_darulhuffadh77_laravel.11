@@ -52,12 +52,12 @@
                             <a href="#" class="dropdown-item dropdown-toggle"
                                 data-bs-toggle="dropdown">Eksekutif</a>
                             <div class="dropdownKmz-menu ropdown-menu m-0 bg-primary rounded-1 start-100 top-0">
-                                <a href="/tentang/struktur-eksekutif" class="dropdown-item">Struktur Eksekutif</a>
-                                <a href="/tentang/profil-pendiri-kh-lanre-said" class="dropdown-item">Profil Pendiri</a>
-                                <a href="/tentang/profil-pimpinan-ust-saad-said" class="dropdown-item">Profil
+                                {{-- <a href="{{route('profil.show', 'struktur-eksekutif')}}" class="dropdown-item">Struktur Eksekutif</a> --}}
+                                <a href="{{route('profil.show', 'profil-pendiri-kh-lanre-said')}}" class="dropdown-item">Profil Pendiri</a>
+                                <a href="{{route('profil.show', 'profil-pimpinan-ust-saad-said')}}" class="dropdown-item">Profil
                                     Pimpinan</a>
-                                <a href="/tentang/profil-direktur-putra" class="dropdown-item">Profil Direktur Putra</a>
-                                <a href="/tentang/profil-direktur-putri" class="dropdown-item">Profil Direktur Putri</a>
+                                <a href="{{route('profil.show', 'profil-direktur-putra')}}" class="dropdown-item">Profil Direktur Putra</a>
+                                <a href="{{route('profil.show', 'profil-direktur-putri')}}" class="dropdown-item">Profil Direktur Putri</a>
                             </div>
                         </div>
 

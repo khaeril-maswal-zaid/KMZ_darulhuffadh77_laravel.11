@@ -21,11 +21,17 @@ class BlogController extends Controller
         return view('blog.index', $data);
     }
 
-    public function show(Blog $blog): View
+    public function show(Blog $blog)
     {
-        // dd(Blog::select('slug')->where('category_id', '4')->orWhere('category_id', '5')->get());
-        //Belum selesai,
-        //Mau buat supaya artikel khusus 4,5 (6 tidak) itu tidak bisa lewat show karena artikel istimewA
+        switch ($blog->category_id) {
+            case '4':
+                return redirect(route('profil.show', $blog->slug));
+                break;
+
+                case '5':
+                    return redirect(route('hardsoftskill.blog', $blog->slug));
+                break;
+        }
 
         $data = [
             'title' => $blog->title,

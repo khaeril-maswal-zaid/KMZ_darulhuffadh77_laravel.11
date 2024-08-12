@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/tentang/{blog:slug}', [BlogController::class, 'profilPimpinan']);
+Route::get('/profil/{blog:slug}', [BlogController::class, 'profilPimpinan'])->name('profil.show');
 
 Route::get('/pendidikan/{blog:slug}', [BlogController::class, 'show']); // sengaja berdiri sendiri meskipun tampilan sama
 
-Route::get('/hard-and-soft-skill/{blog:slug}', [BlogController::class, 'tentangKulikuler']);
+Route::get('/hard-and-soft-skill/{blog:slug}', [BlogController::class, 'tentangKulikuler'])->name('hardsoftskill.blog');
 
 Route::get('/personil-hard-and-soft-skill/{kulikuler}', [KulikulerPersonilController::class, 'index'])->name('personil.hardsoftskill');
 
@@ -62,7 +62,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('/admindh/blog/{blog:slug}', [BlogController::class, 'update'])->name('blogger.update');
     Route::delete('/admindh/blog/{blog}', [BlogController::class, 'destroy'])->name('blogger.delete');
 
-    Route::get('/admindh/tentang/{blog:slug}', [BlogController::class, 'tentangProfil'])->name('eksekutif.blog');
+    Route::get('/admindh/tentang/{blog:slug}', [BlogController::class, 'tentangProfil.show'])->name('eksekutif.blog');
 
     Route::get('/admindh/hard-soft-skill', [KulikulerController::class, 'index'])->name('hardsoftskill.index');
     Route::post('/admindh/program-add', [KulikulerController::class, 'store'])->name('hardsoftskill.store');
@@ -89,7 +89,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/profil.showe', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });

@@ -54,4 +54,9 @@ class Tholabah extends Model
     {
         $query->where('nisdh', 'like', '%' . request('search') . '%')->orWhere('nama', 'like', '%' . request('search') . '%');
     }
+
+    public function scopeFilter(Builder $query): void
+    {
+        $query->where('angkatan', 'like', '%' . request('angkatan') . '%')->where('kabupaten', 'like', '%' . request('alamat') . '%');
+    }
 }
