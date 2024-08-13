@@ -55,8 +55,19 @@ class Tholabah extends Model
         $query->where('nisdh', 'like', '%' . request('search') . '%')->orWhere('nama', 'like', '%' . request('search') . '%');
     }
 
+    // public function scopeFilter(Builder $query): void
+    // {
+    //     $query->where('angkatan', 'like', '%' . request('angkatan') . '%')->where('kabupaten', 'like', '%' . request('alamat') . '%');
+    // }
+
     public function scopeFilter(Builder $query): void
     {
-        $query->where('angkatan', 'like', '%' . request('angkatan') . '%')->where('kabupaten', 'like', '%' . request('alamat') . '%');
+        $query
+            ->when(request('angkatan') && request('angkatan') !== 'all', function ($query) {
+                $query->where('angkatan', 'like', '%' . request('angkatan') . '%');
+            })
+            ->when(request('alamat') && request('alamat') !== 'all', function ($query) {
+                $query->where('kabupaten', 'like', '%' . request('alamat') . '%');
+            });
     }
 }

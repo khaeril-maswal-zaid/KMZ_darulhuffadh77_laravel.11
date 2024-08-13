@@ -107,6 +107,11 @@
                                         <td>{{ $details->tahun_tamat_sd }}</td>
                                     </tr>
                                     <tr>
+                                        <td>Angkatan</td>
+                                        <td>:</td>
+                                        <td>{{ $details->angkatan }}</td>
+                                    </tr>
+                                    <tr>
                                         <td>Experiment</td>
                                         <td>:</td>
                                         <td>{{ $details->experiment ? 'Yah' : 'Bukan' }}</td>

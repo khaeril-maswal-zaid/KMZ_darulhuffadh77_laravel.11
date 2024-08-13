@@ -7,27 +7,29 @@
             <div class="col-sm-6 col-xl-3">
                 <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                     <i class="fa-solid fa-book fa-3x text-primary"></i>
-                    <div class="ms-3">
-                        <p class="mb-2">Jumlah{{ Auth::user()->jenis_kelamin == 'Laki-laki' ? 'Santri Baru' : 'Santriwati Baru' }}</p>
-                        <h6 class="mb-0">{{$santribaru}}</h6>
+                    <div class="ms-2">
+                        <p class="mb-2">
+                            Jumlah {{ Auth::user()->jenis_kelamin == 'Laki-laki' ? 'Santri Baru' : 'Santriwati Baru' }}</p>
+                        <h6 class="mb-0">{{ $santribaru }}</h6>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6 col-xl-3">
                 <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                     <i class="fa-solid fa-users fa-3x text-primary"></i>
-                    <div class="ms-3">
-                        <p class="mb-2">Jumlah {{ Auth::user()->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati' }}</p>
-                        <h6 class="mb-0">{{$santri}}</h6>
+                    <div class="ms-2">
+                        <p class="mb-2">Jumlah {{ Auth::user()->jenis_kelamin == 'Laki-laki' ? 'Santri' : 'Santriwati' }}
+                        </p>
+                        <h6 class="mb-0">{{ $santri }}</h6>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6 col-xl-3">
                 <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                     <i class="fa-solid fa-school fa-3x text-primary"></i>
-                    <div class="ms-3">
+                    <div class="ms-2">
                         <p class="mb-2">Jumlah Pembina</p>
-                        <h6 class="mb-0">{{$pembina}}</h6>
+                        <h6 class="mb-0">{{ $pembina }}</h6>
                     </div>
                 </div>
             </div>
@@ -36,7 +38,7 @@
                     <i class="fa-solid fa-network-wired text-primary fa-3x"></i>
                     <div class="ms-3">
                         <p class="mb-2">Jumlah Alumni</p>
-                        <h6 class="mb-0">{{$alumni}}</h6>
+                        <h6 class="mb-0">{{ $alumni }}</h6>
                     </div>
                 </div>
             </div>

@@ -58,6 +58,7 @@
                             <div class="col-md-4">
                                 <div class="form-floating">
                                     <select class="form-select" id="angkatan" name="angkatan">
+                                        <option selected value="all">Semua</option>
                                         @for ($i = date('Y'); $i >= 1975; $i--)
                                             <option>{{ $i }}</option>
                                         @endfor
@@ -68,7 +69,7 @@
                             <div class="col-md-4">
                                 <div class="form-floating">
                                     <select class="form-select" id="alamat"name="alamat">
-                                        <option value="all">Semua</option>
+                                        <option selected value="all">Semua</option>
                                         <option value="Bulukumba">Bulukumba</option>
                                         <option value="Sinjai">Sinjai</option>
                                         <option value="2">Makassar</option>
@@ -77,15 +78,12 @@
                                     <label for="alamat">Alamat</label>
                                 </div>
                             </div>
-                            <div class="col-md-4" style="display: flex; align-items: center; gap: 10px;">
+                            <div class="col-md-4 col-md-4 px-0 d-flex align-items-center gap-2">
                                 <div class="form-floating" style="flex-grow: 1;">
-                                    <select class="form-select" id="show" name="show" style="width: 100%;"
-                                        name="show">
-                                        <option selected value="40">40</option>
-                                        <option value="24">24</option>
+                                    <select class="form-select w-100" id="show" name="show" name="show">
+                                        <option selected value="24">24</option>
                                         <option value="48">48</option>
                                         <option value="96">96</option>
-                                        <option value="all">Semua</option>
                                     </select>
                                     <label for="show">Show</label>
                                 </div>

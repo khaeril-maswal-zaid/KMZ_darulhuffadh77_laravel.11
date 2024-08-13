@@ -12,13 +12,19 @@ use Illuminate\Support\Facades\Auth;
 
 class TholabahController extends Controller
 {
-    public function index(String $tingkatan, String $jk = 'all'): View
+    public function index(String $tingkatan, String $jk = 'all')
     {
+        $paginate = (request('show')) ?: 24;
 
-        $getTholabah = Tholabah::where('jenis_kelamin', $jk)->where('kategori', $tingkatan)->nisdhName()->filter()->latest()->paginate(24);
+        //kalau pilih filter 'semua'
+        if (request('angkatan') == 'all' && request('alamat') == 'all' && request('show' != '24')) {
+            return back();
+        }
+
+        $getTholabah = Tholabah::where('jenis_kelamin', $jk)->where('kategori', $tingkatan)->nisdhName()->filter()->latest()->paginate($paginate);
 
         if ($jk == 'all') {
-            $getTholabah = Tholabah::where('kategori', $tingkatan)->nisdhName()->filter()->latest()->paginate(24);
+            $getTholabah = Tholabah::where('kategori', $tingkatan)->nisdhName()->filter()->latest()->paginate($paginate);
         }
 
         $data = [
@@ -66,7 +72,8 @@ class TholabahController extends Controller
                 'tahuntamat' => 'required',
 
                 'foto' => [
-                    'required', File::image()->max(400)
+                    'required',
+                    File::image()->max(400)
                 ],
             ],
 
