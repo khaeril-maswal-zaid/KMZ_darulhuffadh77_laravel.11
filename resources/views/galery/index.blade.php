@@ -53,19 +53,20 @@
 
             <div class="row portfolio-container mb-3 ">
                 @foreach ($picturies as $picture)
-                    <div class="col-lg-4 col-md-6 portfolio-item {{($picture->album) ? 'putra' : 'putri'}} mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-4 col-md-6 portfolio-item {{ $picture->album ? 'putra' : 'putri' }} mb-3 wow fadeInUp"
+                        data-wow-delay="0.1s">
                         <div class="portfolio-inner rounded" style="height: 15em;">
-                            <img class="img-fluid h-100 w-100" src="{{ asset('storage/' . $picture->picture1) }}" alt="{{$picture->picture1 }}"
-                                style="object-fit: cover;">
+                            <img class="img-fluid h-100 w-100" src="{{ asset('storage/' . $picture->picture1) }}"
+                                alt="{{ $picture->picture1 }}" style="object-fit: cover;">
 
                             <div class="portfolio-text px-3">
-                                <h5 class="text-white text-center mb-4">Sejarah {{ config('app.name') }}</h5>
+                                <h5 class="text-white text-center mb-4">{{ $picture->title }}</h5>
                                 <div class="d-flex">
-                                    <a class="btn btn-lg-square rounded-circle mx-2" href="{{ asset('storage/' . $picture->picture1) }}"
-                                        data-lightbox="portfolio">
+                                    <a class="btn btn-lg-square rounded-circle mx-2"
+                                        href="{{ asset('storage/' . $picture->picture1) }}" data-lightbox="portfolio">
                                         <i class="fa fa-eye mt-2"></i>
                                     </a>
-                                    <a class="btn btn-lg-square rounded-circle mx-2" href="/blog/{{$picture->slug}}">
+                                    <a class="btn btn-lg-square rounded-circle mx-2" href="/blog/{{ $picture->slug }}">
                                         <i class="fa fa-link mt-2"></i>
                                     </a>
                                 </div>
@@ -73,19 +74,20 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item {{($picture->album) ? 'putra' : 'putri'}} mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-4 col-md-6 portfolio-item {{ $picture->album ? 'putra' : 'putri' }} mb-3 wow fadeInUp"
+                        data-wow-delay="0.1s">
                         <div class="portfolio-inner rounded" style="height: 15em;">
-                            <img class="img-fluid h-100 w-100" src="{{ asset('storage/' . $picture->picture2) }}" alt="{{$picture->picture2 }}"
-                                style="object-fit: cover;">
+                            <img class="img-fluid h-100 w-100" src="{{ asset('storage/' . $picture->picture2) }}"
+                                alt="{{ $picture->picture2 }}" style="object-fit: cover;">
 
                             <div class="portfolio-text px-3">
-                                <h5 class="text-white text-center mb-4">Sejarah {{ config('app.name') }}</h5>
+                                <h5 class="text-white text-center mb-4">{{ $picture->title }}</h5>
                                 <div class="d-flex">
-                                    <a class="btn btn-lg-square rounded-circle mx-2" href="{{ asset('storage/' . $picture->picture2) }}"
-                                        data-lightbox="portfolio">
+                                    <a class="btn btn-lg-square rounded-circle mx-2"
+                                        href="{{ asset('storage/' . $picture->picture2) }}" data-lightbox="portfolio">
                                         <i class="fa fa-eye mt-2"></i>
                                     </a>
-                                    <a class="btn btn-lg-square rounded-circle mx-2" href="/blog/{{$picture->slug}}">
+                                    <a class="btn btn-lg-square rounded-circle mx-2" href="/blog/{{ $picture->slug }}">
                                         <i class="fa fa-link mt-2"></i>
                                     </a>
                                 </div>
@@ -93,26 +95,26 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item {{($picture->album) ? 'putra' : 'putri'}} mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-4 col-md-6 portfolio-item {{ $picture->album ? 'putra' : 'putri' }} mb-3 wow fadeInUp"
+                        data-wow-delay="0.1s">
                         <div class="portfolio-inner rounded" style="height: 15em;">
-                            <img class="img-fluid h-100 w-100" src="{{ asset('storage/' . $picture->picture3) }}" alt="{{$picture->picture3 }}"
-                                style="object-fit: cover;">
+                            <img class="img-fluid h-100 w-100" src="{{ asset('storage/' . $picture->picture3) }}"
+                                alt="{{ $picture->picture3 }}" style="object-fit: cover;">
 
                             <div class="portfolio-text px-3">
-                                <h5 class="text-white text-center mb-4">Sejarah {{ config('app.name') }}</h5>
+                                <h5 class="text-white text-center mb-4">{{ $picture->title }}</h5>
                                 <div class="d-flex">
-                                    <a class="btn btn-lg-square rounded-circle mx-2" href="{{ asset('storage/' . $picture->picture3) }}"
-                                        data-lightbox="portfolio">
+                                    <a class="btn btn-lg-square rounded-circle mx-2"
+                                        href="{{ asset('storage/' . $picture->picture3) }}" data-lightbox="portfolio">
                                         <i class="fa fa-eye mt-2"></i>
                                     </a>
-                                    <a class="btn btn-lg-square rounded-circle mx-2" href="/blog/{{$picture->slug}}">
+                                    <a class="btn btn-lg-square rounded-circle mx-2" href="/blog/{{ $picture->slug }}">
                                         <i class="fa fa-link mt-2"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 @endforeach
             </div>
         </div>

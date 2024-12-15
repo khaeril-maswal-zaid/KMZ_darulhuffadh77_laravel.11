@@ -42,7 +42,7 @@
 
             <div class="row g-5">
                 <div class="col-lg-5">
-                    <div class="max-100 overflow-auto">
+                    <div class="w-100 overflow-auto" style="max-height: 760px">
                         <div class="wow zoomIn mb-3" data-wow-delay="0.2s">
                             <h4>Rutinitas Sehari-hari</h4>
                         </div>
@@ -61,8 +61,20 @@
                                         <td scope="row" nowrap class="align-middle">{{ $harian->waktu }}</td>
                                         <td class="align-middle">{{ $harian->agenda }}</td>
                                         <td>
-                                            <img src="{{ asset('assets/img/' . $harian->picture) }}" alt=""
-                                                class="img-fluid rounded">
+                                            <div class="portfolio-inner rounded">
+                                                <img src="{{ asset('assets/img/' . $harian->picture) }}" alt=""
+                                                    class="img-fluid rounded">
+
+                                                <div class="portfolio-text px-3">
+                                                    <div class="d-flex">
+                                                        <a class="btn btn-lg-square rounded-circle mx-2"
+                                                            href="{{ asset('assets/img/' . $harian->picture) }}"
+                                                            data-lightbox="portfolio">
+                                                            <i class="fa fa-eye mt-2"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -72,7 +84,7 @@
                 </div>
 
                 <div class="col-lg-7">
-                    <div class="max-100 overflow-auto">
+                    <div class="w-100 overflow-auto">
 
                         <div class="wow zoomIn mb-3" data-wow-delay="0.2s">
                             <h4>Rutinitas Perpekan</h4>
@@ -94,8 +106,20 @@
                                         <td nowrap class="align-middle">{{ $mingguan->waktu }}</td>
                                         <td nowrap class="align-middle">{{ $mingguan->agenda }}</td>
                                         <td>
-                                            <img src="{{ asset('assets/img/' . $mingguan->picture) }}" alt=""
-                                                class="img-fluid rounded">
+                                            <div class="portfolio-inner rounded">
+                                                <img src="{{ asset('assets/img/' . $mingguan->picture) }}" alt=""
+                                                    class="img-fluid rounded">
+
+                                                <div class="portfolio-text px-3">
+                                                    <div class="d-flex">
+                                                        <a class="btn btn-lg-square rounded-circle mx-2"
+                                                            href="{{ asset('assets/img/' . $mingguan->picture) }}"
+                                                            data-lightbox="portfolio">
+                                                            <i class="fa fa-eye mt-2"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach

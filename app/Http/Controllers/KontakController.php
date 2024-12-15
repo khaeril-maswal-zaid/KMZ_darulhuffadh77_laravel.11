@@ -60,6 +60,6 @@ class KontakController extends Controller
         ];
 
         $kontak->update($data);
-        return redirect()->route('index.kontak')->with('success', 'Kontak Edit Successful');
+        return redirect()->route('kontak.index')->with('success', 'Kontak Edit Successful');
     }
 }

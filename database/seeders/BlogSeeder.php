@@ -17,21 +17,32 @@ class BlogSeeder extends Seeder
         $categorys = [
             [
                 'category' => 'islamic',
-                'description' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum illo dignissimos vero accusamus. Tenetur quam ad sequi nihil temporibus soluta dolore reprehenderit ratione nisi voluptas sunt quos, architecto amet suscipit impedit inventore voluptatibus et reiciendis rerum cumque accusantium doloribus alias a commodi. Voluptas tenetur laudantium vel asperiores dolor praesentium, mollitia consequatur omnis doloremque? Maxime voluptates dolor hic assumenda doloremque fugit sunt itaque, velit voluptatem eos nesciunt sit! Eligendi quae deleniti labore eaque qui reiciendis. Illo minus nobis totam velit quod vel hic, eveniet eos ut inventore magni officiis et ducimus voluptatem unde officia obcaecati sint qui quae aliquid doloremque exercitationem.',
-            ], [
+                'name' => 'Islamic',
+                'description' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
+            ],
+            [
                 'category' => 'news-dh',
-                'description' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum illo dignissimos vero accusamus. Tenetur quam ad sequi nihil temporibus soluta dolore reprehenderit ratione nisi voluptas sunt quos, architecto amet suscipit impedit inventore voluptatibus et reiciendis rerum cumque accusantium doloribus alias a commodi. Voluptas tenetur laudantium vel asperiores dolor praesentium, mollitia consequatur omnis doloremque? Maxime voluptates dolor hic assumenda doloremque fugit sunt itaque, velit voluptatem eos nesciunt sit! Eligendi quae deleniti labore eaque qui reiciendis. Illo minus nobis totam velit quod vel hic, eveniet eos ut inventore magni officiis et ducimus voluptatem unde officia obcaecati sint qui quae aliquid doloremque exercitationem.',
-            ], [
+                'name' => 'Nwes DH',
+                'description' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
+            ],
+            [
                 'category' => 'story-dh',
-                'description' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum illo dignissimos vero accusamus. Tenetur quam ad sequi nihil temporibus soluta dolore reprehenderit ratione nisi voluptas sunt quos, architecto amet suscipit impedit inventore voluptatibus et reiciendis rerum cumque accusantium doloribus alias a commodi. Voluptas tenetur laudantium vel asperiores dolor praesentium, mollitia consequatur omnis doloremque? Maxime voluptates dolor hic assumenda doloremque fugit sunt itaque, velit voluptatem eos nesciunt sit! Eligendi quae deleniti labore eaque qui reiciendis. Illo minus nobis totam velit quod vel hic, eveniet eos ut inventore magni officiis et ducimus voluptatem unde officia obcaecati sint qui quae aliquid doloremque exercitationem.',
-            ], [
+                'name' => 'Story DH',
+                'description' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
+            ],
+            [
                 'category' => 'khusus-1-165',
+                'name' => 'Eksekutif',
                 'description' => 'Untuk profil pimpinan'
-            ], [
+            ],
+            [
                 'category' => 'khusus-2-165',
+                'name' => 'Hard and Soft Skill',
                 'description' => 'Hard and Soft Skill',
-            ], [
+            ],
+            [
                 'category' => 'khusus-umum-165',
+                'name' => 'Default',
                 'description' => 'Tampilan umum namun kategori khusus karena bawaan Aplikasi'
             ]
         ];
@@ -53,7 +64,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ],   [
+            ],
+            [
                 'category_id' => 2,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',
@@ -69,7 +81,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ],  [
+            ],
+            [
                 'category_id' => 3,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',
@@ -85,7 +98,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ], [
+            ],
+            [
                 'category_id' => 4,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',
@@ -101,7 +115,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ], [
+            ],
+            [
                 'category_id' => 4,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',
@@ -117,7 +132,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ], [
+            ],
+            [
                 'category_id' => 4,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',
@@ -133,7 +149,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ], [
+            ],
+            [
                 'category_id' => 4,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',
@@ -149,7 +166,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ], [
+            ],
+            [
                 'category_id' => 6,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',
@@ -165,7 +183,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ], [
+            ],
+            [
                 'category_id' => 6,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',
@@ -181,7 +200,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ], [
+            ],
+            [
                 'category_id' => 6,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',
@@ -197,7 +217,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ], [
+            ],
+            [
                 'category_id' => 5,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',
@@ -213,7 +234,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ], [
+            ],
+            [
                 'category_id' => 5,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',
@@ -229,7 +251,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ], [
+            ],
+            [
                 'category_id' => 5,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',
@@ -245,7 +268,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ], [
+            ],
+            [
                 'category_id' => 5,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',
@@ -261,7 +285,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ], [
+            ],
+            [
                 'category_id' => 5,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',
@@ -277,7 +302,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ], [
+            ],
+            [
                 'category_id' => 6,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',
@@ -293,7 +319,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ], [
+            ],
+            [
                 'category_id' => 6,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',
@@ -309,7 +336,8 @@ class BlogSeeder extends Seeder
                 'visit' => 50,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ], [
+            ],
+            [
                 'category_id' => 6,
                 'user_id' => 1,
                 'oleh' => 'Khaeril Maswal Zaid',

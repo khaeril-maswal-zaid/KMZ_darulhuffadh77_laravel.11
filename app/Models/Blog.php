@@ -28,17 +28,14 @@ class Blog extends Model
         'visit'
     ];
 
-    protected $with = ['kategori', 'author'];
+    protected $with = ['kategori'];
 
     public function kategori(): BelongsTo
     {
         return $this->belongsTo(BlogCategory::class, 'category_id', 'id');
     }
 
-    public function author(): BelongsTo
-    {
-        return $this->belongsTo(User::class, 'user_id', 'id');
-    }
+    // Author diambil dari kolum oleh bukan 'user_id'
 
     public function scopeTitle(Builder $query): void
     {

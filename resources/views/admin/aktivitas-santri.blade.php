@@ -41,43 +41,47 @@
         <div class="bg-light rounded h-100 p-4">
             <div class="row g-5">
                 <div class="col-lg-6">
-                    <div class="max-100 overflow-auto">
-                        <div class="wow zoomIn mb-3" data-wow-delay="0.2s">
-                            <h4>Daily routine</h4>
-                        </div>
+                    <div class="w-100 overflow-auto" style="max-height: 427px">
+                        <div class="max-100 overflow-auto">
+                            <div class="wow zoomIn mb-3" data-wow-delay="0.2s">
+                                <h4>Daily routine</h4>
+                            </div>
 
-                        <table class="table table-primary table-striped table-bordered wow zoomIn" data-wow-delay="0.9s">
-                            <thead>
-                                <tr>
-                                    <th scope="col" class="text-center">Time</th>
-                                    <th scope="col" class="text-center">Activities</th>
-                                    <th scope="col" class="text-center" width="37%">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($harians as $harian)
-                                    <tr class="text-center">
-                                        <td scope="row" nowrap class="align-middle">{{ $harian->waktu }}</td>
-                                        <td class="align-middle text-start" nowrap>{{ $harian->agenda }}</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-success dropdown-toggle" type="button"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                Action
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <button type="button" class="dropdown-item" data-bs-toggle="modal"
-                                                        onclick="deleteAktivitas(this)" data-bs-target="#exampleModalDelete"
-                                                        data-delete="{{ $harian->id }}"> Delete
-                                                    </button>
-                                                </li>
-                                                <li><button class="dropdown-item">Image</button></li>
-                                            </ul>
-                                        </td>
+                            <table class="table table-primary table-striped table-bordered wow zoomIn"
+                                data-wow-delay="0.9s">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="text-center">Time</th>
+                                        <th scope="col" class="text-center">Activities</th>
+                                        <th scope="col" class="text-center" width="37%">Action</th>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach ($harians as $harian)
+                                        <tr class="text-center">
+                                            <td scope="row" nowrap class="align-middle">{{ $harian->waktu }}</td>
+                                            <td class="align-middle text-start" nowrap>{{ $harian->agenda }}</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-success dropdown-toggle" type="button"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Action
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <button type="button" class="dropdown-item" data-bs-toggle="modal"
+                                                            onclick="deleteAktivitas(this)"
+                                                            data-bs-target="#exampleModalDelete"
+                                                            data-delete="{{ $harian->id }}"> Delete
+                                                        </button>
+                                                    </li>
+                                                    <li><button class="dropdown-item">Image</button></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -115,7 +119,6 @@
                                                         data-delete="{{ $mingguan->id }}"> Delete
                                                     </button>
                                                 </li>
-                                                <li><button class="dropdown-item">Image</button></li>
                                             </ul>
                                         </td>
                                     </tr>

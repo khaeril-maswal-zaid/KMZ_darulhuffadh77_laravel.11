@@ -28,8 +28,8 @@ class BlogController extends Controller
                 return redirect(route('profil.show', $blog->slug));
                 break;
 
-                case '5':
-                    return redirect(route('hardsoftskill.blog', $blog->slug));
+            case '5':
+                return redirect(route('hardsoftskill.blog', $blog->slug));
                 break;
         }
 
@@ -106,13 +106,13 @@ class BlogController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
-        //Validasi
+        // Validasi
         $request->validate([
             'categoryid' => 'required|numeric|exists:blog_categories,id',
             'oleh' => 'required',
             'olehlainnya' => 'required',
-            'judul' => 'required',
-            'deskripsi' => 'required',
+            'judul' => 'required|max:255',
+            'deskripsi' => 'required|max:255',
             'bodyartikel1' => 'required',
             'bodyartikel2' => 'required',
             'image1' => ['required', File::image()->max(400)],
@@ -125,8 +125,8 @@ class BlogController extends Controller
 
             'oleh' => 'Wajib menentukan Author',
             'olehlainnya' => 'Wajib menentukan Author',
-            'judul' =>  'Judul wajib diisi',
-            'deskripsi' =>  'Deskripsi wajib diisi',
+            'judul' =>  'Judul wajib diisi, Unique, Max 255',
+            'deskripsi' =>  'Deskripsi wajib diisi, Max 255',
             'bodyartikel1' =>  'Artikel bagian 1 wajib diisi',
             'bodyartikel2' =>  'Artikel bagian 2 wajib diisi',
 
@@ -143,13 +143,11 @@ class BlogController extends Controller
             'image3.max' => 'Size maksimal 400 kb',
         ]);
 
-        //atur oleh
-        // ($request->input('olehlainnya') ? $oleh = $request->input('olehlainnya') : $oleh = $request->input('oleh'));
 
         $data = [
             'category_id' => $request->input('categoryid'),
             'user_id' => $request->user()->id,
-            'oleh' => $request->input('olehlainnya'),
+            'oleh' => $request->input('olehlainnya'), //bahkan jika oleh biasa value nya pasti ke olehlainnya
             'slug' => Str::of($request->input('judul'))->slug('-'),
             'title' => $request->input('judul'),
             'excerpt' => $request->input('deskripsi'),
@@ -188,8 +186,8 @@ class BlogController extends Controller
             'categoryid' => 'required|numeric|exists:blog_categories,id',
             'olehUpdate' => 'required',
             'olehlainnyaUpdate' => 'required',
-            'judulUpdate' => 'required',
-            'deskripsiUpdate' => 'required',
+            'judulUpdate' => ['required', 'max:255'],
+            'deskripsiUpdate' => ['required', 'max:255'],
             'bodyartikelUpdate1' => 'required',
             'bodyartikelUpdate2' => 'required',
             'imageUpdate1' => [File::image()->max(400)],
@@ -202,8 +200,8 @@ class BlogController extends Controller
 
             'olehUpdate' => 'Wajib menentukan Author',
             'olehlainnyaUpdate' => 'Wajib menentukan Author',
-            'judulUpdate' =>  'Judul wajib diisi',
-            'deskripsiUpdate' =>  'Deskripsi wajib diisi',
+            'judulUpdate' =>  'Judul wajib diisi, Unique, Max 255',
+            'deskripsiUpdate' =>  'Deskripsi wajib diisi, Max 255',
             'bodyartikelUpdate1' =>  'Artikel bagian 1 wajib diisi',
             'bodyartikelUpdate2' =>  'Artikel bagian 2 wajib diisi',
 

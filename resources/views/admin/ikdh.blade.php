@@ -65,7 +65,8 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('ikdh.index') }}">View</a>
+                                            <a class="dropdown-item" target="_blank"
+                                                href="{{ route('ikdh.index') }}">View</a>
                                         </li>
                                         <li><button type="button" class="dropdown-item" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal{{ $index }}"> Delete </button>
