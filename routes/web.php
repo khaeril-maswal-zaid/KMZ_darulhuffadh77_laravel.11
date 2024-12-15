@@ -33,9 +33,10 @@ Route::get('/galery', [GaleryController::class, 'index']);
 
 Route::get('/kontak', [KontakController::class, 'index']);
 
-Route::get('/penerimaan-santri-baru', [TholabahController::class, 'informasiPendaftaran'])->name('pendaftaran.informasi');
 Route::get('/penerimaan-santri-baru/pendaftaran', [TholabahController::class, 'create'])->name('pendaftaran');
 Route::post('/pendaftaran-santri-baru', [TholabahController::class, 'store']);
+
+Route::get('/penerimaan-santri-baru', [PenerimaanController::class, 'index'])->name('penerimaan.index');
 
 //------------------------------------------------------------------------------------------
 
@@ -58,11 +59,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
     Route::get('/admindh/blog/{var}', [BlogController::class, 'create'])->name('blogger');
-    Route::post('/admindh/blog/create', [BlogController::class, 'store'])->name('blogger.create');
+    Route::post('/admindh/blog/create', [BlogController::class, 'store'])->name('blogger.store');
     Route::put('/admindh/blog/{blog:slug}', [BlogController::class, 'update'])->name('blogger.update');
     Route::delete('/admindh/blog/{blog}', [BlogController::class, 'destroy'])->name('blogger.delete');
 
-    Route::get('/admindh/tentang/{blog:slug}', [BlogController::class, 'tentangProfil.show'])->name('eksekutif.blog');
+    Route::get('/admindh/tentang/{blog:slug}', [BlogController::class, 'tentangProfil'])->name('eksekutif.blog');
 
     Route::get('/admindh/hard-soft-skill', [KulikulerController::class, 'index'])->name('hardsoftskill.index');
     Route::post('/admindh/program-add', [KulikulerController::class, 'store'])->name('hardsoftskill.store');
@@ -84,6 +85,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/admindh/ikatan-keluarga-darul-huffadh', [IkdhController::class, 'masterData'])->name('ikdh.masterdata');
     Route::delete('/admindh/ikatan-keluarga-darul-huffadh-delete/{ikdh}', [IkdhController::class, 'destroy'])->name('ikdh.destroy');
     Route::post('/admindh/ikatan-keluarga-darul-huffadh-store/{tholabah:nisdh}', [IkdhController::class, 'store'])->name('ikdh.store');
+
+    Route::get('/admindh/informasi-pendaftaran', [PenerimaanController::class, 'create'])->name('more.penerimaan');
+    Route::post('/admindh/informasi-pendaftaran/{penerimaan:sub}', [PenerimaanController::class, 'update'])->name('penerimaan.update');
 
     Route::get('/admindh/errro/404', [AdminController::class, 'eror404'])->name('error.404');
 });

@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             IkdhSeeder::class,
             KontakSeeder::class,
             KulikulerSeeder::class,
-            KulikulerPersonilSeeder::class
+            KulikulerPersonilSeeder::class,
+            PenerimaanSeeder::class
         ]);
 
         //Run ALL : php artisan db:seed --class=DatabaseSeeder

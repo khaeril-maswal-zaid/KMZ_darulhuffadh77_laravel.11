@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Kontak;
 use App\Models\Tholabah;
 use Illuminate\Contracts\View\View;
@@ -40,7 +41,8 @@ class TholabahController extends Controller
     {
         $data = [
             'title' => 'Pendaftaran Calon Santri Baru',
-            'kontaks' => Kontak::all()
+            'kontaks' => Kontak::all(),
+            'pimpinan' => Blog::select('picture1')->where('slug', 'profil-pimpinan-ust-saad-said')->firstOrFail()
         ];
 
         return view('penerimaan.pendaftaran', $data);
@@ -166,15 +168,6 @@ class TholabahController extends Controller
 
         Tholabah::create($data);
         return redirect()->route('pendaftaran.informasi')->with('success', true);
-    }
-
-    public function informasiPendaftaran(): View
-    {
-        $data = [
-            'title' => 'Penerimaan Santri Baru',
-            'kontaks' => Kontak::all()
-        ];
-        return view('penerimaan.index', $data);
     }
 
     public function masterData($paramMasterdata): View

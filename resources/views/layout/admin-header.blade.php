@@ -54,8 +54,8 @@
                         class="nav-link dropdown-toggle {{ request()->routeIs('eksekutif.*') ? 'active' : '' }}"
                         data-bs-toggle="dropdown"><i class="fa-solid fa-users-gear me-2"></i>Eksekutif</a>
                     <div class="dropdown-menu bg-transparent border-0">
-                        <a href="{{ route('eksekutif.blog', 'struktur-eksekutif') }}" class="dropdown-item">Struktur
-                            Eksekutif</a>
+                        {{-- <a href="{{ route('eksekutif.blog', 'struktur-eksekutif') }}" class="dropdown-item">Struktur
+                            Eksekutif</a> --}}
                         <a href="{{ route('eksekutif.blog', 'profil-pendiri-kh-lanre-said') }}"
                             class="dropdown-item">Profil Pendiri</a>
                         <a href="{{ route('eksekutif.blog', 'profil-pimpinan-ust-saad-said') }}"
@@ -82,8 +82,18 @@
 
                 <a href="{{ route('kontak.index') }}"
                     class="nav-item nav-link {{ request()->routeIs('kontak.*') ? 'active' : '' }}"><i
-                        class="fa-regular fa-address-book me-2"></i>Kontak</a>
+                        class="fa-regular fa-address-book me-2"></i>Contak</a>
 
+
+                <div class="nav-item dropdown">
+                    <a href="#"
+                        class="nav-link dropdown-toggle {{ request()->routeIs('eksekutif.*') ? 'active' : '' }}"
+                        data-bs-toggle="dropdown"><i class="fa-solid fa-circle-info me-2"></i>Eksekutif</a>
+                    <div class="dropdown-menu bg-transparent border-0">
+                        <a href="{{ route('more.penerimaan') }}" class="dropdown-item">Informasi Pendaftaran</a>
+                        <a href="" class="dropdown-item">Carousel</a>
+                    </div>
+                </div>
             </div>
         </nav>
     </div>

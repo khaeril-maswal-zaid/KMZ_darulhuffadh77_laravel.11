@@ -22,7 +22,7 @@
                     <a href="/"><i class="bi bi-house-door-fill"></i></a>
                     <span class="px-1">/</span>
 
-                    <span class="px-1">Peneriman Santri Baru</span>
+                    <span class="px-1">Peneriman Santri/ Santriwati Baru</span>
                     <span class="px-1">/</span>
                     <span class="px-1">Daftar</span>
                 </div>
@@ -36,17 +36,16 @@
     <section class="container-fluid py-3 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-3">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px">
-                <h5 class="fw-bold text-primary text-uppercase">Penerimaan Santri Baru</h5>
+                <h5 class="fw-bold text-primary text-uppercase">Penerimaan Santri/ Santriwati Baru</h5>
                 <h1 class="mb-0">
                     Pondok Pesantren {{ config('app.name') }}
                 </h1>
             </div>
 
-            <form action="{{ url('/pendaftaran-santri-baru') }}" method="post"
-                class="needs-validation"enctype="multipart/form-data">
-
-                <div class="row g-5 pt-4">
-                    <div class="col-lg-7">
+            <div class="row g-5 pt-4">
+                <div class="col-lg-7">
+                    <form action="{{ url('/pendaftaran-santri-baru') }}" method="post"
+                        class="needs-validation"enctype="multipart/form-data">
                         @csrf
                         <div class="form-floating mb-3">
                             <input value="{{ old('nik') }}" type="text"
@@ -337,20 +336,20 @@
                                 </div>
                             @enderror
                         </div>
-                    </div>
 
-                    <div class="col-lg-5 mt-md-5 mt-4" style="min-height: 500px;">
-                        <div class="position-sticky" style="top: 6rem">
-                            <img class="img-fluid w-100 rounded wow zoomIn img-preview" data-wow-delay="0.9s"
-                                src="{{ asset('assets/img/team-1.jpg') }}" style="object-fit: cover;">
+                        <div class="d-grid mt-3">
+                            <button class="btn btn-success btn-lg" type="submit">Kirim</button>
                         </div>
-                    </div>
+                    </form>
+                </div>
 
-                    <div class="d-grid">
-                        <button class="btn btn-success btn-lg" type="submit">Kirim</button>
+                <div class="col-lg-5 mt-md-5 mt-4" style="min-height: 500px;">
+                    <div class="position-sticky" style="top: 6rem">
+                        <img class="img-fluid w-100 rounded wow zoomIn img-preview" data-wow-delay="0.9s"
+                            src="{{ asset('storage/' . $pimpinan->picture1) }}" style="object-fit: cover;">
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </section>
 

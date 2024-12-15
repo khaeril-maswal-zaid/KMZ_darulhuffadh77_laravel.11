@@ -119,7 +119,7 @@
             </div>
             <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal"
                 data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
-            <a href="{{ route('pendaftaran.informasi') }}" class="btn btn-primary py-2 px-4 ms-3">Daftar</a>
+            <a href="{{ route('penerimaan.index') }}" class="btn btn-primary py-2 px-4 ms-3">Daftar</a>
         </div>
     </nav>
 </div>

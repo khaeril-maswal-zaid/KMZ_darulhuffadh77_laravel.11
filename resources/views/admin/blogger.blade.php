@@ -143,7 +143,7 @@
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
 
-                        <form action="{{ route('blogger.create') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('blogger.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="bodyartikel1" id="isinaArtikel1" value="Darul Huffadh 77 -bug">
                             <input type="hidden" name="bodyartikel2" id="isinaArtikel2" value="Darul Huffadh 77 -bug">
