@@ -18,7 +18,7 @@
         <!-- Petunjuk URL Start -->
         <div class="container-xxl">
             <div class="container">
-                <div class="alert alert-success py-2 label-url" role="alert">
+                <div class="alert alert-primary py-2 label-url" role="alert">
                     <a href="/"><i class="bi bi-house-door-fill"></i></a>
                     <span class="px-1">/</span>
 
@@ -48,7 +48,7 @@
                             <div class="d-flex gap-2 justify-content-end mt-5">
                                 <div class="btn btn-dark">Tentang</div>
                                 <a href="{{ route('personil.hardsoftskill', $blog->slug) }}"
-                                    class="btn btn-success">Pengurus</a>
+                                    class="btn btn-primary">Pengurus</a>
                             </div>
                         </div>
                     </div>

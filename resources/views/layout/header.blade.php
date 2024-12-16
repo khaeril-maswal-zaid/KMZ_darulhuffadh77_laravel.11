@@ -51,7 +51,7 @@
                         <div class="dropdown-item dropdownKmz-toggle m-0 p-0 position-relative">
                             <a href="#" class="dropdown-item dropdown-toggle"
                                 data-bs-toggle="dropdown">Eksekutif</a>
-                            <div class="dropdownKmz-menu ropdown-menu m-0 bg-primary rounded-1 start-100 top-0">
+                            <div class="dropdownKmz-men ropdown-menu m-0 bg-primary rounded-1 start-100 top-0">
                                 {{-- <a href="{{route('profil.show', 'struktur-eksekutif')}}" class="dropdown-item">Struktur Eksekutif</a> --}}
                                 <a href="{{ route('profil.show', 'profil-pendiri-kh-lanre-said') }}"
                                     class="dropdown-item">Profil Pendiri</a>
@@ -85,7 +85,7 @@
                                 <a href="/hard-and-soft-skill/persidha" class="dropdown-item">Persidha</a>
                                 <a href="/hard-and-soft-skill/pramuka" class="dropdown-item">Pramuka</a>
                                 <a href="/hard-and-soft-skill/djour" class="dropdown-item">D`Jour</a>
-                                <a href="/hard-and-soft-skill/seni" class="dropdown-item">Seni</a>
+                                <a href="/hard-and-soft-skill/seni" class="dropdown-item">Karsidha</a>
                             </div>
                         </div>
 

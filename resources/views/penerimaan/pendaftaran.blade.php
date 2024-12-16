@@ -18,7 +18,7 @@
         <!-- Petunjuk URL Start -->
         <div class="container-xxl">
             <div class="container">
-                <div class="alert alert-success py-2 label-url" role="alert">
+                <div class="alert alert-primary py-2 label-url" role="alert">
                     <a href="/"><i class="bi bi-house-door-fill"></i></a>
                     <span class="px-1">/</span>
 
@@ -338,7 +338,7 @@
                         </div>
 
                         <div class="d-grid mt-3">
-                            <button class="btn btn-success btn-lg" type="submit">Kirim</button>
+                            <button class="btn btn-primary btn-lg" type="submit">Kirim</button>
                         </div>
                     </form>
                 </div>

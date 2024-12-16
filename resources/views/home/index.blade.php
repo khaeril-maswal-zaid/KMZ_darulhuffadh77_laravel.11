@@ -10,9 +10,9 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Digital Solution
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Perlu dibela, dijaga dan diperjuangkan
                             </h1>
-                            <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free
+                            <a href="quote.html" class="btn btn-success py-md-3 px-md-5 me-3 animated slideInLeft">Free
                                 Quote</a>
                             <a href="" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact
                                 Us</a>
@@ -26,7 +26,7 @@
                             <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Digital Solution
                             </h1>
-                            <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free
+                            <a href="quote.html" class="btn btn-success py-md-3 px-md-5 me-3 animated slideInLeft">Free
                                 Quote</a>
                             <a href="" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact
                                 Us</a>
@@ -51,11 +51,11 @@
         <div class="container py-5 pt-lg-0">
             <div class="row gx-0">
                 <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
-                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4"
+                    <div class="bg-success shadow d-flex align-items-center justify-content-center p-4"
                         style="height: 150px">
                         <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2"
                             style="width: 60px; height: 60px">
-                            <i class="fa-solid fa-network-wired text-primary fa-2x"></i>
+                            <i class="fa-solid fa-network-wired text-success fa-2x"></i>
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Jumlah Alumni</h5>
@@ -65,22 +65,22 @@
                 </div>
                 <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
                     <div class="bg-light shadow d-flex align-items-center justify-content-center p-4" style="height: 150px">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2"
+                        <div class="bg-success d-flex align-items-center justify-content-center rounded mb-2"
                             style="width: 60px; height: 60px">
                             <i class="fa fa-users text-white fa-2x"></i>
                         </div>
                         <div class="ps-4">
-                            <h5 class="text-primary mb-0">Jumlah Santri</h5>
+                            <h5 class="text-success mb-0">Jumlah Santri</h5>
                             <h1 class="mb-0" data-toggle="counter-up">12345</h1>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4"
+                    <div class="bg-success shadow d-flex align-items-center justify-content-center p-4"
                         style="height: 150px">
                         <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2"
                             style="width: 60px; height: 60px">
-                            <i class="fa fa-users text-primary fa-2x"></i>
+                            <i class="fa fa-users text-success fa-2x"></i>
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Jumlah Santriwati</h5>
@@ -99,10 +99,8 @@
             <div class="row g-5">
                 <div class="col-lg-7">
                     <div class="section-title position-relative pb-3 mb-5">
-                        <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
-                        <h1 class="mb-0">
-                            The Best IT Solution With 10 Years of Experience
-                        </h1>
+                        <h5 class="fw-bold text-success text-uppercase">Siapa Pemilik Pondok ini ?</h5>
+                        <h1 class="mb-0">{{ config('app.name') }} Milik Seluruh Ummat Muslimin !</h1>
                     </div>
                     <p class="mb-4">
                         Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor
@@ -113,34 +111,34 @@
                     <div class="row g-0 mb-3">
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
                             <h5 class="mb-3">
-                                <i class="fa fa-check text-primary me-3"></i>Award Winning
+                                <i class="fa fa-check text-success me-3"></i>Award Winning
                             </h5>
                             <h5 class="mb-3">
-                                <i class="fa fa-check text-primary me-3"></i>Professional
+                                <i class="fa fa-check text-success me-3"></i>Professional
                                 Staff
                             </h5>
                         </div>
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
                             <h5 class="mb-3">
-                                <i class="fa fa-check text-primary me-3"></i>24/7 Support
+                                <i class="fa fa-check text-success me-3"></i>24/7 Support
                             </h5>
                             <h5 class="mb-3">
-                                <i class="fa fa-check text-primary me-3"></i>Fair Prices
+                                <i class="fa fa-check text-success me-3"></i>Fair Prices
                             </h5>
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded"
+                        <div class="bg-success d-flex align-items-center justify-content-center rounded"
                             style="width: 60px; height: 60px">
                             <i class="fa fa-phone-alt text-white"></i>
                         </div>
                         <div class="ps-4">
-                            <h5 class="mb-2">Call to ask any question</h5>
-                            <h4 class="text-primary mb-0">+012 345 6789</h4>
+                            <h5 class="mb-2">Rekening</h5>
+                            <h4 class="text-success mb-0">0123456789</h4>
                         </div>
                     </div>
-                    <a href="quote.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Request
-                        A Quote</a>
+                    <a href="quote.html" class="btn btn-success py-3 px-5 mt-3 wow zoomIn"
+                        data-wow-delay="0.9s">Selengkapnya...</a>
                 </div>
                 <div class="col-lg-5" style="min-height: 500px">
                     <div class="position-relative h-100">
@@ -157,34 +155,22 @@
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px">
-                <h5 class="fw-bold text-primary text-uppercase">Why Choose Us</h5>
+                <h5 class="fw-bold text-success text-uppercase">Why Choose Us</h5>
                 <h1 class="mb-0">We Are Here to Grow Your Business Exponentially</h1>
             </div>
             <div class="row g-5">
                 <div class="col-lg-4">
                     <div class="row g-5">
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.2s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
-                                style="width: 60px; height: 60px">
-                                <i class="fa fa-cubes text-white"></i>
+                        @for ($i = 0; $i < 2; $i++)
+                            <div class="col-12 wow zoomIn" data-wow-delay="0.2s">
+                                <div class="bg-success rounded d-flex align-items-center justify-content-center mb-3"
+                                    style="width: 60px; height: 60px">
+                                    <i class="fa fa-cubes text-white"></i>
+                                </div>
+                                <h5>{{ $programs[$i]->title }}</h5>
+                                <p class="mb-0">{{ Str::limit($programs[$i]->excerpt, 80, '') }}</p>
                             </div>
-                            <h4>Best In Industry</h4>
-                            <p class="mb-0">
-                                Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et
-                                diam dolor
-                            </p>
-                        </div>
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.6s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
-                                style="width: 60px; height: 60px">
-                                <i class="fa fa-award text-white"></i>
-                            </div>
-                            <h4>Award Winning</h4>
-                            <p class="mb-0">
-                                Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et
-                                diam dolor
-                            </p>
-                        </div>
+                        @endfor
                     </div>
                 </div>
                 <div class="col-lg-4 wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px">
@@ -196,22 +182,19 @@
                 <div class="col-lg-4">
                     <div class="row g-5">
                         <div class="col-12 wow zoomIn" data-wow-delay="0.4s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
+                            <div class="bg-success rounded d-flex align-items-center justify-content-center mb-3"
                                 style="width: 60px; height: 60px">
                                 <i class="fa fa-users-cog text-white"></i>
                             </div>
-                            <h4>Professional Staff</h4>
-                            <p class="mb-0">
-                                Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et
-                                diam dolor
-                            </p>
+                            <h5>{{ $programs[2]->title }}</h5>
+                            <p class="mb-0">{{ Str::limit($programs[2]->excerpt, 80, '') }}</p>
                         </div>
                         <div class="col-12 wow zoomIn" data-wow-delay="0.8s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
+                            <div class="bg-success rounded d-flex align-items-center justify-content-center mb-3"
                                 style="width: 60px; height: 60px">
                                 <i class="fa fa-phone-alt text-white"></i>
                             </div>
-                            <h4>24/7 Support</h4>
+                            <h5>Hard & Soft Skill</h5>
                             <p class="mb-0">
                                 Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et
                                 diam dolor
@@ -224,11 +207,11 @@
     </div>
     <!-- Features Start -->
 
-    <!-- Service Start -->
+    {{-- <!-- Service Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px">
-                <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>
+                <h5 class="fw-bold text-success text-uppercase">Our Services</h5>
                 <h1 class="mb-0">Custom IT Solutions for Your Successful Business</h1>
             </div>
             <div class="row g-5">
@@ -243,7 +226,7 @@
                             Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
                             ipsum dolore sed
                         </p>
-                        <a class="btn btn-lg btn-primary rounded" href="">
+                        <a class="btn btn-lg btn-success rounded" href="">
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -259,7 +242,7 @@
                             Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
                             ipsum dolore sed
                         </p>
-                        <a class="btn btn-lg btn-primary rounded" href="">
+                        <a class="btn btn-lg btn-success rounded" href="">
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -275,7 +258,7 @@
                             Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
                             ipsum dolore sed
                         </p>
-                        <a class="btn btn-lg btn-primary rounded" href="">
+                        <a class="btn btn-lg btn-success rounded" href="">
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -291,7 +274,7 @@
                             Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
                             ipsum dolore sed
                         </p>
-                        <a class="btn btn-lg btn-primary rounded" href="">
+                        <a class="btn btn-lg btn-success rounded" href="">
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -307,14 +290,14 @@
                             Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
                             ipsum dolore sed
                         </p>
-                        <a class="btn btn-lg btn-primary rounded" href="">
+                        <a class="btn btn-lg btn-success rounded" href="">
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
                     <div
-                        class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-5">
+                        class="position-relative bg-success rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-5">
                         <h3 class="text-white mb-3">Call Us For Quote</h3>
                         <p class="text-white mb-3">
                             Clita ipsum magna kasd rebum at ipsum amet dolor justo dolor est
@@ -326,103 +309,7 @@
             </div>
         </div>
     </div>
-    <!-- Service End -->
-
-    <!-- Pricing Plan Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px">
-                <h5 class="fw-bold text-primary text-uppercase">Pricing Plans</h5>
-                <h1 class="mb-0">
-                    We are Offering Competitive Prices for Our Clients
-                </h1>
-            </div>
-            <div class="row g-0">
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                    <div class="bg-light rounded">
-                        <div class="border-bottom py-4 px-5 mb-4">
-                            <h4 class="text-primary mb-1">Basic Plan</h4>
-                            <small class="text-uppercase">For Small Size Business</small>
-                        </div>
-                        <div class="p-5 pt-0">
-                            <h1 class="display-5 mb-3">
-                                <small class="align-top" style="font-size: 22px; line-height: 45px">$</small>49.00<small
-                                    class="align-bottom" style="font-size: 16px; line-height: 40px">/ Month</small>
-                            </h1>
-                            <div class="d-flex justify-content-between mb-3">
-                                <span>HTML5 & CSS3</span><i class="fa fa-check text-primary pt-1"></i>
-                            </div>
-                            <div class="d-flex justify-content-between mb-3">
-                                <span>Bootstrap v5</span><i class="fa fa-check text-primary pt-1"></i>
-                            </div>
-                            <div class="d-flex justify-content-between mb-3">
-                                <span>Responsive Layout</span><i class="fa fa-times text-danger pt-1"></i>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Cross-browser Support</span><i class="fa fa-times text-danger pt-1"></i>
-                            </div>
-                            <a href="" class="btn btn-primary py-2 px-4 mt-4">Order Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="bg-white rounded shadow position-relative" style="z-index: 1">
-                        <div class="border-bottom py-4 px-5 mb-4">
-                            <h4 class="text-primary mb-1">Standard Plan</h4>
-                            <small class="text-uppercase">For Medium Size Business</small>
-                        </div>
-                        <div class="p-5 pt-0">
-                            <h1 class="display-5 mb-3">
-                                <small class="align-top" style="font-size: 22px; line-height: 45px">$</small>99.00<small
-                                    class="align-bottom" style="font-size: 16px; line-height: 40px">/ Month</small>
-                            </h1>
-                            <div class="d-flex justify-content-between mb-3">
-                                <span>HTML5 & CSS3</span><i class="fa fa-check text-primary pt-1"></i>
-                            </div>
-                            <div class="d-flex justify-content-between mb-3">
-                                <span>Bootstrap v5</span><i class="fa fa-check text-primary pt-1"></i>
-                            </div>
-                            <div class="d-flex justify-content-between mb-3">
-                                <span>Responsive Layout</span><i class="fa fa-check text-primary pt-1"></i>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Cross-browser Support</span><i class="fa fa-times text-danger pt-1"></i>
-                            </div>
-                            <a href="" class="btn btn-primary py-2 px-4 mt-4">Order Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                    <div class="bg-light rounded">
-                        <div class="border-bottom py-4 px-5 mb-4">
-                            <h4 class="text-primary mb-1">Advanced Plan</h4>
-                            <small class="text-uppercase">For Large Size Business</small>
-                        </div>
-                        <div class="p-5 pt-0">
-                            <h1 class="display-5 mb-3">
-                                <small class="align-top" style="font-size: 22px; line-height: 45px">$</small>149.00<small
-                                    class="align-bottom" style="font-size: 16px; line-height: 40px">/ Month</small>
-                            </h1>
-                            <div class="d-flex justify-content-between mb-3">
-                                <span>HTML5 & CSS3</span><i class="fa fa-check text-primary pt-1"></i>
-                            </div>
-                            <div class="d-flex justify-content-between mb-3">
-                                <span>Bootstrap v5</span><i class="fa fa-check text-primary pt-1"></i>
-                            </div>
-                            <div class="d-flex justify-content-between mb-3">
-                                <span>Responsive Layout</span><i class="fa fa-check text-primary pt-1"></i>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Cross-browser Support</span><i class="fa fa-check text-primary pt-1"></i>
-                            </div>
-                            <a href="" class="btn btn-primary py-2 px-4 mt-4">Order Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Pricing Plan End -->
+    <!-- Service End --> --}}
 
     <!-- Quote Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -430,24 +317,23 @@
             <div class="row g-5">
                 <div class="col-lg-7">
                     <div class="section-title position-relative pb-3 mb-5">
-                        <h5 class="fw-bold text-primary text-uppercase">
-                            Request A Quote
+                        <h5 class="fw-bold text-success text-uppercase">
+                            Berapa Biaya Santri di Pondok ini ?
                         </h5>
                         <h1 class="mb-0">
-                            Need A Free Quote? Please Feel Free to Contact Us
+                            {{-- Pendidikan Gratis itu ada di {{ config('app.name') }} --}}
+                            Sepenuhnya ditanggung, Belajar di {{ config('app.name') }} tanpa biaya apapun.
                         </h1>
                     </div>
                     <div class="row gx-3">
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
                             <h5 class="mb-4">
-                                <i class="fa fa-reply text-primary me-3"></i>Reply within 24
-                                hours
+                                <i class="fa fa-reply text-success me-3"></i>Gratis Biaya Konsumsi
                             </h5>
                         </div>
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
                             <h5 class="mb-4">
-                                <i class="fa fa-phone-alt text-primary me-3"></i>24 hrs
-                                telephone support
+                                <i class="fa fa-phone-alt text-success me-3"></i>Gratis Biaya Asrama
                             </h5>
                         </div>
                     </div>
@@ -459,18 +345,18 @@
                         Sea dolore sanctus sed et. Takimata takimata sanctus sed.
                     </p>
                     <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded"
+                        <div class="bg-success d-flex align-items-center justify-content-center rounded"
                             style="width: 60px; height: 60px">
                             <i class="fa fa-phone-alt text-white"></i>
                         </div>
                         <div class="ps-4">
                             <h5 class="mb-2">Call to ask any question</h5>
-                            <h4 class="text-primary mb-0">+012 345 6789</h4>
+                            <h4 class="text-success mb-0">+012 345 6789</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
+                    <div class="bg-success rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
                         <form>
                             <div class="row g-3">
                                 <div class="col-xl-12">
@@ -506,11 +392,107 @@
     </div>
     <!-- Quote End -->
 
+    <!-- Pricing Plan Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px">
+                <h5 class="fw-bold text-success text-uppercase">Pricing Plans</h5>
+                <h1 class="mb-0">
+                    We are Offering Competitive Prices for Our Clients
+                </h1>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="bg-light rounded">
+                        <div class="border-bottom py-4 px-5 mb-4">
+                            <h4 class="text-success mb-1">Biaya Bulanan</h4>
+                            <small class="text-uppercase">For Small Size Business</small>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <h1 class="display-5 mb-3">
+                                <small class="align-top" style="font-size: 22px; line-height: 45px">$</small>49.00<small
+                                    class="align-bottom" style="font-size: 16px; line-height: 40px">/ Month</small>
+                            </h1>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>HTML5 & CSS3</span><i class="fa fa-check text-success pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>Bootstrap v5</span><i class="fa fa-check text-success pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>Responsive Layout</span><i class="fa fa-times text-danger pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Cross-browser Support</span><i class="fa fa-times text-danger pt-1"></i>
+                            </div>
+                            <a href="" class="btn btn-success py-2 px-4 mt-4">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                    <div class="bg-white rounded shadow position-relative" style="z-index: 1">
+                        <div class="border-bottom py-4 px-5 mb-4">
+                            <h4 class="text-success mb-1">Biaya Semesteran</h4>
+                            <small class="text-uppercase">For Medium Size Business</small>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <h1 class="display-5 mb-3">
+                                <small class="align-top" style="font-size: 22px; line-height: 45px">$</small>99.00<small
+                                    class="align-bottom" style="font-size: 16px; line-height: 40px">/ Month</small>
+                            </h1>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>HTML5 & CSS3</span><i class="fa fa-check text-success pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>Bootstrap v5</span><i class="fa fa-check text-success pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>Responsive Layout</span><i class="fa fa-check text-success pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Cross-browser Support</span><i class="fa fa-times text-danger pt-1"></i>
+                            </div>
+                            <a href="" class="btn btn-success py-2 px-4 mt-4">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                    <div class="bg-light rounded">
+                        <div class="border-bottom py-4 px-5 mb-4">
+                            <h4 class="text-success mb-1">Biaya Tahunan</h4>
+                            <small class="text-uppercase">For Large Size Business</small>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <h1 class="display-5 mb-3">
+                                <small class="align-top" style="font-size: 22px; line-height: 45px">$</small>149.00<small
+                                    class="align-bottom" style="font-size: 16px; line-height: 40px">/ Month</small>
+                            </h1>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>HTML5 & CSS3</span><i class="fa fa-check text-success pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>Bootstrap v5</span><i class="fa fa-check text-success pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>Responsive Layout</span><i class="fa fa-check text-success pt-1"></i>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Cross-browser Support</span><i class="fa fa-check text-success pt-1"></i>
+                            </div>
+                            <a href="" class="btn btn-success py-2 px-4 mt-4">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pricing Plan End -->
+
     <!-- Team Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px">
-                <h5 class="fw-bold text-primary text-uppercase">Team Members</h5>
+                <h5 class="fw-bold text-success text-uppercase">Team Members</h5>
                 <h1 class="mb-0">Professional Stuffs Ready to Help Your Business</h1>
             </div>
             <div class="row g-5">
@@ -518,20 +500,15 @@
                     <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
                         <div class="team-item bg-light rounded overflow-hidden">
                             <div class="team-img position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
+                                <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}"
+                                    alt="" />
                                 <div class="team-social">
-                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
-                                            class="fab fa-twitter fw-normal"></i></a>
-                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
-                                            class="fab fa-facebook-f fw-normal"></i></a>
-                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
-                                            class="fab fa-instagram fw-normal"></i></a>
-                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
-                                            class="fab fa-linkedin-in fw-normal"></i></a>
+                                    <a class="btn btn-lg btn-success btn-lg-square rounded"
+                                        href="profil/{{ $eksekutif->slug }}"><i class="fa fa-eye fw-normal"></i></a>
                                 </div>
                             </div>
                             <div class="text-center py-4">
-                                <h5 class="text-primary">{{ Str::limit($eksekutif->excerpt, 23, '...') }}</h5>
+                                <h5 class="text-success">{{ Str::limit($eksekutif->excerpt, 23, '...') }}</h5>
                                 <p class="text-uppercase m-0">
                                     {{ Str::replace(['Profil', 'Darul Huffadh 77'], '', $eksekutif->title) }}</p>
                             </div>
@@ -547,7 +524,7 @@
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px">
-                <h5 class="fw-bold text-primary text-uppercase">Testimonial</h5>
+                <h5 class="fw-bold text-success text-uppercase">Testimonial</h5>
                 <h1 class="mb-0">What Our Clients Say About Our Digital Services</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
@@ -557,7 +534,7 @@
                             <img class="img-fluid rounded" src="{{ asset('storage/' . $ikdhpusat->ketua->picture) }}"
                                 style="width: 120px; height: 120px" />
                             <div class="ps-4">
-                                <h5 class="text-primary mb-1">{{ $ikdhpusat->ketua->nama }}</h5>
+                                <h5 class="text-success mb-1">{{ $ikdhpusat->ketua->nama }}</h5>
                                 <small
                                     class="text-uppercase">{{ $ikdhpusat->cabang == 'Pusat' ? 'Ketua PP IKDH' : 'Anggota PP IKDH' }}</small>
                             </div>
@@ -577,7 +554,7 @@
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px">
-                <h5 class="fw-bold text-primary text-uppercase">Latest Blog</h5>
+                <h5 class="fw-bold text-success text-uppercase">Latest Blog</h5>
                 <h1 class="mb-0">Read The Latest Articles from Our Blog Post</h1>
             </div>
             <div class="row g-5 mb-3">
@@ -586,15 +563,15 @@
                         <div class="blog-item bg-light rounded overflow-hidden">
                             <div class="blog-img position-relative overflow-hidden">
                                 <img class="img-fluid" src="{{ asset('assets/img/blog-1.jpg') }}" alt="" />
-                                <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
+                                <a class="position-absolute top-0 start-0 bg-success text-white rounded-end mt-5 py-2 px-4"
                                     href="/">{{ $blog->kategori->name }}</a>
                             </div>
                             <div class="p-4 position-relative overflow-hidden" style="height:377px;">
                                 <div class="d-flex mb-3">
                                     <small class="me-3"><i
-                                            class="far fa-user text-primary me-2"></i>{{ $blog->oleh }}</small>
+                                            class="far fa-user text-success me-2"></i>{{ $blog->oleh }}</small>
                                     <small><i
-                                            class="far fa-calendar-alt text-primary me-2"></i>{{ $blog->created_at->format('j M Y') }}</small>
+                                            class="far fa-calendar-alt text-success me-2"></i>{{ $blog->created_at->format('j M Y') }}</small>
                                 </div>
                                 <h4 class="mb-3">{{ $blog->title }}</h4>
                                 <p

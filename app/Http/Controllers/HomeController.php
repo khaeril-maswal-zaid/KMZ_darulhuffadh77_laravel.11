@@ -21,7 +21,13 @@ class HomeController extends Controller
                 ->whereNotIn('category_id', ['4', '5', '6'])
                 ->latest()->paginate($paginate),
 
-            'eksekutifs' => Blog::select('title', 'excerpt', 'picture1')->whereIn('slug', [
+            'programs' => Blog::select('title', 'excerpt')->whereIn('slug', [
+                'kulliyatul-muallimin-alislamiyah',
+                'tahfidzhul-quran',
+                'pengabdian',
+            ])->orderBy('id', 'asc')->get(),
+
+            'eksekutifs' => Blog::select('title', 'excerpt', 'slug', 'picture1')->whereIn('slug', [
                 'profil-pendiri-kh-lanre-said',
                 'profil-pimpinan-ust-saad-said',
                 'profil-direktur-putra',

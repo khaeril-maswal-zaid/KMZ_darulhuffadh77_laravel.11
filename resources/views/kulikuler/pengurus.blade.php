@@ -18,7 +18,7 @@
         <!-- Petunjuk URL Start -->
         <div class="container-xxl">
             <div class="container">
-                <div class="alert alert-success py-2 label-url" role="alert">
+                <div class="alert alert-primary py-2 label-url" role="alert">
                     <a href="/"><i class="bi bi-house-door-fill"></i></a>
                     <span class="px-1">/</span>
 
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-md-5">
                     <div class="gap-2 d-flex justify-content-end">
-                        <a href="/osdha" class="btn btn-success">Tentang</a>
+                        <a href="/osdha" class="btn btn-primary">Tentang</a>
                         <div class="btn btn-dark">Pengurus</div>
                     </div>
                 </div>

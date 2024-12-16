@@ -18,7 +18,7 @@
         <!-- Petunjuk URL Start -->
         <div class="container-xxl">
             <div class="container">
-                <div class="alert alert-success py-2 label-url" role="alert">
+                <div class="alert alert-primary py-2 label-url" role="alert">
                     <a href="/"><i class="bi bi-house-door-fill"></i></a>
                     <span class="px-1">/</span>
 
@@ -48,7 +48,7 @@
                                 placeholder="Cari Nama" autocomplete="off" value="{{ request('search') }}">
                             <label for="searchname"><i class="fa-solid fa-magnifying-glass me-2"></i>Cari Nama</label>
                         </div>
-                        <button type="submit" class="btn btn-success">Search</button>
+                        <button type="submit" class="btn btn-primary">Search</button>
                     </form>
                 </div>
 
@@ -87,7 +87,7 @@
                                     </select>
                                     <label for="show">Show</label>
                                 </div>
-                                <button type="submit" class="btn btn-success">
+                                <button type="submit" class="btn btn-primary">
                                     <i class="fa-solid fa-filter me-2"></i>Filter</button>
                             </div>
 
