@@ -140,7 +140,7 @@
                                     alt="Calon Kulikuler" id="imagePersonil">
                             </div>
                             <div class="col-md-8">
-                                <table class="table">
+                                <table class="table mb-2">
                                     <tbody>
                                         <tr>
                                             <td width="40%">NISDH</td>
@@ -171,10 +171,30 @@
                                 </table>
 
                                 <div class="form-floating mb-2">
-                                    <input autocomplete="off" name="ikdh" type="text"
-                                        class="form-control @error('ikdh') is-invalid @enderror" id="ikdh"
-                                        placeholder="ikdh Berita" value="{{ old('ikdh') }}">
-                                    <label for="ikdh">Input IKDH</label>
+                                    <select name="kategori" class="form-select @error('kategori') is-invalid @enderror"
+                                        id="kategoriselect" aria-label="Floating label select example">
+                                        <option value="cabang" {{ old('kategori') == 'cabang' ? 'selected' : '' }}>
+                                            Cabang
+                                        </option>
+                                        <option value="Pusat" {{ old('kategori') == 'Pusat' ? 'selected' : '' }}>
+                                            Ketua IKDH Pusat</option>
+                                        <option value="anggota-pusat"
+                                            {{ old('kategori') == 'anggota-pusat' ? 'selected' : '' }}>
+                                            Anggota IKDH Pusat</option>
+                                    </select>
+                                    <label for="kategoriselect">Author</label>
+                                    @error('kategori')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-floating mb-2">
+                                    <input name="ikdh" type="text" readonly
+                                        class="form-control @error('ikdh') is-invalid @enderror" id="kategoricustom"
+                                        placeholder="kategori lainnya" value="{{ old('ikdh') }}">
+                                    <label for="kategoricustom">Input IKDH</label>
                                     @error('ikdh')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -192,6 +212,27 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const selectOption = document.getElementById('kategoriselect');
+            const inputLainnya = document.getElementById('kategoricustom');
+
+            if (selectOption.value === 'cabang') {
+                inputLainnya.readOnly = false;
+            }
+
+            selectOption.addEventListener('change', function() {
+                if (selectOption.value === 'cabang') {
+                    inputLainnya.value = '';
+                    inputLainnya.readOnly = false;
+                } else {
+                    inputLainnya.value = selectOption.value
+                    inputLainnya.readOnly = true;
+                }
+            });
+        });
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

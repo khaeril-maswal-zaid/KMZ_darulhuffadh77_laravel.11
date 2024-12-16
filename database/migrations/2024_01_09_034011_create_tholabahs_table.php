@@ -49,7 +49,7 @@ return new class extends Migration
             $table->string('marhalah');
             $table->string('tahun_alumni');
 
-            $table->string('picture');
+            $table->string('picture')->default('tholabah-default.png');
 
             $table->timestamps();
         });

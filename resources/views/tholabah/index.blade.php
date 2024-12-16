@@ -101,7 +101,7 @@
                     <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
                         <div class="team-item bg-primary border rounded border-primary overflow-hidden">
                             <div class="team-img position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="{{ asset('assets/img/' . $tholabah->picture) }}"
+                                <img class="img-fluid w-100" src="{{ asset('storage/' . $tholabah->picture) }}"
                                     alt=" {{ $tholabah->nama }}" />
                                 <div class="team-social">
                                     <a class="btn" href="#">

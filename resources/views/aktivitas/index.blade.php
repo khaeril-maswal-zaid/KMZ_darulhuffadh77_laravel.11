@@ -42,11 +42,11 @@
 
             <div class="row g-5">
                 <div class="col-lg-5">
-                    <div class="w-100 overflow-auto" style="max-height: 760px">
-                        <div class="wow zoomIn mb-3" data-wow-delay="0.2s">
-                            <h4>Rutinitas Sehari-hari</h4>
-                        </div>
+                    <div class="wow zoomIn mb-3" data-wow-delay="0.2s">
+                        <h4>Rutinitas Sehari-hari</h4>
+                    </div>
 
+                    <div class="w-100 overflow-auto" style="max-height: 800px">
                         <table class="table table-primary table-striped table-bordered wow zoomIn" data-wow-delay="0.9s">
                             <thead>
                                 <tr>
@@ -90,41 +90,45 @@
                             <h4>Rutinitas Perpekan</h4>
                         </div>
 
-                        <table class="table table-primary table-striped table-bordered wow zoomIn" data-wow-delay="0.9s">
-                            <thead>
-                                <tr>
-                                    <th scope="col" class="text-center">Hari</th>
-                                    <th scope="col" class="text-center">Waktu</th>
-                                    <th scope="col" class="text-center">Agenda</th>
-                                    <th scope="col" class="text-center" width="25%">Dokumentasi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($mingguans as $mingguan)
-                                    <tr class="text-center">
-                                        <td scope="row" nowrap class="align-middle">{{ $mingguan->hari }}</td>
-                                        <td nowrap class="align-middle">{{ $mingguan->waktu }}</td>
-                                        <td nowrap class="align-middle">{{ $mingguan->agenda }}</td>
-                                        <td>
-                                            <div class="portfolio-inner rounded">
-                                                <img src="{{ asset('assets/img/' . $mingguan->picture) }}" alt=""
-                                                    class="img-fluid rounded">
+                        <div class="w-100 overflow-auto" style="max-height: 800px">
 
-                                                <div class="portfolio-text px-3">
-                                                    <div class="d-flex">
-                                                        <a class="btn btn-lg-square rounded-circle mx-2"
-                                                            href="{{ asset('assets/img/' . $mingguan->picture) }}"
-                                                            data-lightbox="portfolio">
-                                                            <i class="fa fa-eye mt-2"></i>
-                                                        </a>
+                            <table class="table table-primary table-striped table-bordered wow zoomIn"
+                                data-wow-delay="0.9s">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="text-center">Hari</th>
+                                        <th scope="col" class="text-center">Waktu</th>
+                                        <th scope="col" class="text-center">Agenda</th>
+                                        <th scope="col" class="text-center" width="25%">Dokumentasi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($mingguans as $mingguan)
+                                        <tr class="text-center">
+                                            <td scope="row" nowrap class="align-middle">{{ $mingguan->hari }}</td>
+                                            <td nowrap class="align-middle">{{ $mingguan->waktu }}</td>
+                                            <td nowrap class="align-middle">{{ $mingguan->agenda }}</td>
+                                            <td>
+                                                <div class="portfolio-inner rounded">
+                                                    <img src="{{ asset('assets/img/' . $mingguan->picture) }}"
+                                                        alt="" class="img-fluid rounded">
+
+                                                    <div class="portfolio-text px-3">
+                                                        <div class="d-flex">
+                                                            <a class="btn btn-lg-square rounded-circle mx-2"
+                                                                href="{{ asset('assets/img/' . $mingguan->picture) }}"
+                                                                data-lightbox="portfolio">
+                                                                <i class="fa fa-eye mt-2"></i>
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

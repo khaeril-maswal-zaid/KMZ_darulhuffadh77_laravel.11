@@ -18,7 +18,7 @@ class IkdhController extends Controller
         $data = [
             'title' => 'Ikatan Keluarga Darul Huffadh',
             'kontaks' => Kontak::all(),
-            'ikdhs' => Ikdh::all()
+            'ikdhs' => Ikdh::whereNot('cabang', 'anggota-pusat')->orderBy('cabang', 'asc')->get()
         ];
 
         return view('ikdh.index', $data);

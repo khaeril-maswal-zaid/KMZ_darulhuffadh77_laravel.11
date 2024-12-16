@@ -55,13 +55,13 @@ class TholabahFactory extends Factory
             'marhalah' => 'Tholabun', //ini
             'tahun_alumni' => 'Tholabun', //ini
 
-            'picture' => 'tholabahs/' . fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
+            'picture' => 'tholabahs/tholabah-default.png',
         ];
     }
 
     public function santriBaru()
     {
-        return  $this->state(fn (array $attributes) =>  [
+        return  $this->state(fn(array $attributes) =>  [
             'nik' => fake()->unique()->numberBetween(1111111111111111, 9999999999999999),
             'nama' => fake()->name(),
             'jenis_kelamin' => fake()->randomElement(['Laki-laki', 'Perempuan']),
@@ -100,13 +100,13 @@ class TholabahFactory extends Factory
             'marhalah' => 'csb-165', //ini
             'tahun_alumni' => 'csb-165', //ini
 
-            'picture' => 'tholabahs/' . fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
+            'picture' => 'tholabahs/tholabah-default.png',
         ]);
     }
 
     public function pembina()
     {
-        return  $this->state(fn (array $attributes) =>  [
+        return  $this->state(fn(array $attributes) =>  [
             'nik' => fake()->unique()->numberBetween(1111111111111111, 9999999999999999),
             'nama' => fake()->name(),
             'jenis_kelamin' => fake()->randomElement(['Laki-laki', 'Perempuan']),
@@ -145,14 +145,14 @@ class TholabahFactory extends Factory
             'marhalah' => fake()->word(),
             'tahun_alumni' => fake()->year(),
 
-            'picture' => 'tholabahs/' . fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
+            'picture' => 'tholabahs/tholabah-default.png',
         ]);
     }
 
     public function pengabdianLuar()
     {
 
-        return  $this->state(fn (array $attributes) =>  [
+        return  $this->state(fn(array $attributes) =>  [
             'nik' => fake()->unique()->numberBetween(1111111111111111, 9999999999999999),
             'nama' => fake()->name(),
             'jenis_kelamin' => fake()->randomElement(['Laki-laki', 'Perempuan']),
@@ -191,13 +191,13 @@ class TholabahFactory extends Factory
             'marhalah' => fake()->word(),
             'tahun_alumni' => fake()->year(),
 
-            'picture' => 'tholabahs/' . fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
+            'picture' => 'tholabahs/tholabah-default.png',
         ]);
     }
 
     public function alumni()
     {
-        return  $this->state(fn (array $attributes) =>  [
+        return  $this->state(fn(array $attributes) =>  [
             'nik' => fake()->unique()->numberBetween(1111111111111111, 9999999999999999),
             'nama' => fake()->name(),
             'jenis_kelamin' => fake()->randomElement(['Laki-laki', 'Perempuan']),
@@ -236,13 +236,13 @@ class TholabahFactory extends Factory
             'marhalah' => fake()->word(),
             'tahun_alumni' => fake()->year(),
 
-            'picture' => 'tholabahs/' . fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
+            'picture' => 'tholabahs/tholabah-default.png',
         ]);
     }
 
     public function pembesar()
     {
-        return  $this->state(fn (array $attributes) =>  [
+        return  $this->state(fn(array $attributes) =>  [
             'nik' => fake()->unique()->numberBetween(1111111111111111, 9999999999999999),
             'nama' => fake()->name(),
             'jenis_kelamin' => fake()->randomElement(['Laki-laki', 'Perempuan']),
@@ -281,13 +281,13 @@ class TholabahFactory extends Factory
             'marhalah' => fake()->word(),
             'tahun_alumni' => fake()->year(),
 
-            'picture' => 'tholabahs/' . fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
+            'picture' => 'tholabahs/tholabah-default.png',
         ]);
     }
 
     public function rundom()
     {
-        return  $this->state(fn (array $attributes) =>  [
+        return  $this->state(fn(array $attributes) =>  [
             'nik' => fake()->unique()->numberBetween(1111111111111111, 9999999999999999),
             'nama' => fake()->name(),
             'jenis_kelamin' => fake()->randomElement(['Laki-laki', 'Perempuan']),
@@ -326,7 +326,7 @@ class TholabahFactory extends Factory
             'marhalah' => fake()->word(),
             'tahun_alumni' => fake()->year(),
 
-            'picture' => 'tholabahs/' . fake()->randomElement(['team-1.jpg', 'team-2.jpg', 'team-3.jpg']),
+            'picture' => 'tholabahs/tholabah-default.png',
         ]);
     }
 }

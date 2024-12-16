@@ -28,6 +28,8 @@
     <!-- Libraries Stylesheet -->
     <link href="{{ asset('assets/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/lib/animate/animate.min.css') }}" rel="stylesheet" />
+
+    {{-- Dari Masternya WebDes --}}
     <link href="{{ asset('assets/lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
@@ -53,6 +55,8 @@
     <script src="{{ asset('assets/lib/waypoints/waypoints.min.js') }}"></script>
     <script src="{{ asset('assets/lib/counterup/counterup.min.js') }}"></script>
     <script src="{{ asset('assets/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+    {{-- Dari Masternya WebDes --}}
     <script src="{{ asset('assets/lib/isotope/isotope.pkgd.min.js') }}"></script>
     <script src="{{ asset('assets/lib/lightbox/js/lightbox.min.js') }}"></script>
 

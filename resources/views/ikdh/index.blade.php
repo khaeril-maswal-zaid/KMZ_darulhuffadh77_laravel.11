@@ -36,7 +36,7 @@
         <div class="container py-3">
             <div class="section-title position-relative pb-3 mb-4">
                 <h5 class="fw-bold text-primary text-uppercase">Ikatan Keluarga {{ config('app.name') }}</h5>
-                <h1 class="mb-0">IKDH</h1>
+                <h1 class="mb-0">CABANG IKDH</h1>
             </div>
 
             <div class="row">
