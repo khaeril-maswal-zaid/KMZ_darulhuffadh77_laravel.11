@@ -47,12 +47,10 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Tentang</a>
                     <div class="dropdown-menu m-0 bg-primary">
-
                         <div class="dropdown-item dropdownKmz-toggle m-0 p-0 position-relative">
                             <a href="#" class="dropdown-item dropdown-toggle"
                                 data-bs-toggle="dropdown">Eksekutif</a>
-                            <div class="dropdownKmz-men ropdown-menu m-0 bg-primary rounded-1 start-100 top-0">
-                                {{-- <a href="{{route('profil.show', 'struktur-eksekutif')}}" class="dropdown-item">Struktur Eksekutif</a> --}}
+                            <div class="dropdownKmz-menu ropdown-menu m-0 bg-primary rounded-1 start-100 top-0">
                                 <a href="{{ route('profil.show', 'profil-pendiri-kh-lanre-said') }}"
                                     class="dropdown-item">Profil Pendiri</a>
                                 <a href="{{ route('profil.show', 'profil-pimpinan-ust-saad-said') }}"
