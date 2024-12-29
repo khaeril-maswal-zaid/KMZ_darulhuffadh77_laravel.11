@@ -6,9 +6,9 @@
             <h1 class="h4 id-table">Informasi Pendaftaran</h1>
 
             <!-- Button trigger modal -->
-            <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            {{-- <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Add Sub
-            </button>
+            </button> --}}
         </div>
 
         <div class="bg-light rounded h-100 p-4">

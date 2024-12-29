@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Ikdh;
 use App\Models\Kontak;
+use App\Models\More;
 use Illuminate\Contracts\View\View;
 
 class HomeController extends Controller
@@ -13,13 +14,29 @@ class HomeController extends Controller
     {
         $paginate = (request('show')) ?: 6;
 
+        //----RENCANA DTB KONF
+        //carousel
+        //jumlah tholabah angka
+        //Rekening
+        //logo dh
+        //logo sub (osdah, persidah, dll, kemenag)
+
         $data = [
             'title' => false,
             'kontaks' => Kontak::all(),
 
-            'blogs' => Blog::select('category_id', 'oleh', 'title', 'created_at', 'excerpt', 'slug')
+            //-----------BELUM DI EKSEKUSI DI VIEW --------------
+            'carousel' => More::whre("categori", "carousel")->get(),
+            'rekening' => More::whre("categori", "rekening")->get(),
+            'logoDh' => More::whre("categori", "logo-dh")->get(),
+            'vendor' => More::whre("categori", "vendor")->get(),
+
+            'blogs' => Blog::select('category_id', 'oleh', 'title', "picture1", 'created_at', 'excerpt', 'slug')
                 ->whereNotIn('category_id', ['4', '5', '6'])
                 ->latest()->paginate($paginate),
+
+            'blogKhusus' => Blog::select('title', 'picture1', 'excerpt', 'slug')
+                ->whereIn('slug', ['darul-huffadh-milik-seluruh-ummat-muslimin', 'sepenuhnya-ditanggung-bBelajar-di-darul-huffadh-tanpa-biaya-apapun'])->get(),
 
             'programs' => Blog::select('title', 'excerpt')->whereIn('slug', [
                 'kulliyatul-muallimin-alislamiyah',
