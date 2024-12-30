@@ -1,1 +1,2 @@
-- a Href Eksekutif jika ganti judul, Route('blogger.eksekutif')
+- a Href Eksekutif jika ganti judul, Route('blogger.eksekutif');
+- Buat rondown ambil qutes dan tampilan di carousel

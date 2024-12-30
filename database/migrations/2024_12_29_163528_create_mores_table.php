@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('categori', 50);
             $table->string('name', 50);
-            $table->string('value', 100);
+            $table->string('value', 200);
             $table->timestamps();
         });
     }

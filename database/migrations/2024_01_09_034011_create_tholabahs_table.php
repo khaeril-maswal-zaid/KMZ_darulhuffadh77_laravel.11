@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nik', 16);
             $table->string('nama');
-            $table->string('jenis_kelamin');
-            $table->string('tempat_lahir');
-            $table->string('tanggal_lahir');
+            $table->string('jenis_kelamin', 50);
+            $table->string('tempat_lahir', 100);
+            $table->string('tanggal_lahir', 20);
             $table->string('provinsi');
             $table->string('kabupaten');
             $table->string('kecamatan');
@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('pekerjaan_ibu');
             $table->string('kontak_ayah');
             $table->string('kontak_ibu');
-            $table->string('nisn');
+            $table->string('nisn', 20);
             $table->string('asal_sekolah');
             $table->year('tahun_tamat_sd');
 

@@ -5,27 +5,19 @@
     <div class="container-fluid position-relative p-0">
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="{{ asset('assets/img/carousel-1.jpg') }}" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Menuju Pulau Idaman Al-Quran &
-                                Al-Hadist
-                            </h1>
+                @foreach ($carousels as $carousel => $key)
+                    <div class="carousel-item ATUR-KELAS-ACTIVE active">
+                        <img class="w-100" src="{{ asset('assets/img/carousel-1.jpg') }}" alt="Image">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                            <div class="p-3" style="max-width: 900px;">
+                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
+                                <h1 class="display-1 text-white mb-md-4 animated zoomIn">
+                                    KERJAKAN JUGA
+                                </h1>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="{{ asset('assets/img/carousel-2.jpg') }}" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Perlu dibela, dijaga dan diperjuangkan
-                            </h1>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -52,7 +44,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Jumlah Alumni</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">12345</h1>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">{{ $alumni + $alumnibefore->value }}</h1>
                         </div>
                     </div>
                 </div>
@@ -64,7 +56,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="text-primary mb-0">Jumlah Santri</h5>
-                            <h1 class="mb-0" data-toggle="counter-up">12345</h1>
+                            <h1 class="mb-0" data-toggle="counter-up">{{ $putra + $santribefore->value }}</h1>
                         </div>
                     </div>
                 </div>
@@ -77,7 +69,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Jumlah Santriwati</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">12345</h1>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">{{ $putri + $santriwatibefore->value }}</h1>
                         </div>
                     </div>
                 </div>
@@ -153,7 +145,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="mb-2">Rekening Pesantren</h5>
-                            <h4 class="text-primary mb-0">0123456789</h4>
+                            <h4 class="text-primary mb-0">{{ $rekening->value }}</h4>
                         </div>
                     </div>
                     <a href="{{ $blogKhusus->first()->slug }}" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn"
@@ -195,7 +187,7 @@
                 <div class="col-lg-4 wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px">
                     <div class="position-relative h-100">
                         <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s"
-                            src="{{ asset('assets/img/feature.jpg') }}" style="object-fit: cover" />
+                            src="{{ asset('storage/' . $logoDh->value) }}" style="object-fit: cover" />
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -362,7 +354,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="mb-2">Rekening Pesantren</h5>
-                            <h4 class="text-primary mb-0">0123456789</h4>
+                            <h4 class="text-primary mb-0">{{ $rekening->value }}</h4>
                         </div>
                     </div>
                     <a href="{{ $blogKhusus->last()->slug }}" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn"
@@ -541,15 +533,9 @@
         <div class="container py-5 mb-5">
             <div class="bg-white">
                 <div class="owl-carousel vendor-carousel">
-                    <img src="{{ asset('assets/img/vendor-1.jpg') }}" alt="" />
-                    <img src="{{ asset('assets/img/vendor-2.jpg') }}" alt="" />
-                    <img src="{{ asset('assets/img/vendor-3.jpg') }}" alt="" />
-                    <img src="{{ asset('assets/img/vendor-4.jpg') }}" alt="" />
-                    <img src="{{ asset('assets/img/vendor-5.jpg') }}" alt="" />
-                    <img src="{{ asset('assets/img/vendor-6.jpg') }}" alt="" />
-                    <img src="{{ asset('assets/img/vendor-7.jpg') }}" alt="" />
-                    <img src="{{ asset('assets/img/vendor-8.jpg') }}" alt="" />
-                    <img src="{{ asset('assets/img/vendor-9.jpg') }}" alt="" />
+                    @foreach ($vendors as $vendor)
+                        <img src="{{ asset('storage/' . $vendor->value) }}" alt="" />
+                    @endforeach
                 </div>
             </div>
         </div>

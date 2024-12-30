@@ -33,7 +33,13 @@ class BlogController extends Controller
                 break;
         }
 
+        $blog->update(['visit' => $blog->visit + 1]);
+
         $data = [
+            'latests' => Blog::select('title', "picture1", 'slug',)
+                ->whereNotIn('category_id', ['4', '5', '6'])->whereNot('slug', $blog->slug)
+                ->latest()->limit(7)->get(),
+
             'title' => $blog->title,
             'kontaks' => Kontak::all(),
             'blog' => $blog
