@@ -117,6 +117,8 @@
                     </div>
                 @endforeach
             </div>
+            {{ $picturies->onEachSide(0)->links() }}
+
         </div>
     </section>
     <!-- Projects End -->

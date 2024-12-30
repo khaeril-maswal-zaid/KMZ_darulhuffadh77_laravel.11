@@ -10,10 +10,12 @@ class GaleryController extends Controller
 {
     public function index()
     {
+        $paginate = (request('show')) ?: 7;
+
         $data = [
             'title' => 'Galeri Pondok',
             'kontaks' => Kontak::all(),
-            'picturies' => Blog::select('picture1', 'title', 'picture2', 'picture3', 'album', 'slug')->latest()->get()
+            'picturies' => Blog::select('picture1', 'title', 'picture2', 'picture3', 'album', 'slug')->latest()->paginate($paginate)
         ];
 
         return view('galery.index', $data);
