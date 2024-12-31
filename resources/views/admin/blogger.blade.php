@@ -1359,16 +1359,12 @@
             const elements = document.querySelectorAll('.updateArtikel');
             elements.forEach(element => {
                 element.addEventListener('click', () => {
-                    console.log(element.dataset);
 
                     var xhr = new XMLHttpRequest();
                     xhr.open('GET', '/api/blog/' + element.dataset.slugArtikel, true);
                     xhr.onreadystatechange = function() {
                         if (xhr.readyState == 4 && xhr.status == 200) {
                             var response = JSON.parse(xhr.responseText);
-
-                            console.log(response);
-
 
                             document.getElementById('judulberitaUpdate').value = response.title;
                             document.getElementById('floatingTextareaUpdate').value = response.description;

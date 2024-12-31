@@ -90,7 +90,7 @@
             <div class="row g-5">
                 @foreach ($eksekutifs as $eksekutif)
                     <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
-                        <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-item bg-light rounded overflow-hidden h-100 d-flex flex-column">
                             <div class="team-img position-relative overflow-hidden">
                                 <img class="img-fluid w-100" src="{{ asset('storage/' . $eksekutif->picture1) }}"
                                     alt="" />
@@ -99,10 +99,11 @@
                                         href="profil/{{ $eksekutif->slug }}"><i class="fa fa-link"></i></a>
                                 </div>
                             </div>
-                            <div class="text-center py-4">
+                            <div class="text-center py-4 mt-auto">
                                 <h5 class="text-primary">{{ Str::limit($eksekutif->excerpt, 23, '...') }}</h5>
                                 <p class="text-uppercase m-0">
-                                    {{ Str::replace(['Profil', 'Darul Huffadh 77'], '', $eksekutif->title) }}</p>
+                                    {{ Str::replace(['Profil', 'Darul Huffadh 77'], '', $eksekutif->title) }}
+                                </p>
                             </div>
                         </div>
                     </div>
