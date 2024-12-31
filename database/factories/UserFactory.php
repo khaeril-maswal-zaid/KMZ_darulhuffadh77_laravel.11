@@ -36,12 +36,12 @@ class UserFactory extends Factory
 
     public function kmz()
     {
-        return $this->state(fn (array $attributes) =>  [
-            'name' => 'Khaeril Maswal Zaid',
+        return $this->state(fn(array $attributes) =>  [
+            'name' => 'Official DH 77',
             'jenis_kelamin' => 'Laki-laki',
-            'email' => 'muhammadkhaerilzaid@gmail.com',
+            'email' => 'official@darul-huffadh.ponpes.id',
             'email_verified_at' => now(),
-            'password' => Hash::make('maahadii165'),
+            'password' => Hash::make('maahadii165#'),
             'image' => 'user/kmz.jpg',
             'remember_token' => Str::random(10),
         ]);
@@ -52,7 +52,7 @@ class UserFactory extends Factory
      */
     public function unverified(): static
     {
-        return $this->state(fn (array $attributes) => [
+        return $this->state(fn(array $attributes) => [
             'email_verified_at' => null,
         ]);
     }
