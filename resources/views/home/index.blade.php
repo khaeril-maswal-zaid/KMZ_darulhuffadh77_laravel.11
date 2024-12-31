@@ -93,7 +93,8 @@
                         <div class="team-item bg-light rounded overflow-hidden h-100 d-flex flex-column">
                             <div class="team-img position-relative overflow-hidden">
                                 <img class="img-fluid w-100" src="{{ asset('storage/' . $eksekutif->picture1) }}"
-                                    alt="" />
+                                    alt="{{ asset('storage/' . $eksekutif->picture1) }}"
+                                    style=" height: 200px; object-fit: cover; " />
                                 <div class="team-social">
                                     <a class="btn btn-lg btn-primary btn-lg-square rounded"
                                         href="profil/{{ $eksekutif->slug }}"><i class="fa fa-link"></i></a>
@@ -473,7 +474,9 @@
                     <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                         <div class="blog-item bg-light rounded overflow-hidden">
                             <div class="blog-img position-relative overflow-hidden">
-                                <img class="img-fluid" src="{{ asset('storage/' . $blog->picture1) }}" alt="" />
+                                <img class="img-fluid" src="{{ asset('storage/' . $blog->picture1) }}"
+                                    alt="{{ asset('storage/' . $blog->picture1) }}"
+                                    style=" height: 239px; object-fit: cover; " />
                                 <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
                                     href="/">{{ $blog->kategori->name }}</a>
                             </div>
