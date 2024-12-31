@@ -94,7 +94,7 @@
                             <div class="team-img position-relative overflow-hidden">
                                 <img class="img-fluid w-100" src="{{ asset('storage/' . $eksekutif->picture1) }}"
                                     alt="{{ asset('storage/' . $eksekutif->picture1) }}"
-                                    style=" height: 200px; object-fit: cover; " />
+                                    style=" height: 317px; object-fit: cover; " />
                                 <div class="team-social">
                                     <a class="btn btn-lg btn-primary btn-lg-square rounded"
                                         href="profil/{{ $eksekutif->slug }}"><i class="fa fa-link"></i></a>
