@@ -42,7 +42,7 @@ class UserFactory extends Factory
             'email' => 'official@darul-huffadh.ponpes.id',
             'email_verified_at' => now(),
             'password' => Hash::make('maahadii165#'),
-            'image' => 'user/kmz.jpg',
+            'image' => 'users/user.jpg',
             'remember_token' => Str::random(10),
         ]);
     }
