@@ -151,7 +151,14 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                         <a href="/profile" class="dropdown-item">My Profile</a>
-                        <a href="{{ route('logout') }}" class="dropdown-item">Logout</a>
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <button type="submit" class="dropdown-item">
+                                {{ __('Log Out') }}
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
