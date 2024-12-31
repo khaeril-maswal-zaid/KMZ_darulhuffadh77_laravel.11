@@ -77,8 +77,9 @@
                                                 href="{{ route('blog.detail', $blog->slug) }}">View</a>
                                         </li>
                                         <li>
-                                            <button class="dropdown-item" data-bs-toggle="modal"
-                                                data-bs-target="#staticBackdropUpdate" id="updateArtikel"
+                                            <button class="dropdown-item updateArtikel" data-bs-toggle="modal"
+                                                data-bs-target="#staticBackdropUpdate"
+                                                id="updateArtikel{{ $index }}"
                                                 data-slug-artikel="{{ $blog->slug }}">Update</button>
                                         </li>
                                         @if ($blogs->first()->kategori->category != 'khusus-umum-165')
@@ -1355,28 +1356,39 @@
         </div>
 
         <script>
-            document.getElementById('updateArtikel').addEventListener('click', function() {
-                var xhr = new XMLHttpRequest();
-                xhr.open('GET', '/api/blog/' + this.dataset.slugArtikel, true);
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState == 4 && xhr.status == 200) {
-                        var response = JSON.parse(xhr.responseText);
+            const elements = document.querySelectorAll('.updateArtikel');
+            elements.forEach(element => {
+                element.addEventListener('click', () => {
+                    console.log(element.dataset);
 
-                        document.getElementById('judulberitaUpdate').value = response.title;
-                        document.getElementById('floatingTextareaUpdate').value = response.description;
-                        updateArticle1(response.body1);
-                        updateArticle2(response.body2);
-                        document.getElementById('olehselectUpdate').value = 'cuctom';
-                        document.getElementById('penuliscustomUpdate').value = response.oleh;
-                        document.querySelector('.img-preview1Update').src = '/storage/' + response.picture1;
-                        document.querySelector('.img-previewUpdate2').src = '/storage/' + response.picture2;
-                        document.querySelector('.img-previewUpdate3').src = '/storage/' + response.picture3;
-                        document.getElementById('formUpdate').action =
-                            '{{ route('blogger.update', '') }}/' +
-                            response.slug;
-                    }
-                };
-                xhr.send();
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', '/api/blog/' + element.dataset.slugArtikel, true);
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            var response = JSON.parse(xhr.responseText);
+
+                            console.log(response);
+
+
+                            document.getElementById('judulberitaUpdate').value = response.title;
+                            document.getElementById('floatingTextareaUpdate').value = response.description;
+                            updateArticle1(response.body1);
+                            updateArticle2(response.body2);
+                            document.getElementById('olehselectUpdate').value = 'cuctom';
+                            document.getElementById('penuliscustomUpdate').value = response.oleh;
+                            document.querySelector('.img-preview1Update').src = '/storage/' + response
+                                .picture1;
+                            document.querySelector('.img-previewUpdate2').src = '/storage/' + response
+                                .picture2;
+                            document.querySelector('.img-previewUpdate3').src = '/storage/' + response
+                                .picture3;
+                            document.getElementById('formUpdate').action =
+                                '{{ route('blogger.update', '') }}/' +
+                                response.slug;
+                        }
+                    };
+                    xhr.send();
+                });
             });
         </script>
 
