@@ -32,6 +32,11 @@ class MoreSeeder extends Seeder
             [
                 "categori" => "quotes",
                 "name" => "Quotes",
+                "value" => "Ke Darul Huffadh untuk apa ?"
+            ],
+            [
+                "categori" => "quotes",
+                "name" => "Quotes",
                 "value" => "Menuju Pulau Idaman Al-Quran & Al-Hadist"
             ],
             [
@@ -46,53 +51,48 @@ class MoreSeeder extends Seeder
             ],
             [
                 "categori" => "logo-vendor",
-                "name" => "Kemenag",
-                "value" => "more/kemenag.png"
+                "name" => "Osdah",
+                "value" => "more/vendor-1.png"
             ],
             [
                 "categori" => "logo-vendor",
                 "name" => "Osdah",
-                "value" => "more/vendor-1.jpg"
+                "value" => "more/vendor-2.png"
             ],
             [
                 "categori" => "logo-vendor",
                 "name" => "Osdah",
-                "value" => "more/vendor-2.jpg"
+                "value" => "more/vendor-3.png"
             ],
             [
                 "categori" => "logo-vendor",
                 "name" => "Osdah",
-                "value" => "more/vendor-3.jpg"
+                "value" => "more/vendor-4.png"
             ],
             [
                 "categori" => "logo-vendor",
                 "name" => "Osdah",
-                "value" => "more/vendor-4.jpg"
+                "value" => "more/vendor-5.png"
             ],
             [
                 "categori" => "logo-vendor",
                 "name" => "Osdah",
-                "value" => "more/vendor-5.jpg"
+                "value" => "more/vendor-6.png"
             ],
             [
                 "categori" => "logo-vendor",
                 "name" => "Osdah",
-                "value" => "more/vendor-6.jpg"
+                "value" => "more/vendor-7.png"
             ],
             [
                 "categori" => "logo-vendor",
                 "name" => "Osdah",
-                "value" => "more/vendor-7.jpg"
+                "value" => "more/vendor-8.png"
             ],
             [
                 "categori" => "logo-vendor",
                 "name" => "Osdah",
-                "value" => "more/vendor-8.jpg"
-            ],
-            [
-                "categori" => "logo-vendor",
-                "name" => "Osdah",
-                "value" => "more/vendor-9.jpg"
+                "value" => "more/vendor-9.png"
             ],
             [
                 "categori" => "alumnibefore",

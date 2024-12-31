@@ -6,10 +6,9 @@
         <div class="container-fluid bg-primary py-5 mb-4 mb-md-5 bg-header">
             <div class="row py-5">
                 <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-4 text-white animated zoomIn">Tentang</h1>
-                    <a href="/" class="h5 text-white">Home</a>
-                    <i class="far fa-circle text-white px-2"></i>
-                    <a href="/" class="h5 text-white">About</a>
+                    <h1 class="display-4 text-white animated zoomIn">
+                        {{ $sharedQuotes[0][mt_rand(0, $sharedQuotes[1])]['value'] }}</h1>
+
                 </div>
             </div>
         </div>
@@ -22,10 +21,7 @@
                     <a href="/"><i class="bi bi-house-door-fill"></i></a>
                     <span class="px-1">/</span>
 
-                    <span class="px-1">Lembaga</span>
-                    <span class="px-1">/</span>
-
-                    <a href="/">Lorem ipsum dolor</a>
+                    <span class="px-1">{{ $title }}</span>
                 </div>
             </div>
         </div>
@@ -36,7 +32,7 @@
     <section class="container-fluid py-3 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-3">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px">
-                <h5 class="fw-bold text-primary text-uppercase">Direktori Santri</h5>
+                <h5 class="fw-bold text-primary text-uppercase">Database {{ $title }}</h5>
                 <h1 class="mb-0">Pondok Pesantren {{ config('app.name') }}</h1>
             </div>
 

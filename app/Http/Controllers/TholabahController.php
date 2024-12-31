@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 
 class TholabahController extends Controller
 {
-    public function index(String $tingkatan, String $jk = 'all')
+    public function index(String $title, String $tingkatan, String $jk = 'all')
     {
         $paginate = (request('show')) ?: 24;
 
@@ -29,7 +29,7 @@ class TholabahController extends Controller
         }
 
         $data = [
-            'title' => $tingkatan,
+            'title' => $title,
             'kontaks' => Kontak::all(),
             'tholabahs' => $getTholabah
         ];

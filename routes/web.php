@@ -21,11 +21,11 @@ Route::get('/aktivitas-santri-santriwati', [AktivitasSantriController::class, 'i
 Route::get('/blog/{blog:slug}', [BlogController::class, 'show'])->name('blog.detail');
 
 
-Route::get('/pembina-putri', [TholabahController::class, 'index'])->defaults('tingkatan', 'Pembina')->defaults('jk', 'Perempuan');
-Route::get('/pembina-putra', [TholabahController::class, 'index'])->defaults('tingkatan', 'Pembina')->defaults('jk', 'Laki-laki');
-Route::get('/santri', [TholabahController::class, 'index'])->defaults('tingkatan', 'Tholabun')->defaults('jk', 'Laki-laki');
-Route::get('/santriwati', [TholabahController::class, 'index'])->defaults('tingkatan', 'Tholabun')->defaults('jk', 'Perempuan');
-Route::get('/alumni', [TholabahController::class, 'index'])->defaults('tingkatan', 'Alumni');
+Route::get('/pembina-putri', [TholabahController::class, 'index'])->defaults('title', 'Pembina Putri')->defaults('tingkatan', 'Pembina')->defaults('jk', 'Perempuan');
+Route::get('/pembina-putra', [TholabahController::class, 'index'])->defaults('title', 'Pembina Putra')->defaults('tingkatan', 'Pembina')->defaults('jk', 'Laki-laki');
+Route::get('/santri', [TholabahController::class, 'index'])->defaults('title', 'Santri')->defaults('tingkatan', 'Tholabun')->defaults('jk', 'Laki-laki');
+Route::get('/santriwati', [TholabahController::class, 'index'])->defaults('title', 'Santriwati')->defaults('tingkatan', 'Tholabun')->defaults('jk', 'Perempuan');
+Route::get('/alumni', [TholabahController::class, 'index'])->defaults('title', 'Alumni')->defaults('tingkatan', 'Alumni');
 
 Route::get('/ikatan-keluarga-darul-huffadh', [IkdhController::class, 'index'])->name('ikdh.index');
 

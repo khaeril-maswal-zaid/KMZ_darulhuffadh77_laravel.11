@@ -5,14 +5,15 @@
     <div class="container-fluid position-relative p-0">
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
-                @foreach ($carousels as $carousel => $key)
-                    <div class="carousel-item ATUR-KELAS-ACTIVE active">
-                        <img class="w-100" src="{{ asset('assets/img/carousel-1.jpg') }}" alt="Image">
+                @foreach ($carousels as $key => $carousel)
+                    <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
+                        <img class="w-100" src="{{ asset('storage/' . $carousel->value) }}" alt="Image">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 900px;">
-                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
+                                {{-- <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative
+                                    & Innovative</h5> --}}
                                 <h1 class="display-1 text-white mb-md-4 animated zoomIn">
-                                    KERJAKAN JUGA
+                                    {{ $sharedQuotes[0][mt_rand(0, $sharedQuotes[1])]['value'] }}
                                 </h1>
                             </div>
                         </div>
@@ -69,7 +70,8 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Jumlah Santriwati</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">{{ $putri + $santriwatibefore->value }}</h1>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">{{ $putri + $santriwatibefore->value }}
+                            </h1>
                         </div>
                     </div>
                 </div>
